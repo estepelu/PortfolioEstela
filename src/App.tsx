@@ -126,17 +126,17 @@ export default function App() {
               {/* Hero Section */}
               <section className="mb-24">
                 <motion.div
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  transition={{ type: "spring", stiffness: 260, damping: 28 }}
                   className="max-w-4xl"
                 >
                   <h1 className="text-5xl md:text-7xl font-display font-bold text-nord-0 leading-[1.1] mb-8">
-                    Designing for <span style={{ color: '#ff00d8' }}>human</span> movement and <span style={{ color: '#ff7f00' }}>ergonomics</span>.
+                    Building <span style={{ color: '#ff00d8' }}>data systems</span> that understand how people <span style={{ color: '#ff7f00' }}>move and decide</span>.
                   </h1>
                   <p className="text-xl text-nord-3 leading-relaxed mb-10 max-w-2xl">
-                    I'm {portfolioData.owner.name.split(' ')[0].toLowerCase()}, a {portfolioData.owner.title.toLowerCase()} focused on bridging the gap between digital human modelling and real-world automotive development.
+                    I'm {portfolioData.owner.name.split(' ')[0].toLowerCase()}, a senior data scientist with a PhD in Informatics — I turn complex human systems data into predictive models, validation pipelines, and engineering decisions that actually work at scale.
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <button 
@@ -171,13 +171,13 @@ export default function App() {
                     <h2 className="text-3xl font-display font-bold text-nord-0 mb-8 lowercase">about me</h2>
                     <div className="space-y-6 text-lg text-nord-3 leading-relaxed">
                       <p>
-                        I am an <span className="text-nord-0 font-semibold">ambitious, data-driven professional</span> with a track record of solving complex system challenges. My background in high-stakes research has taught me how to bridge the gap between technical complexity and real-world application.
+                        I am a <span className="text-nord-0 font-semibold">senior data scientist</span> with 5+ years of experience building predictive models, validation pipelines, and data-driven systems for complex engineering challenges — from autonomous system testing to human motion modelling.
                       </p>
                       <p>
-                        I thrive in environments that challenge my analytical skills and offer opportunities for continuous growth. Whether it's optimizing a simulation pipeline or leading a cross-functional R&D team, I am driven by the impact my work has on system efficiency and user safety.
+                        I lead cross-functional projects end-to-end: from experimental design and data collection to modelling, benchmarking, and communicating results to both technical and non-technical stakeholders. I've worked with Volvo, Scania, and international research institutes, and co-founded a hardware startup.
                       </p>
                       <p>
-                        I'm not just a researcher; I'm a problem solver who believes in the power of rigorous frameworks and comprehensive understanding to drive innovation in any organization.
+                        I thrive at the intersection of <span className="text-nord-0 font-semibold">rigorous analysis and practical delivery</span> — where the goal is not just the model, but the decision it enables.
                       </p>
                     </div>
                     
@@ -341,10 +341,10 @@ export default function App() {
               className="max-w-4xl mx-auto"
             >
               {/* Resume Header */}
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-16 pb-12 border-b border-nord-4/30">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10 pb-10 border-b border-nord-4/30">
                 <div>
                   <h1 className="text-4xl font-display font-bold text-nord-0 mb-2">{portfolioData.owner.name}</h1>
-                  <p className="text-nord-10 font-medium text-lg">{portfolioData.owner.title}</p>
+                  <p className="font-medium text-lg" style={{ color: '#ff00d8' }}>{portfolioData.owner.title}</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm text-nord-3">
                   <div className="flex items-center gap-2">
@@ -366,6 +366,14 @@ export default function App() {
                 </div>
               </div>
 
+              {/* Profile Summary */}
+              {'resumeProfile' in portfolioData && (
+                <div className="mb-10 p-6 rounded-3xl relative overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(255,0,216,0.06) 0%, rgba(255,127,0,0.04) 100%)', border: '1px solid rgba(255,0,216,0.15)' }}>
+                  <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full blur-3xl opacity-20" style={{ background: '#ff00d8' }} />
+                  <p className="text-nord-3 leading-relaxed text-sm relative z-10">{(portfolioData as typeof portfolioData & { resumeProfile: string }).resumeProfile}</p>
+                </div>
+              )}
+
               {/* Resume Content */}
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
                 <div className="lg:col-span-2 space-y-16">
@@ -375,15 +383,22 @@ export default function App() {
                       <Briefcase className="w-5 h-5" /> Professional Experience
                     </h2>
                     <div className="space-y-12">
-                      {portfolioData.experience.map((exp, i) => (
+                      {(portfolioData as typeof portfolioData & { experience: Array<{ role: string; company: string; period: string; bullets?: string[]; description?: string }> }).experience.map((exp, i) => (
                         <div key={i} className="relative pl-8 border-l-2 border-nord-4/30">
-                          <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-2 border-nord-10" />
+                          <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-2" style={{ borderColor: i === 0 ? '#ff00d8' : '#5e81ac' }} />
                           <div className="mb-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                             <h3 className="text-lg font-bold text-nord-0">{exp.role}</h3>
-                            <span className="text-xs font-bold text-nord-10 bg-nord-10/10 px-2 py-1 rounded-md">{exp.period}</span>
+                            <span className="text-xs font-bold px-2 py-1 rounded-md" style={{ color: '#5e81ac', background: 'rgba(94,129,172,0.1)' }}>{exp.period}</span>
                           </div>
                           <p className="text-nord-3 font-medium mb-4">{exp.company}</p>
-                          <p className="text-nord-3 text-sm leading-relaxed">{exp.description}</p>
+                          <ul className="space-y-2.5">
+                            {exp.bullets.map((bullet, bi) => (
+                              <li key={bi} className="flex gap-3 text-nord-3 text-sm leading-relaxed">
+                                <span className="mt-2 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: i === 0 ? '#ff00d8' : '#5e81ac' }} />
+                                {bullet}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       ))}
                     </div>
@@ -413,53 +428,59 @@ export default function App() {
                   {/* Skills Grid */}
                   <section>
                     <h2 className="text-sm uppercase tracking-widest font-bold text-nord-4 mb-6">Technical Expertise</h2>
-                    <div className="space-y-6">
-                      <div>
-                        <h4 className="text-xs font-bold text-nord-0 mb-3 flex items-center gap-2">
-                          <Database className="w-3 h-3" /> Core Stack
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {['Python', 'MATLAB', 'Time-series', 'Predictive Modelling'].map(s => (
-                            <span key={s} className="text-[10px] px-2 py-1 bg-nord-0 text-white rounded-md">{s}</span>
+                    {(() => {
+                      const skills = (portfolioData as typeof portfolioData & { skills: { core: string[]; methods: string[]; experimental: string[]; tools: string[] } }).skills;
+                      const groups = [
+                        { label: 'Core Stack', items: skills.core, bg: 'bg-nord-0 text-white' },
+                        { label: 'Methods', items: skills.methods, bg: 'bg-[#ff00d8]/10 text-[#c800a8]' },
+                        { label: 'Experimental', items: skills.experimental, bg: 'bg-[#ff7f00]/10 text-[#c06000]' },
+                        { label: 'Tools', items: skills.tools, bg: 'bg-nord-6 text-nord-3' },
+                      ];
+                      return (
+                        <div className="space-y-5">
+                          {groups.map(g => (
+                            <div key={g.label}>
+                              <h4 className="text-[10px] font-bold text-nord-4 uppercase tracking-widest mb-2">{g.label}</h4>
+                              <div className="flex flex-wrap gap-2">
+                                {g.items.map(s => (
+                                  <span key={s} className={`text-[10px] px-2 py-1 rounded-md font-medium ${g.bg}`}>{s}</span>
+                                ))}
+                              </div>
+                            </div>
                           ))}
                         </div>
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-bold text-nord-0 mb-3 flex items-center gap-2">
-                          <Cpu className="w-3 h-3" /> Engineering Tools
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {['IPS IMMA', 'Siemens Jack', 'AnyBody', 'SolidWorks'].map(s => (
-                            <span key={s} className="text-[10px] px-2 py-1 bg-nord-6 text-nord-3 rounded-md">{s}</span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
+                      );
+                    })()}
                   </section>
 
                   {/* Languages */}
                   <section>
                     <h2 className="text-sm uppercase tracking-widest font-bold text-nord-4 mb-6">Languages</h2>
                     <div className="space-y-3">
-                      {[
-                        { l: 'English', p: 'C1' },
-                        { l: 'Spanish', p: 'Native' },
-                        { l: 'Swedish', p: 'B1' }
-                      ].map(lang => (
-                        <div key={lang.l} className="flex justify-between items-center text-sm">
-                          <span className="text-nord-3">{lang.l}</span>
-                          <span className="text-nord-0 font-bold">{lang.p}</span>
+                      {(portfolioData as typeof portfolioData & { languages: Array<{ name: string; level: string }> }).languages.map(lang => (
+                        <div key={lang.name} className="flex justify-between items-center text-sm">
+                          <span className="text-nord-3">{lang.name}</span>
+                          <span className="font-bold text-xs px-2 py-0.5 rounded-md" style={{ color: '#ff7f00', background: 'rgba(255,127,0,0.1)' }}>{lang.level}</span>
                         </div>
                       ))}
                     </div>
                   </section>
 
-                  {/* Profile Summary */}
-                  <section className="p-6 bg-nord-0 text-white rounded-3xl">
-                    <h2 className="text-xs uppercase tracking-widest font-bold mb-4">Profile</h2>
-                    <p className="text-xs leading-relaxed text-nord-4">
-                      I design reproducible analysis pipelines that transform experimental and simulation data into traceable evidence for testing decisions and system improvement.
-                    </p>
+                  {/* Awards */}
+                  <section className="p-6 bg-nord-0 text-white rounded-3xl relative overflow-hidden">
+                    <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full blur-2xl opacity-30" style={{ background: '#ff00d8' }} />
+                    <h2 className="text-xs uppercase tracking-widest font-bold mb-4 relative z-10">Leadership & Awards</h2>
+                    <ul className="space-y-2 relative z-10">
+                      {[
+                        'Elected Student Representative & Board Member — represented 40+ PhD students in university governance.',
+                        'Recipient of multiple international grants and travel awards supporting research dissemination.'
+                      ].map((item, i) => (
+                        <li key={i} className="text-[11px] leading-relaxed text-nord-4 flex gap-2">
+                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#ff00d8' }} />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </section>
                 </div>
               </div>

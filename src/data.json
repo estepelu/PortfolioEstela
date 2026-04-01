@@ -1,7 +1,7 @@
 {
   "owner": {
     "name": "Estela Pérez Luque",
-    "title": "Data Scientist | Simulation Validation & Human Factors",
+    "title": "Senior Data Scientist | Predictive Modelling & Systems Validation",
     "email": "perezluque.estela1504@gmail.com",
     "phone": "+46 73 262 8876",
     "linkedin": "https://linkedin.com/in/estelaperezluque",
@@ -9,65 +9,227 @@
   },
   "lastUpdated": "2026-04-01",
   "philosophy": "I believe in the importance of having rigorous frameworks to evaluate systems and a comprehensive understanding to connect the dots. I am driven to solve real-world problems by understanding customer needs and providing the best solutions through deep system analysis.",
-  "interests": ["Autonomous Driving", "Robotics", "Digital Human Modelling", "Human Behaviour Patterns"],
+  "interests": ["Autonomous Systems", "Robotics", "Human Behaviour Modelling", "Predictive AI"],
+  "resumeProfile": "Senior data scientist with a PhD in Informatics and 5+ years of experience building predictive models, validation pipelines, and data-driven systems for complex engineering challenges. I design reproducible end-to-end analysis workflows that turn experimental and simulation data into traceable evidence for engineering decisions and system improvement. I lead cross-functional projects across industry, international research, and startup ventures—translating complex technical findings into actionable recommendations for both technical and non-technical stakeholders.",
   "experience": [
     {
-      "role": "Research Engineer (Simulation & Human Factors)",
-      "company": "University of Skövde",
+      "role": "Research Engineer & PhD Researcher",
+      "company": "University of Skövde, Sweden",
       "period": "Sep 2020 – Oct 2025",
-      "description": "Designed and executed scenario-based validation studies for predictive models. Built reproducible Python and MATLAB pipelines to benchmark model performance. Collaborated with industrial partners like Volvo and Scania to align validation scope and translate technical findings."
+      "bullets": [
+        "Built end-to-end Python and MATLAB pipelines for simulation validation and model benchmarking, comparing prediction outputs against motion capture and in-vehicle datasets using RMSE, DTW, and Bland-Altman metrics—producing reproducible, traceable evidence for engineering decisions and test planning.",
+        "Led multi-stakeholder R&D projects with Volvo Cars, Volvo Trucks, Scania, Texas Tech University, and University of Antwerp, aligning scope, timelines, and expectations across technical and non-technical teams and translating findings into decision-ready reports, resulting in 15+ peer-reviewed publications.",
+        "Applied multi-objective optimization (NSGA-II) to vehicle interior design problems, evaluating 1,000+ configurations across 14 digital human manikins—shifting ergonomics assessment from manual trial-and-error to systematic, scalable design-space exploration.",
+        "Designed and executed experimental studies with motion capture and 4D body-scanning systems across diverse applications, managing protocol development, ethics approvals, and data pipelines from scratch to publication-ready outputs.",
+        "Supervised 10+ BSc theses and delivered teaching at BSc and MSc level; elected Student Representative and Board Member representing 40+ PhD students in university-level research governance."
+      ]
     },
     {
       "role": "Visiting Researcher",
-      "company": "University of Antwerp",
+      "company": "University of Antwerp, Belgium",
       "period": "Sep 2024 – Mar 2025",
-      "description": "Designed motion-capture and 4D body-scanning protocols for human motion validation. Developed reproducible workflows for processing and organizing advanced body-scanning datasets."
+      "bullets": [
+        "Managed a 6-month international research stay end-to-end: led ethics application for 5-year large-scale data collection approval, designed motion capture and 4D body-scanning protocols for 30+ participants, and built reproducible multi-site data pipelines enabling consistent validation across institutions."
+      ]
     },
     {
       "role": "Co-founder and R&D Lead",
-      "company": "Swe-Ex AB (Startup)",
+      "company": "Swe-Ex AB (Startup) — Science Park Skövde, Sweden",
       "period": "Sep 2021 – Mar 2023",
-      "description": "Translated user needs and safety considerations into measurable design targets. Drove three full prototype iterations from CAD to physical validation. Combined product development, testing, and stakeholder feedback in a fast-moving startup environment."
+      "bullets": [
+        "Co-founded an early-stage wearable technology startup developing exoskeleton-inspired safety support equipment for assembly-line environments, incubated at Science Park Skövde over 2 years.",
+        "Translated user needs and safety requirements into measurable product targets and drove three full prototype iterations from CAD to physical validation using 3D-printed, textile, and steel components.",
+        "Built commercial acumen through investor communications, market analysis across 10+ industries, and structured business planning—bridging technical capability with product viability and go-to-market strategy."
+      ]
     },
     {
       "role": "Research Assistant",
-      "company": "University of Skövde",
+      "company": "University of Skövde, Sweden",
       "period": "Jun 2019 – Sep 2020",
-      "description": "Contributed to applied ergonomics projects with 6+ industry partners. Produced decision-ready reports and educational documentation. Helped partners apply ergonomic insights in product development."
+      "bullets": [
+        "Contributed to applied projects with 6+ industry partners: conducted ergonomic assessments (RULA, REBA), produced decision-ready analytical reports and educational content, and presented findings to cross-functional teams to support product development decisions."
+      ]
     }
   ],
   "education": [
     {
       "degree": "PhD in Informatics",
-      "school": "University of Skövde",
+      "school": "University of Skövde, Sweden",
       "period": "Sep 2020 – Oct 2025",
-      "details": "Thesis: Human Posture and Motion Prediction for Automotive Ergonomics Design."
+      "details": "Thesis: Human Posture and Motion Prediction for Automotive Ergonomics Design — predictive modelling, simulation validation, and benchmarking against real-world datasets."
     },
     {
       "degree": "Master of Science in Intelligent Automation",
-      "school": "University of Skövde",
-      "period": "Aug 2018 – Jun 2019"
+      "school": "University of Skövde, Sweden",
+      "period": "Aug 2018 – Jun 2019",
+      "details": "Thesis: Experimental evaluation of three upper-body exoskeletons using Xsens motion capture."
     },
     {
-      "degree": "Bachelor of Science in Mechanical Engineering",
-      "school": "University of Skövde",
+      "degree": "Bachelor of Science in Mechanical Engineering (ERASMUS+)",
+      "school": "University of Skövde, Sweden",
       "period": "Aug 2017 – Jun 2018"
     },
     {
       "degree": "Degree in Mechanical Engineering",
-      "school": "University of Málaga",
+      "school": "University of Málaga, Spain",
       "period": "Aug 2012 – Jun 2018"
     }
   ],
+  "skills": {
+    "core": ["Python", "MATLAB", "Time-series Analysis", "Predictive Modelling", "Simulation Validation", "Data Pipelines"],
+    "methods": ["Model Benchmarking", "Experimental Design", "Multi-objective Optimisation", "Statistical Analysis", "Inverse Kinematics"],
+    "experimental": ["Motion Capture (Xsens, MOVE4D, optical)", "4D Body Scanning", "Protocol Development", "Ethics Governance"],
+    "tools": ["IPS IMMA", "Siemens Jack", "AnyBody", "SolidWorks", "Autodesk Inventor"]
+  },
+  "languages": [
+    { "name": "English", "level": "C1" },
+    { "name": "Spanish", "level": "Native" },
+    { "name": "Swedish", "level": "B1" }
+  ],
+  "scholarStats": {
+    "totalCitations": 145,
+    "since2020Citations": 143,
+    "hIndex": 8,
+    "hIndex5y": 7,
+    "i10Index": 5,
+    "i10Index5y": 5,
+    "scholarUrl": "https://scholar.google.com/citations?user=3fIvGjcAAAAJ&hl=en",
+    "citationsPerYear": [
+      { "year": 2020, "citations": 2 },
+      { "year": 2021, "citations": 10 },
+      { "year": 2022, "citations": 22 },
+      { "year": 2023, "citations": 26 },
+      { "year": 2024, "citations": 46 },
+      { "year": 2025, "citations": 30 },
+      { "year": 2026, "citations": 9 }
+    ]
+  },
   "publications": [
     {
-      "id": "pub-sbmoo-ergonomics",
-      "title": "Simulation-based Multi-objective Optimization Combined with a DHM tool for Occupant Packaging Design",
+      "id": "pub-eye-tracking-vr",
+      "title": "Eye-tracking beyond peripersonal space in virtual reality: validation and best practices",
+      "authors": "M Lamb, M Brundin, E Pérez Luque, E Billing",
+      "publication": "Frontiers in Virtual Reality",
+      "year": 2022,
+      "citations": 30,
+      "doi": ""
+    },
+    {
+      "id": "pub-exoskeleton-range-of-motion",
+      "title": "Motion behavior and range of motion when using exoskeletons in manual assembly tasks",
+      "authors": "E Pérez Luque, D Högberg, A Iriondo Pascual, D Läkmull, F Garcia Rivera",
+      "publication": "Swedish Production Symposium (SPS2020)",
+      "year": 2020,
+      "citations": 25,
+      "doi": ""
+    },
+    {
+      "id": "pub-moo-productivity-wellbeing",
+      "title": "Optimization of productivity and worker well-being by using a multi-objective optimization framework",
+      "authors": "A Iriondo Pascual, D Högberg, D Läkmull, E Pérez Luque, A Syberfeldt, L Hanson",
+      "publication": "IISE Transactions on Occupational Ergonomics and Human Factors",
+      "year": 2021,
+      "citations": 21,
+      "doi": ""
+    },
+    {
+      "id": "pub-moo-ergonomics-productivity",
+      "title": "Multi-objective optimization of ergonomics and productivity by using an optimization framework",
+      "authors": "A Iriondo Pascual, D Högberg, A Syberfeldt, E Brolin, E Pérez Luque, L Hanson, D Läkmull",
+      "publication": "DHM and Posturography",
+      "year": 2021,
+      "citations": 14,
+      "doi": ""
+    },
+    {
+      "id": "pub-mocap-ai-posture",
+      "title": "Aiding Observational Ergonomic Evaluation Methods Using MOCAP Systems Supported by AI-Based Posture Recognition",
+      "authors": "V Igelmo, A Syberfeldt, D Högberg, F Garcia Rivera, E Pérez Luque",
+      "publication": "Advances in Transdisciplinary Engineering",
+      "year": 2020,
+      "citations": 13,
+      "doi": ""
+    },
+    {
+      "id": "pub-challenges-ergonomics-automotive",
+      "title": "Challenges for the consideration of ergonomics in product development in the Swedish automotive industry – an interview study",
+      "authors": "E Pérez Luque, E Brolin, D Högberg, M Lamb",
+      "publication": "Proceedings of the Design Society",
+      "year": 2022,
+      "citations": 9,
+      "doi": "10.1017/pds.2022.219"
+    },
+    {
+      "id": "pub-vr-smart-textiles",
+      "title": "Using Virtual Reality and smart textiles to assess the design of workstations",
+      "authors": "F Garcia Rivera, E Brolin, A Syberfeldt, D Högberg, A Iriondo Pascual, E Pérez Luque",
+      "publication": "Advances in Transdisciplinary Engineering",
+      "year": 2020,
+      "citations": 9,
+      "doi": ""
+    },
+    {
+      "id": "pub-ergonomics-eval-moo",
+      "title": "Implementation of ergonomics evaluation methods in a multi-objective optimization framework",
+      "authors": "A Iriondo Pascual, D Högberg, A Syberfeldt, E Brolin, F García Rivera, E Pérez Luque, L Hanson",
+      "publication": "Advances in Simulation and Digital Manufacturing",
+      "year": 2020,
+      "citations": 8,
+      "doi": ""
+    },
+    {
+      "id": "pub-hip-joint-simulation",
+      "title": "Simulation of hip joint location for occupant packaging design",
+      "authors": "E Pérez Luque, E Brolin, M Lamb, D Högberg",
+      "publication": "Proceedings of the 7th International Digital Human Modeling Symposium",
+      "year": 2022,
+      "citations": 5,
+      "doi": "10.17077/dhm.31742"
+    },
+    {
+      "id": "pub-exoskeleton-framework-dhm",
+      "title": "A Framework to Model the Use of Exoskeletons in DHM Tools",
+      "authors": "F Garcia Rivera, A Brolin, E Pérez Luque, D Högberg",
+      "publication": "Advances in Transdisciplinary Engineering",
+      "year": 2021,
+      "citations": 4,
+      "doi": ""
+    },
+    {
+      "id": "pub-dhm-exoskeleton-assessment",
+      "title": "DHM supported assessment of the effects of using an exoskeleton during work",
+      "authors": "F Garcia Rivera, D Högberg, M Lamb, E Pérez Luque",
+      "publication": "International Journal of Human Factors Modelling and Simulation",
+      "year": 2022,
+      "citations": 2,
+      "doi": ""
+    },
+    {
+      "id": "pub-understanding-eye-tracking",
+      "title": "Understanding Eye-Tracking in Virtual Reality",
+      "authors": "M Lamb, E Pérez Luque, E Billing",
+      "publication": "Advances in Transdisciplinary Engineering",
+      "year": 2022,
+      "citations": 2,
+      "doi": ""
+    },
+    {
+      "id": "pub-exoskeleton-eval-range",
+      "title": "Evaluation of the Use of Exoskeletons in the Range of Motion of Workers",
+      "authors": "E Pérez Luque, D Högberg, A Iriondo Pascual",
+      "publication": "Proceedings of the 20th Congress of the International Ergonomics Association",
+      "year": 2019,
+      "citations": 2,
+      "doi": ""
+    },
+    {
+      "id": "pub-comparison-wearable-4d",
+      "title": "Comparison Between Observational Method, Wearable Inertial Measurement System and 4D Stereophotogrammetry for Ergonomics Risk Assessment: A Case Study",
       "authors": "E Pérez Luque, D Högberg, L Hanson, G Brolin",
-      "publication": "International Journal of Industrial Ergonomics",
+      "publication": "Applied Sciences",
       "year": 2025,
-      "citations": 12,
-      "doi": "10.1016/j.ergon.2024.103690"
+      "citations": 1,
+      "doi": ""
     },
     {
       "id": "pub-posture-prediction-comparison",
@@ -75,8 +237,44 @@
       "authors": "E Pérez Luque, D Högberg, L Hanson, G Brolin",
       "publication": "International Journal of Human Factors Modelling and Simulation",
       "year": 2025,
-      "citations": 8,
+      "citations": 0,
       "doi": "10.1504/IJHFE.2025.10075068"
+    },
+    {
+      "id": "pub-phd-thesis",
+      "title": "Human Posture and Motion Prediction for Automotive Ergonomics Design: Enhancing Functionality and Accuracy in Digital Human Modelling Tools",
+      "authors": "E Pérez Luque",
+      "publication": "PhD Thesis, University of Skövde",
+      "year": 2025,
+      "citations": 0,
+      "doi": ""
+    },
+    {
+      "id": "pub-minimum-clearance",
+      "title": "Minimum Clearance Distance Prediction in Manual Collision Avoidance Reaching Tasks: Perceived-Risk-Based Motion Versus Steering Dynamics Model",
+      "authors": "E Pérez Luque, D Högberg, L Hanson, G Brolin",
+      "publication": "Journal of Biomechanical Engineering",
+      "year": 2025,
+      "citations": 0,
+      "doi": ""
+    },
+    {
+      "id": "pub-statistical-body-shape",
+      "title": "Statistical 3D Body Shape Predictions for Standardisation of Digital Human Modelling Tools",
+      "authors": "E Pérez Luque, D Högberg, L Hanson, G Brolin",
+      "publication": "International Journal of Industrial Ergonomics",
+      "year": 2025,
+      "citations": 0,
+      "doi": ""
+    },
+    {
+      "id": "pub-sbmoo-ergonomics",
+      "title": "Simulation-based multi-objective optimization combined with a DHM tool for occupant packaging design",
+      "authors": "E Pérez Luque, D Högberg, L Hanson, G Brolin",
+      "publication": "International Journal of Industrial Ergonomics",
+      "year": 2025,
+      "citations": 0,
+      "doi": "10.1016/j.ergon.2024.103690"
     },
     {
       "id": "pub-improving-occupant-packaging",
@@ -84,26 +282,35 @@
       "authors": "E Pérez Luque, D Högberg, L Hanson, G Brolin",
       "publication": "Digital Human Modeling and Applications in Health, Safety, Ergonomics and Risk Management",
       "year": 2024,
-      "citations": 15,
+      "citations": 0,
       "doi": "10.1007/978-3-031-60000-0_1"
     },
     {
-      "id": "pub-challenges-ergonomics-automotive",
-      "title": "Challenges for the Consideration of Ergonomics in Product Development in the Swedish Automotive Industry – An Interview Study",
-      "authors": "E Pérez Luque, D Högberg, L Hanson",
-      "publication": "Proceedings of the Design Society",
-      "year": 2022,
-      "citations": 24,
-      "doi": "10.1017/pds.2022.219"
+      "id": "pub-infinity-problems",
+      "title": "Infinity Problems: Considering the Implications of a Lightweight Inverse Kinematic for Understanding Human Motion Planning",
+      "authors": "E Pérez Luque, D Högberg, L Hanson, G Brolin",
+      "publication": "Human Factors",
+      "year": 2024,
+      "citations": 0,
+      "doi": ""
     },
     {
-      "id": "pub-hip-joint-simulation",
-      "title": "Simulation of Hip Joint Location for Occupant Packaging Design",
-      "authors": "E Pérez Luque, D Högberg, L Hanson, G Brolin",
-      "publication": "Proceedings of the 7th International Digital Human Modeling Symposium",
-      "year": 2022,
-      "citations": 10,
-      "doi": "10.17077/dhm.31742"
+      "id": "pub-closing-gender-gap",
+      "title": "Closing the Gender Gap in DHM",
+      "authors": "E Pérez Luque, D Högberg, L Hanson",
+      "publication": "Advances in Transdisciplinary Engineering",
+      "year": 2020,
+      "citations": 0,
+      "doi": ""
+    },
+    {
+      "id": "pub-exoskeleton-hand-rehab",
+      "title": "Exoskeleton for hand rehabilitation",
+      "authors": "E Pérez Luque",
+      "publication": "Master's Thesis, University of Skövde",
+      "year": 2018,
+      "citations": 0,
+      "doi": ""
     }
   ],
   "projects": [
@@ -269,7 +476,6 @@
       "impact": [
         "Showed that OPM performed better for H-point x and steering wheel x across both vehicles",
         "Showed that SPM performed better for H-point z across both vehicles",
-        "Showed that lower-seat and higher-seat vehicle configurations favour different methods for eye-point prediction",
         "Provided a practical basis for choosing prediction methods by context instead of treating one method as universally best"
       ],
       "skills": ["Validation", "Comparative analysis", "Human factors", "Automotive ergonomics", "Statistical analysis"],
@@ -356,9 +562,9 @@
         "paperLabel": "Paper F",
         "publicationTitle": "Predicting Human Upper Extremity Reaching Motions: Comparison of Optimization-based Method and Heuristic Method",
         "publicationType": "journal-paper",
-        "year": 2025,
-        "publicationStatus": "submitted",
-        "doi": ""
+        "year": 2026,
+        "publicationStatus": "published",
+        "doi": "10.1080/10447318.2026.2632154"
       },
       "sortOrder": 6
     },
@@ -406,17 +612,17 @@
       "featured": true,
       "yearStart": 2019,
       "yearEnd": 2021,
-      "summary": "Co-founded an exoskeleton-focused startup and worked on translating user and ergonomic needs into product requirements, prototype decisions, and iterative development.",
+      "summary": "Co-founded an exoskeleton-focused startup developing wearable safety support equipment for assembly-line environments, incubated at Science Park Skövde.",
       "challenge": "Wearable assistive products need to balance comfort, fit, usability, safety, and practical engineering constraints, especially when moving from concept to prototype.",
       "solution": "Worked in an early-stage startup setting to define requirements, develop prototypes, and improve the concept through repeated iterations and feedback.",
       "whatIDid": [
-        "Co-founded the company with collaborators",
-        "Helped translate user needs into measurable requirements and design criteria",
-        "Contributed to prototype development and iteration cycles",
-        "Participated in an incubator program with coaching and business development support"
+        "Co-founded the company with collaborators through Science Park Skövde incubator",
+        "Translated user needs into measurable requirements and design criteria",
+        "Drove three full prototype iterations from CAD to physical validation",
+        "Built commercial acumen through investor communications and market analysis across 10+ industries"
       ],
       "impact": [
-        "Built several exoskeleton prototypes",
+        "Built three functional exoskeleton prototype versions",
         "Gained direct experience in startup product development and early-stage decision-making",
         "Strengthened the link between human factors thinking and real product iteration"
       ],
