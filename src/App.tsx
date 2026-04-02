@@ -49,6 +49,18 @@ import ResearchProfile from './components/ResearchProfile';
 
 type Project = typeof portfolioData.projects[0];
 
+const PARTNER_LOGOS = [
+  { name: 'University of Antwerp', file: 'Antwerp.jpg' },
+  { name: 'Ericsson', file: 'Ericsson.png' },
+  { name: 'Safer', file: 'Safer.jpeg' },
+  { name: 'Scania', file: 'Scania.png' },
+  { name: 'Texas Tech University', file: 'Texas tech.jpg' },
+  { name: 'Volvo Cars', file: 'Volvo Cars.jpeg' },
+  { name: 'Volvo Group', file: 'Volvo Group.png' },
+  { name: 'Zeekr', file: 'Zeekr.jpg' },
+  { name: 'Feelgood', file: 'feelgood.png' },
+];
+
 export default function App() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [filter, setFilter] = useState<string>('all');
@@ -367,6 +379,62 @@ export default function App() {
                     ))}
                   </AnimatePresence>
                 </div>
+              </section>
+
+              {/* Collaborators & Partners */}
+              <section className="mb-32">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ type: 'spring', stiffness: 260, damping: 28 }}
+                  className="mb-10"
+                >
+                  <h2 className="text-3xl font-display font-bold text-nord-0 mb-3 lowercase">collaborators & partners</h2>
+                  <p className="text-nord-1">Institutions and organisations I have worked with across research, industry, and ventures.</p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ type: 'spring', stiffness: 240, damping: 28, delay: 0.1 }}
+                  className="overflow-hidden rounded-3xl py-6"
+                  style={{ background: '#ffffff', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)', maskImage: 'linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)' }}
+                >
+                  <div className="marquee-inner">
+                    {[...PARTNER_LOGOS, ...PARTNER_LOGOS].map((logo, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          flexShrink: 0,
+                          margin: '0 28px',
+                          width: '200px',
+                          height: '110px',
+                          backgroundColor: '#ffffff',
+                          borderRadius: '12px',
+                          padding: '14px',
+                          overflow: 'hidden',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                        }}
+                      >
+                        <img
+                          src={`${import.meta.env.BASE_URL}logos/${encodeURIComponent(logo.file)}`}
+                          alt={logo.name}
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'contain',
+                            display: 'block',
+                            backgroundColor: '#ffffff',
+                          }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
               </section>
             </motion.div>
           )}

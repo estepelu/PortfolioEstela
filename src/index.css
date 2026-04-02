@@ -36,14 +36,33 @@
 }
 
 .scandi-gradient {
-  background: linear-gradient(135deg, #eceff4 0%, #e5e9f0 50%, #d8dee9 100%);
+  background: linear-gradient(135deg, #b5decc 0%, #e8cfd5 50%, #f27291 100%);
+  min-height: 100vh;
 }
 
 .glass-card {
-  @apply bg-white/40 backdrop-blur-md border border-white/20 shadow-sm transition-all duration-300;
+  @apply bg-white/50 backdrop-blur-md border border-white/30 shadow-sm transition-all duration-300;
 }
 
 .glass-card:hover {
-  @apply bg-white/80 border-white/60;
-  box-shadow: 0 28px 60px rgba(130,36,31,0.18), 0 8px 20px rgba(0,0,0,0.07);
+  background: linear-gradient(135deg, rgba(181,222,204,0.82) 0%, rgba(242,114,145,0.68) 100%);
+  border-color: rgba(242,114,145,0.55);
+  box-shadow: 0 28px 60px rgba(130,36,31,0.22), 0 8px 20px rgba(0,0,0,0.08);
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee 32s linear infinite;
+}
+
+.marquee-container {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
 }
