@@ -5,10 +5,10 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", sans-serif;
   
-  --color-nord-0: #2e3440;
-  --color-nord-1: #3b4252;
-  --color-nord-2: #434c5e;
-  --color-nord-3: #4c566a;
+  --color-nord-0: #000000;
+  --color-nord-1: #111111;
+  --color-nord-2: #1a1a1a;
+  --color-nord-3: #2a2a2a;
   --color-nord-4: #d8dee9;
   --color-nord-5: #e5e9f0;
   --color-nord-6: #eceff4;
@@ -36,7 +36,7 @@
 }
 
 .scandi-gradient {
-  background: linear-gradient(135deg, #b5decc 0%, #e8cfd5 50%, #f27291 100%);
+  background: linear-gradient(135deg, #b5decc 0%, #f27291 100%);
   min-height: 100vh;
 }
 
