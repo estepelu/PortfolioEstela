@@ -24,6 +24,9 @@
   
   --color-pop-pink: #ff00d8;
   --color-pop-orange: #ff7f00;
+  --color-pop-blue: #0080ff;
+  --color-pop-green: #00c896;
+  --color-pop-purple: #9b59ff;
 }
 
 @layer base {

@@ -94,12 +94,6 @@ export default function App() {
               >
                 research profile
               </button>
-              <button 
-                onClick={() => setActiveTab('quiz')}
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all lowercase ${activeTab === 'quiz' ? 'bg-white text-nord-0 shadow-sm' : 'text-nord-3 hover:text-nord-0'}`}
-              >
-                traveler & foodie test
-              </button>
             </div>
             <div className="hidden md:flex items-center gap-4">
               <a href={portfolioData.owner.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 text-nord-3 hover:text-nord-10 transition-colors">
@@ -133,10 +127,10 @@ export default function App() {
                   className="max-w-4xl"
                 >
                   <h1 className="text-5xl md:text-7xl font-display font-bold text-nord-0 leading-[1.1] mb-8">
-                    Building <span style={{ color: '#ff00d8' }}>data systems</span> that understand how people <span style={{ color: '#ff7f00' }}>move and decide</span>.
+                    Turning <span style={{ color: '#ff00d8' }}>complex systems</span> into decisions, products, and <span style={{ color: '#ff7f00' }}>customer outcomes</span>.
                   </h1>
                   <p className="text-xl text-nord-3 leading-relaxed mb-10 max-w-2xl">
-                    I'm {portfolioData.owner.name.split(' ')[0].toLowerCase()}, a senior data scientist with a PhD in Informatics — I turn complex human systems data into predictive models, validation pipelines, and engineering decisions that actually work at scale.
+                    I'm {portfolioData.owner.name.split(' ')[0].toLowerCase()}, a PhD-level data scientist and systems thinker. I bridge deep technical expertise with commercial delivery — from predictive models and validation pipelines to go-to-market strategy and customer success.
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <button 
@@ -171,13 +165,13 @@ export default function App() {
                     <h2 className="text-3xl font-display font-bold text-nord-0 mb-8 lowercase">about me</h2>
                     <div className="space-y-6 text-lg text-nord-3 leading-relaxed">
                       <p>
-                        I am a <span className="text-nord-0 font-semibold">senior data scientist</span> with 5+ years of experience building predictive models, validation pipelines, and data-driven systems for complex engineering challenges — from autonomous system testing to human motion modelling.
+                        I'm a <span className="text-nord-0 font-semibold">PhD-level data scientist and systems thinker</span> with 5+ years of experience connecting technical depth with real-world impact — from predictive modelling and data pipelines to customer-facing delivery and go-to-market execution.
                       </p>
                       <p>
-                        I lead cross-functional projects end-to-end: from experimental design and data collection to modelling, benchmarking, and communicating results to both technical and non-technical stakeholders. I've worked with Volvo, Scania, and international research institutes, and co-founded a hardware startup.
+                        I lead cross-functional projects end-to-end: scoping the problem, building the evidence, and translating findings into decisions that stick. I've partnered with Volvo, Scania, and international research institutes, and co-founded a hardware startup where I managed everything from prototyping to investor communications.
                       </p>
                       <p>
-                        I thrive at the intersection of <span className="text-nord-0 font-semibold">rigorous analysis and practical delivery</span> — where the goal is not just the model, but the decision it enables.
+                        Whether the role is <span className="text-nord-0 font-semibold">technical, commercial, or at the boundary</span> — I bring the same toolkit: rigorous analysis, clear communication, and a bias for outcomes over outputs.
                       </p>
                     </div>
                     
@@ -269,9 +263,9 @@ export default function App() {
                         onClick={() => setSelectedProject(project)}
                         className={`glass-card rounded-3xl p-8 cursor-pointer flex flex-col h-full group relative overflow-hidden ${project.id === 'phd-thesis' ? 'md:col-span-2 lg:col-span-2 border-nord-10/30 bg-nord-10/5' : ''}`}
                       >
-                        {/* Color Pop Background Glows */}
-                        <div className="absolute -top-24 -right-24 w-48 h-48 bg-pop-pink/5 rounded-full blur-[60px] group-hover:bg-pop-pink/15 transition-all duration-500" />
-                        <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-pop-orange/5 rounded-full blur-[60px] group-hover:bg-pop-orange/15 transition-all duration-500" />
+                        {/* Per-project accent glow */}
+                        <div className="absolute -top-24 -right-24 w-48 h-48 rounded-full blur-[60px] opacity-[0.06] group-hover:opacity-[0.20] transition-all duration-500" style={{ background: project.accentColor }} />
+                        <div className="absolute -bottom-24 -left-24 w-48 h-48 rounded-full blur-[60px] opacity-[0.04] group-hover:opacity-[0.12] transition-all duration-500" style={{ background: project.accentColor }} />
                         
                         {project.id === 'phd-thesis' && (
                           <div className="absolute top-0 right-0 p-4">
@@ -346,21 +340,21 @@ export default function App() {
                   <h1 className="text-4xl font-display font-bold text-nord-0 mb-2">{portfolioData.owner.name}</h1>
                   <p className="font-medium text-lg" style={{ color: '#ff00d8' }}>{portfolioData.owner.title}</p>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm text-nord-3">
-                  <div className="flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-nord-10" />
-                    <a href={`mailto:${portfolioData.owner.email}`} className="hover:text-nord-10">{portfolioData.owner.email}</a>
+                <div className="flex flex-col gap-2.5 text-sm text-nord-3 min-w-0">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <Mail className="w-4 h-4 text-nord-10 shrink-0" />
+                    <a href={`mailto:${portfolioData.owner.email}`} className="hover:text-nord-10 break-all">{portfolioData.owner.email}</a>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Phone className="w-4 h-4 text-nord-10" />
+                    <Phone className="w-4 h-4 text-nord-10 shrink-0" />
                     <span>{portfolioData.owner.phone}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-nord-10" />
+                    <MapPin className="w-4 h-4 text-nord-10 shrink-0" />
                     <span>{portfolioData.owner.location}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Linkedin className="w-4 h-4 text-nord-10" />
+                    <Linkedin className="w-4 h-4 text-nord-10 shrink-0" />
                     <a href={portfolioData.owner.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-nord-10">LinkedIn Profile</a>
                   </div>
                 </div>
@@ -379,7 +373,7 @@ export default function App() {
                 <div className="lg:col-span-2 space-y-16">
                   {/* Experience */}
                   <section>
-                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-4 mb-8 flex items-center gap-3">
+                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-8 flex items-center gap-3">
                       <Briefcase className="w-5 h-5" /> Professional Experience
                     </h2>
                     <div className="space-y-12">
@@ -406,7 +400,7 @@ export default function App() {
 
                   {/* Education */}
                   <section>
-                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-4 mb-8 flex items-center gap-3">
+                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-8 flex items-center gap-3">
                       <GraduationCap className="w-5 h-5" /> Education
                     </h2>
                     <div className="space-y-8">
@@ -417,7 +411,7 @@ export default function App() {
                             <p className="text-sm text-nord-3">{edu.school}</p>
                             {edu.details && <p className="text-xs text-nord-10 mt-1 italic">{edu.details}</p>}
                           </div>
-                          <span className="text-xs font-medium text-nord-4 shrink-0">{edu.period}</span>
+                          <span className="text-xs font-medium text-nord-3 shrink-0">{edu.period}</span>
                         </div>
                       ))}
                     </div>
@@ -427,7 +421,7 @@ export default function App() {
                 <div className="space-y-12">
                   {/* Skills Grid */}
                   <section>
-                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-4 mb-6">Technical Expertise</h2>
+                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-6">Technical Expertise</h2>
                     {(() => {
                       const skills = (portfolioData as typeof portfolioData & { skills: { core: string[]; methods: string[]; experimental: string[]; tools: string[] } }).skills;
                       const groups = [
@@ -440,7 +434,7 @@ export default function App() {
                         <div className="space-y-5">
                           {groups.map(g => (
                             <div key={g.label}>
-                              <h4 className="text-[10px] font-bold text-nord-4 uppercase tracking-widest mb-2">{g.label}</h4>
+                              <h4 className="text-[10px] font-bold text-nord-2 uppercase tracking-widest mb-2">{g.label}</h4>
                               <div className="flex flex-wrap gap-2">
                                 {g.items.map(s => (
                                   <span key={s} className={`text-[10px] px-2 py-1 rounded-md font-medium ${g.bg}`}>{s}</span>
@@ -455,7 +449,7 @@ export default function App() {
 
                   {/* Languages */}
                   <section>
-                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-4 mb-6">Languages</h2>
+                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-6">Languages</h2>
                     <div className="space-y-3">
                       {(portfolioData as typeof portfolioData & { languages: Array<{ name: string; level: string }> }).languages.map(lang => (
                         <div key={lang.name} className="flex justify-between items-center text-sm">
@@ -472,7 +466,7 @@ export default function App() {
                     <h2 className="text-xs uppercase tracking-widest font-bold mb-4 relative z-10">Leadership & Awards</h2>
                     <ul className="space-y-2 relative z-10">
                       {[
-                        'Elected Student Representative & Board Member — represented 40+ PhD students in university governance.',
+                        'Elected Student Representative & Board Member, representing 40+ PhD students in university governance.',
                         'Recipient of multiple international grants and travel awards supporting research dissemination.'
                       ].map((item, i) => (
                         <li key={i} className="text-[11px] leading-relaxed text-nord-4 flex gap-2">
@@ -628,7 +622,7 @@ export default function App() {
                     <span className="px-3 py-1 bg-nord-8/10 text-nord-10 text-[10px] uppercase tracking-widest font-bold rounded-full">
                       {selectedProject.category.replace('-', ' ')}
                     </span>
-                    <span className="text-nord-4 text-sm font-medium">{selectedProject.yearStart} — {selectedProject.yearEnd}</span>
+                    <span className="text-nord-3 text-sm font-medium">{selectedProject.yearStart} to {selectedProject.yearEnd}</span>
                   </div>
                   
                   <h2 className="text-3xl md:text-5xl font-display font-bold text-nord-0 mb-6">
@@ -642,22 +636,15 @@ export default function App() {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
                     <div className="md:col-span-2 space-y-10">
                       <div>
-                        <h4 className="text-sm uppercase tracking-widest font-bold text-nord-4 mb-4 flex items-center gap-2">
-                          <Info className="w-4 h-4" /> The Challenge
+                        <h4 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-4 flex items-center gap-2">
+                          <Info className="w-4 h-4" /> Context & Challenge
                         </h4>
                         <p className="text-nord-3 leading-relaxed">{selectedProject.challenge}</p>
                       </div>
-                      
+
                       <div>
-                        <h4 className="text-sm uppercase tracking-widest font-bold text-nord-4 mb-4 flex items-center gap-2">
-                          <ChevronRight className="w-4 h-4" /> The Solution
-                        </h4>
-                        <p className="text-nord-3 leading-relaxed">{selectedProject.solution}</p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="text-sm uppercase tracking-widest font-bold text-nord-4 mb-4 flex items-center gap-2">
-                          <Briefcase className="w-4 h-4" /> What I Did
+                        <h4 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-4 flex items-center gap-2">
+                          <Briefcase className="w-4 h-4" /> Action
                         </h4>
                         <ul className="space-y-3">
                           {selectedProject.whatIDid.map((item, i) => (
@@ -672,7 +659,7 @@ export default function App() {
                     
                     <div className="space-y-10">
                       <div>
-                        <h4 className="text-sm uppercase tracking-widest font-bold text-nord-4 mb-4">Skills</h4>
+                        <h4 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-4">Skills</h4>
                         <div className="flex flex-wrap gap-2">
                           {selectedProject.skills.map(skill => (
                             <span key={skill} className="text-xs px-3 py-1 bg-nord-6 text-nord-3 rounded-full">
@@ -683,7 +670,7 @@ export default function App() {
                       </div>
                       
                       <div>
-                        <h4 className="text-sm uppercase tracking-widest font-bold text-nord-4 mb-4">Tools</h4>
+                        <h4 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-4">Tools</h4>
                         <div className="flex flex-wrap gap-2">
                           {selectedProject.tools.map(tool => (
                             <span key={tool} className="text-xs px-3 py-1 bg-nord-6 text-nord-3 rounded-full">
@@ -695,7 +682,7 @@ export default function App() {
 
                       {selectedProject.evidence && (
                         <div>
-                          <h4 className="text-sm uppercase tracking-widest font-bold text-nord-4 mb-4">Evidence</h4>
+                          <h4 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-4">Evidence</h4>
                           <div className="p-4 bg-nord-6 rounded-2xl">
                             <div className="flex items-center gap-2 text-nord-10 font-bold text-xs mb-2">
                               <FileText className="w-3 h-3" />
@@ -720,8 +707,8 @@ export default function App() {
                     </div>
                   </div>
                   
-                  <div className="bg-nord-14/10 rounded-3xl p-8 md:p-12">
-                    <h4 className="text-sm uppercase tracking-widest font-bold text-nord-14 mb-6">Impact & Results</h4>
+                  <div className="bg-nord-14/10 rounded-3xl p-8 md:p-12 mb-6">
+                    <h4 className="text-sm uppercase tracking-widest font-bold text-nord-14 mb-6">Results</h4>
                     <ul className="space-y-4">
                       {selectedProject.impact.map((item, i) => (
                         <li key={i} className="flex gap-4 text-nord-0 font-medium leading-relaxed">
@@ -733,6 +720,13 @@ export default function App() {
                       ))}
                     </ul>
                   </div>
+
+                  {(selectedProject as typeof selectedProject & { learning?: string }).learning && (
+                    <div className="rounded-3xl p-8 md:p-12" style={{ background: 'linear-gradient(135deg, rgba(255,0,216,0.06) 0%, rgba(255,127,0,0.04) 100%)', border: '1px solid rgba(255,0,216,0.15)' }}>
+                      <h4 className="text-sm uppercase tracking-widest font-bold mb-4" style={{ color: '#ff00d8' }}>Key Insight</h4>
+                      <p className="text-nord-3 leading-relaxed italic">"{(selectedProject as typeof selectedProject & { learning?: string }).learning}"</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>

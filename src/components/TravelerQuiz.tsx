@@ -202,8 +202,8 @@ export default function TravelerQuiz() {
                 {currentQuestion.type === 'traveler' && <Map className="w-5 h-5 text-nord-10" />}
                 {currentQuestion.type === 'foodie' && <Utensils className="w-5 h-5 text-nord-14" />}
                 {currentQuestion.type === 'curiosity' && <Lightbulb className="w-5 h-5 text-nord-13" />}
-                <span className="text-xs font-bold uppercase tracking-widest text-nord-4">
-                  {currentQuestion.type} — {currentQuestionIndex + 1} of {QUESTIONS.length}
+                <span className="text-xs font-bold uppercase tracking-widest text-nord-3">
+                  {currentQuestion.type} · {currentQuestionIndex + 1} of {QUESTIONS.length}
                 </span>
               </div>
               <div className="w-32 h-2 bg-nord-4/30 rounded-full overflow-hidden">
@@ -293,75 +293,151 @@ export default function TravelerQuiz() {
             key="results"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="space-y-12"
+            transition={{ type: 'spring', stiffness: 280, damping: 28 }}
+            className="space-y-10"
           >
-            <div className="text-center space-y-4">
-              <div className="inline-flex p-4 bg-nord-14/10 rounded-full text-nord-14 mb-4">
-                <Trophy className="w-12 h-12" />
+            {/* Hero score banner */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 28, delay: 0.1 }}
+              className="relative rounded-[2.5rem] p-10 md:p-14 text-center overflow-hidden"
+              style={{ background: 'linear-gradient(135deg, #2e3440 0%, #3b4252 100%)' }}
+            >
+              <div className="absolute -top-16 -left-16 w-48 h-48 rounded-full blur-3xl opacity-30" style={{ background: '#ff00d8' }} />
+              <div className="absolute -bottom-16 -right-16 w-48 h-48 rounded-full blur-3xl opacity-20" style={{ background: '#ff7f00' }} />
+              <div className="relative z-10">
+                <div className="inline-flex p-4 rounded-full mb-6" style={{ background: 'rgba(255,0,216,0.15)' }}>
+                  <Trophy className="w-10 h-10" style={{ color: '#ff00d8' }} />
+                </div>
+                <motion.div
+                  initial={{ scale: 0.5, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 20, delay: 0.3 }}
+                  className="text-7xl font-display font-bold text-white mb-2"
+                >
+                  {totalCorrect}<span className="text-3xl text-white/50">/{QUESTIONS.length}</span>
+                </motion.div>
+                <p className="text-white/60 text-lg mb-6">
+                  {totalCorrect === QUESTIONS.length
+                    ? 'Perfect score! You are a true world explorer.'
+                    : totalCorrect >= 4
+                    ? 'Impressive knowledge! You have clearly explored the world.'
+                    : totalCorrect >= 2
+                    ? 'Not bad! There is always more world to discover.'
+                    : 'Every journey starts somewhere. Keep exploring!'}
+                </p>
+                {/* Dimension pills */}
+                <div className="flex flex-wrap justify-center gap-3">
+                  {scores.map((s) => {
+                    const colors: Record<string, string> = { Traveler: '#ff00d8', Foodie: '#ff7f00', Curiosity: '#0080ff' };
+                    const c = colors[s.subject] || '#5e81ac';
+                    return (
+                      <div key={s.subject} className="px-5 py-2 rounded-full text-sm font-bold flex items-center gap-2" style={{ background: `${c}22`, color: c, border: `1px solid ${c}44` }}>
+                        {s.subject}: {Math.round(s.A)}%
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-              <h2 className="text-4xl font-display font-bold text-nord-0">Your Explorer Profile</h2>
-              <p className="text-nord-3 text-lg">
-                You got {totalCorrect} out of {QUESTIONS.length} correct! Here's how your profile breaks down.
-              </p>
-            </div>
+            </motion.div>
 
+            {/* Charts grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Radar Chart for Profile Breakdown */}
-              <div className="glass-card p-8 rounded-[2.5rem] space-y-6">
-                <h3 className="text-lg font-bold text-nord-0 flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5 text-nord-10" /> Profile Dimensions
+              {/* Radar chart */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ type: 'spring', stiffness: 260, damping: 28, delay: 0.25 }}
+                className="glass-card p-8 rounded-[2rem] space-y-6"
+              >
+                <h3 className="text-base font-bold text-nord-0 flex items-center gap-2">
+                  <BarChart3 className="w-5 h-5" style={{ color: '#ff00d8' }} /> Your Explorer Shape
                 </h3>
-                <div className="h-64 w-full">
+                <div className="h-56 w-full">
                   <ResponsiveContainer width="100%" height="100%">
-                    <RadarChart cx="50%" cy="50%" outerRadius="80%" data={scores}>
+                    <RadarChart cx="50%" cy="50%" outerRadius="78%" data={scores}>
                       <PolarGrid stroke="#d8dee9" />
-                      <PolarAngleAxis dataKey="subject" tick={{ fill: '#4c566a', fontSize: 12 }} />
+                      <PolarAngleAxis dataKey="subject" tick={{ fill: '#4c566a', fontSize: 12, fontWeight: 600 }} />
                       <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
-                      <Radar
-                        name="Score"
-                        dataKey="A"
-                        stroke="#88c0d0"
-                        fill="#88c0d0"
-                        fillOpacity={0.6}
-                      />
+                      <Radar name="You" dataKey="A" stroke="#ff00d8" fill="#ff00d8" fillOpacity={0.25} strokeWidth={2} />
                     </RadarChart>
                   </ResponsiveContainer>
                 </div>
-                <p className="text-xs text-nord-3 text-center italic">
-                  This radar chart visualizes your performance across three key domains of exploration.
-                </p>
-              </div>
+                <p className="text-xs text-nord-3 text-center italic">Performance across traveler, foodie, and curiosity dimensions.</p>
+              </motion.div>
 
-              {/* Bar Chart for Comparison */}
-              <div className="glass-card p-8 rounded-[2.5rem] space-y-6">
-                <h3 className="text-lg font-bold text-nord-0 flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5 text-nord-14" /> Historical Comparison
+              {/* Bar chart */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ type: 'spring', stiffness: 260, damping: 28, delay: 0.35 }}
+                className="glass-card p-8 rounded-[2rem] space-y-6"
+              >
+                <h3 className="text-base font-bold text-nord-0 flex items-center gap-2">
+                  <BarChart3 className="w-5 h-5" style={{ color: '#ff7f00' }} /> vs. the Crowd
                 </h3>
-                <div className="h-64 w-full">
+                <div className="h-56 w-full">
                   <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={comparisonData}>
+                    <BarChart data={comparisonData} barGap={4}>
                       <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e9f0" />
-                      <XAxis dataKey="category" axisLine={false} tickLine={false} tick={{ fill: '#4c566a', fontSize: 12 }} />
-                      <YAxis axisLine={false} tickLine={false} tick={{ fill: '#4c566a', fontSize: 12 }} />
-                      <Tooltip 
-                        contentStyle={{ borderRadius: '1rem', border: 'none', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }}
-                      />
-                      <Legend iconType="circle" />
-                      <Bar name="Global Average" dataKey="average" fill="#d8dee9" radius={[4, 4, 0, 0]} />
-                      <Bar name="Your Score" dataKey="user" fill="#81a1c1" radius={[4, 4, 0, 0]} />
+                      <XAxis dataKey="category" axisLine={false} tickLine={false} tick={{ fill: '#4c566a', fontSize: 11 }} />
+                      <YAxis axisLine={false} tickLine={false} tick={{ fill: '#4c566a', fontSize: 11 }} domain={[0, 100]} />
+                      <Tooltip contentStyle={{ borderRadius: '0.75rem', border: 'none', fontSize: '12px', boxShadow: '0 4px 24px rgba(0,0,0,0.10)' }} />
+                      <Legend iconType="circle" wrapperStyle={{ fontSize: '11px' }} />
+                      <Bar name="Global Avg" dataKey="average" fill="#d8dee9" radius={[4, 4, 0, 0]} />
+                      <Bar name="You" dataKey="user" fill="#ff7f00" radius={[4, 4, 0, 0]} />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
-                <p className="text-xs text-nord-3 text-center italic">
-                  Benchmarking your results against the historical average of previous explorers.
-                </p>
-              </div>
+                <p className="text-xs text-nord-3 text-center italic">Your score benchmarked against previous explorers.</p>
+              </motion.div>
             </div>
 
-            <div className="flex justify-center gap-6">
+            {/* Per-dimension progress bars */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ type: 'spring', stiffness: 260, damping: 28, delay: 0.45 }}
+              className="glass-card p-8 rounded-[2rem]"
+            >
+              <h3 className="text-base font-bold text-nord-0 mb-6">Dimension Breakdown</h3>
+              <div className="space-y-6">
+                {[
+                  { label: 'Traveler', key: 'Traveler', color: '#ff00d8', icon: Map, desc: 'Geographic knowledge & landmark recognition' },
+                  { label: 'Foodie', key: 'Foodie', color: '#ff7f00', icon: Utensils, desc: 'Culinary culture & regional delicacies' },
+                  { label: 'Curiosity', key: 'Curiosity', color: '#0080ff', icon: Lightbulb, desc: 'World facts, geography & cultural trivia' },
+                ].map((dim) => {
+                  const score = scores.find(s => s.subject === dim.label)?.A ?? 0;
+                  return (
+                    <div key={dim.label}>
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <dim.icon className="w-4 h-4" style={{ color: dim.color }} />
+                          <span className="text-sm font-bold text-nord-0">{dim.label}</span>
+                          <span className="text-xs text-nord-3">{dim.desc}</span>
+                        </div>
+                        <span className="text-sm font-bold" style={{ color: dim.color }}>{Math.round(score)}%</span>
+                      </div>
+                      <div className="h-2.5 bg-nord-4/30 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: `${score}%` }}
+                          transition={{ type: 'spring', stiffness: 120, damping: 20, delay: 0.5 }}
+                          className="h-full rounded-full"
+                          style={{ background: dim.color }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </motion.div>
+
+            <div className="flex justify-center gap-4">
               <button
                 onClick={resetQuiz}
-                className="px-8 py-4 bg-nord-6 text-nord-0 rounded-full font-bold hover:bg-nord-4 transition-all flex items-center gap-2"
+                className="px-8 py-4 bg-nord-6 text-nord-0 rounded-full font-bold hover:bg-nord-5 transition-all flex items-center gap-2"
               >
                 <RotateCcw className="w-5 h-5" /> Retake Test
               </button>

@@ -1,51 +1,51 @@
 {
   "owner": {
     "name": "Estela Pérez Luque",
-    "title": "Senior Data Scientist | Predictive Modelling & Systems Validation",
+    "title": "Data Scientist | Technical Strategy & Customer-Driven Systems",
     "email": "perezluque.estela1504@gmail.com",
     "phone": "+46 73 262 8876",
-    "linkedin": "https://linkedin.com/in/estelaperezluque",
+    "linkedin": "https://www.linkedin.com/in/estela-perez-luque",
     "location": "Skövde, Sweden"
   },
-  "lastUpdated": "2026-04-01",
+  "lastUpdated": "2026-04-02",
   "philosophy": "I believe in the importance of having rigorous frameworks to evaluate systems and a comprehensive understanding to connect the dots. I am driven to solve real-world problems by understanding customer needs and providing the best solutions through deep system analysis.",
-  "interests": ["Autonomous Systems", "Robotics", "Human Behaviour Modelling", "Predictive AI"],
-  "resumeProfile": "Senior data scientist with a PhD in Informatics and 5+ years of experience building predictive models, validation pipelines, and data-driven systems for complex engineering challenges. I design reproducible end-to-end analysis workflows that turn experimental and simulation data into traceable evidence for engineering decisions and system improvement. I lead cross-functional projects across industry, international research, and startup ventures—translating complex technical findings into actionable recommendations for both technical and non-technical stakeholders.",
+  "interests": ["Autonomous Systems", "Human-Centred AI", "Product Analytics", "Human Behaviour Modelling", "Customer Experience Design", "Simulation Technology"],
+  "resumeProfile": "PhD in Informatics with 5+ years turning complex systems and data into decisions, products, and customer outcomes. I have led cross-functional projects across industry partnerships, international research, and a startup venture — spanning predictive modelling and validation pipelines through stakeholder communication, market analysis, and customer-facing delivery. I thrive where technical depth meets business reality: whether scoping a data strategy, enabling customer success, or building the analytical foundation for a go-to-market motion.",
   "experience": [
     {
-      "role": "Research Engineer & PhD Researcher",
+      "role": "Research Engineer and PhD Researcher",
       "company": "University of Skövde, Sweden",
-      "period": "Sep 2020 – Oct 2025",
+      "period": "Sep 2020 to Oct 2025",
       "bullets": [
-        "Built end-to-end Python and MATLAB pipelines for simulation validation and model benchmarking, comparing prediction outputs against motion capture and in-vehicle datasets using RMSE, DTW, and Bland-Altman metrics—producing reproducible, traceable evidence for engineering decisions and test planning.",
-        "Led multi-stakeholder R&D projects with Volvo Cars, Volvo Trucks, Scania, Texas Tech University, and University of Antwerp, aligning scope, timelines, and expectations across technical and non-technical teams and translating findings into decision-ready reports, resulting in 15+ peer-reviewed publications.",
-        "Applied multi-objective optimization (NSGA-II) to vehicle interior design problems, evaluating 1,000+ configurations across 14 digital human manikins—shifting ergonomics assessment from manual trial-and-error to systematic, scalable design-space exploration.",
-        "Designed and executed experimental studies with motion capture and 4D body-scanning systems across diverse applications, managing protocol development, ethics approvals, and data pipelines from scratch to publication-ready outputs.",
+        "Built end-to-end Python and MATLAB pipelines for simulation validation and model benchmarking, comparing prediction outputs against motion capture and in-vehicle datasets using RMSE, DTW, and Bland-Altman metrics to produce reproducible, traceable evidence for engineering decisions and test planning.",
+        "Led multi-stakeholder R&D projects with Volvo Cars, Volvo Trucks, Scania, Texas Tech University, and University of Antwerp, aligning scope, timelines, and expectations across technical and non-technical teams, resulting in 15+ peer-reviewed publications and 145 total citations.",
+        "Applied multi-objective optimization (NSGA-II) to vehicle interior design problems, evaluating 1,000+ configurations across 14 digital human manikins and shifting ergonomics assessment from manual trial-and-error to systematic, scalable design-space exploration.",
+        "Designed and executed experimental studies with motion capture and 4D body-scanning systems, managing protocol development, ethics approvals, and data pipelines end-to-end from participant recruitment to publication-ready outputs.",
         "Supervised 10+ BSc theses and delivered teaching at BSc and MSc level; elected Student Representative and Board Member representing 40+ PhD students in university-level research governance."
       ]
     },
     {
       "role": "Visiting Researcher",
       "company": "University of Antwerp, Belgium",
-      "period": "Sep 2024 – Mar 2025",
+      "period": "Sep 2024 to Mar 2025",
       "bullets": [
         "Managed a 6-month international research stay end-to-end: led ethics application for 5-year large-scale data collection approval, designed motion capture and 4D body-scanning protocols for 30+ participants, and built reproducible multi-site data pipelines enabling consistent validation across institutions."
       ]
     },
     {
       "role": "Co-founder and R&D Lead",
-      "company": "Swe-Ex AB (Startup) — Science Park Skövde, Sweden",
-      "period": "Sep 2021 – Mar 2023",
+      "company": "Swe-Ex AB (Startup) at Science Park Skövde, Sweden",
+      "period": "Sep 2021 to Mar 2023",
       "bullets": [
         "Co-founded an early-stage wearable technology startup developing exoskeleton-inspired safety support equipment for assembly-line environments, incubated at Science Park Skövde over 2 years.",
         "Translated user needs and safety requirements into measurable product targets and drove three full prototype iterations from CAD to physical validation using 3D-printed, textile, and steel components.",
-        "Built commercial acumen through investor communications, market analysis across 10+ industries, and structured business planning—bridging technical capability with product viability and go-to-market strategy."
+        "Built commercial acumen through investor communications, market analysis across 10+ industries, and structured business planning, bridging technical capability with product viability and go-to-market strategy."
       ]
     },
     {
       "role": "Research Assistant",
       "company": "University of Skövde, Sweden",
-      "period": "Jun 2019 – Sep 2020",
+      "period": "Jun 2019 to Sep 2020",
       "bullets": [
         "Contributed to applied projects with 6+ industry partners: conducted ergonomic assessments (RULA, REBA), produced decision-ready analytical reports and educational content, and presented findings to cross-functional teams to support product development decisions."
       ]
@@ -55,24 +55,24 @@
     {
       "degree": "PhD in Informatics",
       "school": "University of Skövde, Sweden",
-      "period": "Sep 2020 – Oct 2025",
-      "details": "Thesis: Human Posture and Motion Prediction for Automotive Ergonomics Design — predictive modelling, simulation validation, and benchmarking against real-world datasets."
+      "period": "Sep 2020 to Oct 2025",
+      "details": "Thesis: Human Posture and Motion Prediction for Automotive Ergonomics Design. Predictive modelling, simulation validation, and benchmarking against real-world datasets."
     },
     {
       "degree": "Master of Science in Intelligent Automation",
       "school": "University of Skövde, Sweden",
-      "period": "Aug 2018 – Jun 2019",
+      "period": "Aug 2018 to Jun 2019",
       "details": "Thesis: Experimental evaluation of three upper-body exoskeletons using Xsens motion capture."
     },
     {
       "degree": "Bachelor of Science in Mechanical Engineering (ERASMUS+)",
       "school": "University of Skövde, Sweden",
-      "period": "Aug 2017 – Jun 2018"
+      "period": "Aug 2017 to Jun 2018"
     },
     {
       "degree": "Degree in Mechanical Engineering",
       "school": "University of Málaga, Spain",
-      "period": "Aug 2012 – Jun 2018"
+      "period": "Aug 2012 to Jun 2018"
     }
   ],
   "skills": {
@@ -152,7 +152,7 @@
     },
     {
       "id": "pub-challenges-ergonomics-automotive",
-      "title": "Challenges for the consideration of ergonomics in product development in the Swedish automotive industry – an interview study",
+      "title": "Challenges for the consideration of ergonomics in product development in the Swedish automotive industry - an interview study",
       "authors": "E Pérez Luque, E Brolin, D Högberg, M Lamb",
       "publication": "Proceedings of the Design Society",
       "year": 2022,
@@ -171,7 +171,7 @@
     {
       "id": "pub-ergonomics-eval-moo",
       "title": "Implementation of ergonomics evaluation methods in a multi-objective optimization framework",
-      "authors": "A Iriondo Pascual, D Högberg, A Syberfeldt, E Brolin, F García Rivera, E Pérez Luque, L Hanson",
+      "authors": "A Iriondo Pascual, D Högberg, A Syberfeldt, E Brolin, F Garcia Rivera, E Pérez Luque, L Hanson",
       "publication": "Advances in Simulation and Digital Manufacturing",
       "year": 2020,
       "citations": 8,
@@ -317,62 +317,71 @@
     {
       "id": "phd-thesis",
       "slug": "phd-thesis-human-posture-motion-prediction",
-      "title": "PhD Thesis: Human Posture & Motion Prediction",
-      "tagline": "A comprehensive framework for automotive ergonomics design through 6 interconnected research papers.",
+      "title": "PhD Thesis: Human Posture and Motion Prediction",
+      "tagline": "Six papers. One question: can simulation tools predict how real humans move in real vehicles? Here is what I found.",
+      "accentColor": "#ff00d8",
       "category": "phd-thesis",
       "projectType": "research-and-development",
       "status": "completed",
       "featured": true,
       "yearStart": 2020,
       "yearEnd": 2025,
-      "summary": "This thesis represents a multi-year journey to improve digital human modelling tools. It connects 6 distinct research papers into a cohesive methodology for predicting and validating human movement in vehicles.",
-      "challenge": "Ergonomics tools often lack the behavioral realism and validation needed for early-stage automotive design decisions.",
-      "solution": "Developed a suite of methods ranging from workflow mapping to multi-objective optimization and motion capture validation.",
+      "summary": "Five years of interconnected research on whether automotive DHM tools can be made reliable enough to replace or delay expensive physical prototyping. Six papers, from practitioner interviews to 1-million-run optimization frameworks to validated motion prediction models.",
+      "challenge": "DHM tools are standard in automotive engineering, but practitioners were losing time to manual corrections, inaccurate posture predictions, and workflows that did not connect digital simulation to real human behaviour. Nobody had done a systematic, evidence-based study of where exactly the tools were failing or what it would take to fix them.",
+      "solution": "A six-paper research programme moving from practitioner reality through method development to model validation and improvement.",
       "whatIDid": [
-        "Led the end-to-end research lifecycle for 6 international publications",
-        "Developed novel 3D predictive frameworks using Python, MATLAB, and DHM tools",
-        "Validated simulation models against large-scale real-world driver datasets"
+        "Started by interviewing 10 expert ergonomics designers from 7 Swedish automotive companies to map where current tools were failing before building anything",
+        "Developed the Body Shape Alignment procedure that standardized how digital manikins are seated in vehicle models, later used in 3 subsequent studies",
+        "Built an automated multi-objective optimization framework running over 1 million simulation configurations to identify interior layouts that work for all body types",
+        "Compared competing posture prediction methods against real-world data from 199 Volvo drivers across two vehicle types, giving practitioners a clear decision rule",
+        "Created stature-based posture strategies that improved prediction accuracy for short drivers by 37% using existing OEM test data",
+        "Developed and validated a new heuristic motion prediction method (SFM) with 11x lower velocity error than the existing standard"
       ],
       "impact": [
-        "Created a bridge between virtual ergonomics and measured human behaviour",
-        "Demonstrated scalable ways to treat ergonomics as an optimization problem",
-        "Provided industry-ready benchmarks for choosing posture prediction methods"
+        "6 peer-reviewed publications, 145 total citations, h-index 8",
+        "Practitioners now have evidence-based guidance: which posture method for which vehicle type, and how to feed existing data back into simulation tools",
+        "The alignment procedure from Paper B became the standardized foundation for 3 subsequent studies",
+        "Posture prediction accuracy for short drivers improved from 36.4 mm to 22.9 mm RMSE (37% reduction)"
       ],
-      "skills": ["Data Science", "Simulation Validation", "Predictive Modelling", "Project Leadership"],
-      "tools": ["Python", "MATLAB", "IPS IMMA", "Motion Capture"],
-      "domains": ["Automotive", "Ergonomics", "Data Science"],
+      "learning": "Research that starts by listening to practitioners before building anything solves problems that actually matter. Every technical contribution in this thesis traced directly back to a gap confirmed by people doing the work in industry.",
+      "skills": ["Data Science", "Simulation Validation", "Predictive Modelling", "Multi-objective Optimisation", "Project Leadership"],
+      "tools": ["Python", "MATLAB", "IPS IMMA", "Motion Capture", "NSGA-II"],
+      "domains": ["Automotive", "Human Factors", "Data Science"],
       "sortOrder": 0
     },
     {
       "id": "paper-a-ergonomics-workflows",
       "slug": "ergonomics-workflows-automotive-industry",
-      "title": "Mapped Ergonomics Workflows in Automotive Development",
-      "tagline": "Studied how ergonomics teams work in vehicle development and where current tools slow down better decisions.",
+      "title": "Mapped Where Simulation Tools Were Failing Practitioners",
+      "tagline": "Before building better tools, I interviewed the people using them. Every single expert confirmed the same four problems.",
+      "accentColor": "#ff7f00",
       "category": "human-factors",
       "projectType": "research-and-development",
       "status": "completed",
       "featured": true,
       "yearStart": 2021,
       "yearEnd": 2022,
-      "summary": "Interview-based project focused on how ergonomics is actually handled in Swedish automotive product development, from requirements and trade-offs to tools and validation.",
-      "challenge": "Ergonomics teams need to balance comfort, visibility, posture, safety, manufacturing, and styling, but current workflows and tools make early ergonomics work slower, more fragmented, and harder to scale.",
-      "solution": "Ran a structured interview study with ergonomics specialists across Swedish automotive companies to map workflows, tool usage, pain points, and capability gaps.",
+      "summary": "A structured qualitative study with 10 expert ergonomics designers from 7 Swedish automotive OEMs and suppliers, mapping end-to-end workflows, tool usage patterns, and the pain points that mattered most.",
+      "challenge": "Swedish automotive OEMs were investing in DHM tools but had no evidence-based picture of how ergonomics designers actually used them, where the tools were failing, and what was really needed. Tool improvements were being driven by assumptions rather than practitioner reality.",
+      "solution": "Semi-structured expert interviews with systematic qualitative content analysis to map workflows and identify the gaps that mattered most.",
       "whatIDid": [
-        "Designed and ran a semi-structured interview study with ergonomics professionals",
-        "Analysed workflows, tool use, decision points, and recurring bottlenecks",
-        "Translated findings into concrete improvement areas for digital ergonomics tools"
+        "Designed and ran 10 semi-structured expert interviews (60 to 75 minutes each) with ergonomics designers from 7 OEMs and suppliers",
+        "Built a structured qualitative coding framework to categorize findings across workflow stages, tool usage, pain points, and future needs",
+        "Mapped the full ergonomics workflow from requirements definition through validation, identifying where each type of tool was used and where it broke down"
       ],
       "impact": [
-        "Identified four clear opportunity areas: behavior prediction, tool usability, ergonomics evaluation methods, and better integration between systems",
-        "Created a grounded industry picture of how ergonomics is handled in real vehicle programs",
-        "Provided the practical foundation for the later simulation and prediction work in the thesis"
+        "All 10 participants independently confirmed: DHM tools were slow, hard to use, and produced inaccurate posture predictions requiring manual correction",
+        "Identified 4 concrete research gaps confirmed by every expert: human behaviour prediction, tool usability, ergonomics evaluation methods, and system integration",
+        "These findings directly shaped the technical research agenda for Papers B through F",
+        "Published at DESIGN 2022, one of the leading international design research conferences"
       ],
-      "skills": ["User research", "Qualitative analysis", "Human factors", "Workflow analysis", "Requirements framing"],
-      "tools": ["Semi-structured interviews", "Qualitative coding"],
-      "domains": ["Automotive", "Ergonomics", "Digital human modelling"],
+      "learning": "Industry practitioners are the best research compass. When all 10 experts independently name the same 4 problems, those are the 4 problems worth solving.",
+      "skills": ["User Research", "Qualitative Analysis", "Human Factors", "Workflow Analysis", "Requirements Framing"],
+      "tools": ["Semi-structured Interviews", "Qualitative Coding", "Mayring Content Analysis"],
+      "domains": ["Automotive", "Human Factors", "Digital Human Modelling"],
       "evidence": {
         "paperLabel": "Paper A",
-        "publicationTitle": "Challenges for the Consideration of Ergonomics in Product Development in the Swedish Automotive Industry – An Interview Study",
+        "publicationTitle": "Challenges for the Consideration of Ergonomics in Product Development in the Swedish Automotive Industry - An Interview Study",
         "publicationType": "conference-paper",
         "year": 2022,
         "publicationStatus": "published",
@@ -383,30 +392,32 @@
     {
       "id": "paper-b-hip-joint-location",
       "slug": "hip-joint-location-occupant-packaging",
-      "title": "Improved How Virtual Drivers Are Positioned in the Seat",
-      "tagline": "Developed a more realistic way to align digital humans to vehicle seating geometry.",
+      "title": "Fixed the Starting Point of Every Seated Driving Simulation",
+      "tagline": "Digital manikins were floating in space because the vehicle reference point does not match the human hip joint. I built the procedure to fix that.",
+      "accentColor": "#0080ff",
       "category": "vehicle-ergonomics",
       "projectType": "method-development",
       "status": "completed",
       "featured": true,
       "yearStart": 2022,
       "yearEnd": 2022,
-      "summary": "Focused on a core simulation problem in occupant packaging: the mismatch between vehicle reference points like the H-point and the human anatomical hip joint used in DHM tools.",
-      "challenge": "Current seated posture workflows often depend on manual adjustment because standard vehicle reference points do not map cleanly to biomechanical human models.",
-      "solution": "Developed the Body Shape Alignment method, using a virtual H-point machine template to align manikin body surfaces more consistently to the seat and compare it against a statistical prediction approach.",
+      "summary": "The SAE J826 H-point does not correspond to the human anatomical hip joint, and there was no standardized procedure to bridge the gap. This caused non-reproducible seated posture setups that depended on who was running the simulation.",
+      "challenge": "Before any driving posture simulation can begin, the digital manikin has to be seated in the vehicle correctly. The standard vehicle reference point (the H-point) does not correspond to the human anatomical hip joint, and no standardized method existed to bridge the gap. Engineers were manually adjusting alignment by feel, producing results that depended on which engineer was running the simulation. The mismatch was largest for high-BMI body types.",
+      "solution": "The Body Shape Alignment (BSA) procedure: place a virtual H-point Machine template at the vehicle seat reference point, align its geometry to the seat surface, then align the manikin body mesh to the template.",
       "whatIDid": [
-        "Investigated the relationship between vehicle seating reference points and human hip-joint location",
-        "Built the Body Shape Alignment concept for seated driving simulations",
-        "Compared the new method against a statistical prediction approach using realistic body meshes"
+        "Developed the Body Shape Alignment (BSA) procedure using a virtual H-point Machine template to anchor manikin positioning to vehicle seat geometry",
+        "Tested BSA across 14 digital manikins spanning the full BMI range from the CAESAR anthropometric database, including both male and female bodies",
+        "Compared BSA head-to-head against the existing Statistical Prediction Method (SPM) in a Volkswagen Beetle CAD model using 3D body meshes"
       ],
       "impact": [
-        "Showed a more consistent and realistic positioning approach across body types",
-        "Reduced dependence on purely manual seat alignment in virtual posture setup",
-        "Improved repeatability and communication of seating assumptions in occupant packaging studies"
+        "SPM produced physically unrealistic floating positions for high-BMI manikins (detaching forward from the seat surface), requiring manual correction every time",
+        "BSA maintained consistent, realistic seat contact across all 14 manikins regardless of body type",
+        "BSA became the standardized alignment step for Papers C, D, and E, providing a reproducible foundation across the full research programme"
       ],
-      "skills": ["DHM", "Posture prediction", "Simulation method development", "Validation", "Automotive ergonomics"],
-      "tools": ["IPS IMMA context", "BioHuman meshes", "Simulation experiments"],
-      "domains": ["Occupant packaging", "Automotive", "Digital human modelling"],
+      "learning": "Unsexy infrastructure fixes are often the highest-leverage technical contributions. If the starting conditions of a simulation are wrong and non-reproducible, no amount of sophisticated modelling downstream will correct that.",
+      "skills": ["DHM", "Posture Prediction", "Simulation Method Development", "Validation", "Standardization"],
+      "tools": ["IPS IMMA", "Siemens Jack", "BioHuman Meshes", "CAESAR Database"],
+      "domains": ["Occupant Packaging", "Automotive", "Digital Human Modelling"],
       "evidence": {
         "paperLabel": "Paper B",
         "publicationTitle": "Simulation of Hip Joint Location for Occupant Packaging Design",
@@ -420,30 +431,33 @@
     {
       "id": "paper-c-sbmoo-occupant-packaging",
       "slug": "simulation-based-design-optimization-occupant-packaging",
-      "title": "Automated Vehicle Packaging Trade-Offs with Multi-Objective Optimization",
-      "tagline": "Built a workflow that explores seat and steering wheel design options automatically instead of by manual trial and error.",
+      "title": "Replaced Manual Trial-and-Error with 1 Million Automated Simulations",
+      "tagline": "Vehicle interior ergonomics is an optimization problem. I built the framework that treats it like one.",
+      "accentColor": "#9b59ff",
       "category": "design-optimization",
       "projectType": "research-and-development",
       "status": "completed",
       "featured": true,
       "yearStart": 2023,
       "yearEnd": 2025,
-      "summary": "Combined digital human modelling with simulation-based multi-objective optimization to explore occupant packaging decisions across a diverse user population.",
-      "challenge": "Occupant packaging requires balancing multiple competing ergonomics targets and geometric constraints, but traditional workflows are too manual to explore the design space well.",
-      "solution": "Integrated a DHM tool with a multi-objective optimization workflow using NSGA-II, allowing thousands of design variants to be generated and assessed automatically.",
+      "summary": "Built an automated multi-objective optimization pipeline coupling NSGA-II with IPS IMMA DHM software to systematically explore interior layout options for a diverse driver population.",
+      "challenge": "Designing a vehicle interior that works ergonomically for drivers of all body sizes involves balancing 5 design variables against 4 geometric constraints for 14 anthropometric profiles simultaneously. Engineers were solving this through manual trial and error, one configuration at a time. Too slow to explore the real design space and too subjective to produce traceable results.",
+      "solution": "Coupled the NSGA-II genetic algorithm with IPS IMMA to automate the search for Pareto-optimal interior layouts across a diverse manikin population.",
       "whatIDid": [
-        "Defined the optimization problem, variables, objectives, and constraints for an occupant packaging scenario",
-        "Built a simulation loop using 14 digital manikins to represent anthropometric diversity",
-        "Used NSGA-II to evaluate 1000 design variants in a structured way"
+        "Built an automated optimization pipeline coupling the NSGA-II genetic algorithm with IPS IMMA DHM software",
+        "Defined 5 design variables (seat and steering wheel positions), 4 geometric hard constraints (head, knee, thigh clearances and vision angle), and a joint-angle-based ergonomic objective for 14 digital human manikins",
+        "Ran 1,000 optimization iterations, each evaluating 75 posture configurations across 14 manikins, for a total of over 1 million individual simulation runs"
       ],
       "impact": [
-        "Shifted ergonomics assessment toward systematic design-space exploration",
-        "Reduced manual iteration and improved traceability in design evaluation",
-        "Demonstrated a scalable way to treat ergonomics as an optimization problem earlier in development"
+        "Algorithm converged at approximately 550 iterations, identifying a Pareto-optimal design achieving only 38 unacceptable joint angles across the full 14-manikin population",
+        "All 4 geometric hard constraints satisfied by the selected solution",
+        "Demonstrated that automated systematic exploration identifies solutions manual iteration would never reach in a practical project timeline",
+        "Published in International Journal of Industrial Ergonomics (2025)"
       ],
-      "skills": ["Multi-objective optimization", "Simulation", "DHM", "Constraint-based modelling", "Design-space exploration"],
+      "learning": "Once a design problem can be expressed as objectives and constraints, automation almost always outperforms human trial and error in both speed and solution quality. The leverage is in the formulation, not in running the algorithm.",
+      "skills": ["Multi-objective Optimisation", "Simulation", "DHM", "Constraint-based Modelling", "Design-space Exploration"],
       "tools": ["IPS IMMA", "NSGA-II", "MATLAB"],
-      "domains": ["Automotive", "Vehicle interior design", "Optimization", "Ergonomics"],
+      "domains": ["Automotive", "Vehicle Interior Design", "Optimisation", "Human Factors"],
       "evidence": {
         "paperLabel": "Paper C",
         "publicationTitle": "Simulation-based Multi-objective Optimization Combined with a DHM tool for Occupant Packaging Design",
@@ -457,30 +471,33 @@
     {
       "id": "paper-d-driving-posture-comparison",
       "slug": "driving-posture-prediction-method-comparison",
-      "title": "Benchmarked Two Driving Posture Prediction Methods with Real Vehicle Data",
-      "tagline": "Compared statistical and optimization-based posture prediction methods using real users in two vehicle layouts.",
+      "title": "Tested Two Prediction Models Against 199 Real Drivers",
+      "tagline": "Which DHM posture prediction method is actually more accurate? The answer depends on which vehicle you are designing.",
+      "accentColor": "#00c896",
       "category": "validation",
       "projectType": "comparative-study",
       "status": "completed",
       "featured": true,
       "yearStart": 2024,
       "yearEnd": 2025,
-      "summary": "Evaluated two seated driving posture prediction approaches against real-world data collected from 199 drivers across two Volvo vehicle models with different seat heights.",
-      "challenge": "DHM posture prediction methods are often used in industry without enough evidence of how they behave in different vehicle configurations.",
-      "solution": "Compared a Statistical Prediction Method (SPM) and an Optimization Prediction Method (OPM) for H-point, eye-point, and steering wheel prediction, using real measured data as ground truth.",
+      "summary": "The first rigorous head-to-head comparison of the two main driving posture prediction approaches, evaluated against real preferred-position data from 199 drivers in two Volvo vehicles with different seat height configurations.",
+      "challenge": "Automotive engineers use DHM tools daily to predict where drivers will position their seats, steering wheels, and eye height during vehicle design. Two main prediction approaches exist, but nobody had tested them head-to-head against a large real-world dataset across multiple vehicle types. Engineers were choosing methods based on habit, not evidence.",
+      "solution": "Collected real preferred-position data from 199 drivers across two Volvo vehicles and compared both methods using RMSE, MAE, correlation, and Bland-Altman analysis.",
       "whatIDid": [
-        "Worked with real-world driving posture data from 199 participants",
-        "Compared SPM and OPM across key driver position variables",
-        "Analysed errors across fore-aft and vertical dimensions and by vehicle configuration"
+        "Analyzed real preferred-position data from 199 drivers in two Volvo vehicles with different seat height configurations (low-seat SUV and high-seat model)",
+        "Compared the Statistical Prediction Method (regression-based) against the Optimization Prediction Method (comfort-maximization) for H-point, eye-point, and steering wheel positions",
+        "Applied RMSE, MAE, Pearson correlation, and Bland-Altman analysis, introducing Bland-Altman plots to this research domain for the first time"
       ],
       "impact": [
-        "Showed that OPM performed better for H-point x and steering wheel x across both vehicles",
-        "Showed that SPM performed better for H-point z across both vehicles",
-        "Provided a practical basis for choosing prediction methods by context instead of treating one method as universally best"
+        "OPM outperformed for fore-aft H-point in both vehicles (47.2 mm vs 48.8 mm RMSE in Vehicle A; 48.5 mm vs 59.9 mm in Vehicle B)",
+        "SPM outperformed for vertical H-point in both vehicles (23.4 mm vs OPM 26.0 mm in Vehicle A)",
+        "Both methods underperformed for short and tall drivers, pointing directly to the next research question addressed in Paper E",
+        "Bland-Altman analysis revealed systematic prediction biases invisible to RMSE metrics alone"
       ],
-      "skills": ["Validation", "Comparative analysis", "Human factors", "Automotive ergonomics", "Statistical analysis"],
-      "tools": ["IPS IMMA", "Statistical modelling", "RMSE", "MAE", "Bland-Altman analysis"],
-      "domains": ["Automotive", "Occupant packaging", "Digital human modelling"],
+      "learning": "In most real prediction problems, no single model wins everywhere. The most useful output is often a clear decision rule: use this method for this context, use that one for that one.",
+      "skills": ["Validation", "Comparative Analysis", "Human Factors", "Statistical Analysis", "Experimental Design"],
+      "tools": ["IPS IMMA", "RMSE", "MAE", "Bland-Altman Analysis", "Python"],
+      "domains": ["Automotive", "Occupant Packaging", "Digital Human Modelling"],
       "evidence": {
         "paperLabel": "Paper D",
         "publicationTitle": "A case study of digital human modelling assisted occupant packaging design: comparing driving posture and position prediction methods",
@@ -494,31 +511,33 @@
     {
       "id": "paper-e-simulation-real-data-integration",
       "slug": "simulation-real-data-integration-posture-prediction",
-      "title": "Used Simulation Plus Real Data to Tailor Posture Prediction Models",
-      "tagline": "Expanded incomplete driver datasets into more useful posture prediction strategies for different stature groups.",
+      "title": "Turned Unused OEM Test Data into a 37% Accuracy Improvement",
+      "tagline": "OEM posture clinic data is usually left unused. I built the pipeline that feeds it back into DHM tools and improved prediction for extreme body sizes by up to 37%.",
+      "accentColor": "#ffd60a",
       "category": "data-driven-simulation",
       "projectType": "method-development",
       "status": "completed",
       "featured": true,
       "yearStart": 2024,
       "yearEnd": 2024,
-      "summary": "Developed a process to enhance seated driver posture prediction by combining real-world driving position data with simulation outputs and extracted joint-angle information.",
-      "challenge": "In occupant packaging, teams often have only partial real-world data, which limits how well they can improve or tailor posture prediction models.",
-      "solution": "Built a three-step process: collect driver position data, generate matching manikins, and simulate them in their preferred positions to extract more complete posture information.",
+      "summary": "A three-step pipeline to connect real OEM posture clinic data to DHM prediction models, improving accuracy for short and tall drivers by creating stature-based strategies from 49 real participants without a dedicated new study.",
+      "challenge": "DHM tools apply a single generic posture strategy to all drivers regardless of body size. Short and tall drivers consistently get the worst predictions. Meanwhile, most automotive OEMs routinely collect driver posture data in test clinics that sits unused and disconnected from their simulation models.",
+      "solution": "A three-step pipeline: measure real preferred positions, generate individualized manikins, simulate at measured positions to extract joint angles, then build stature-based strategies.",
       "whatIDid": [
-        "Integrated seat position, steering wheel position, and eye-point data with simulation",
-        "Generated manikins matched to participant anthropometry",
-        "Extracted joint-angle information from simulated seated postures",
-        "Built stature-based posture strategies for short, medium, and tall drivers"
+        "Built a 3-step pipeline to feed real driver data back into DHM prediction: measure preferred positions from 49 Volvo Cars drivers, generate individualized manikins in IPS IMMA, simulate each manikin at their measured position to extract representative joint angles",
+        "Derived 3 stature-based posture strategies (short, medium, tall) from the extracted data",
+        "Compared stature-based strategies against the default generic Seated Car strategy using RMSE for H-point and eye-point positions"
       ],
       "impact": [
-        "Showed that stature-based strategies improved prediction for short and tall driver groups",
-        "Demonstrated a practical way to extend incomplete posture datasets",
-        "Supported more customized posture prediction instead of relying on one generic default strategy"
+        "H-point vertical RMSE improved from 36.4 mm to 22.9 mm for short drivers (37% reduction)",
+        "Eye-point vertical RMSE improved from 32.3 mm to 22.8 mm for short drivers and from 27.1 mm to 22.9 mm for tall drivers",
+        "Demonstrated that existing OEM test clinic data at 49 participants is sufficient to improve simulation accuracy without a dedicated new study",
+        "Presented at the 22nd IEA World Congress (2024)"
       ],
-      "skills": ["Simulation", "Data integration", "Posture prediction", "Ergonomics analysis", "Anthropometry"],
-      "tools": ["IPS IMMA", "Simulation experiments", "RMSE analysis"],
-      "domains": ["Automotive", "Occupant packaging", "Digital human modelling"],
+      "learning": "Many organisations sit on data that could improve their models. Connecting existing data assets to the tools that need them is often higher value than collecting new data from scratch.",
+      "skills": ["Simulation", "Data Integration", "Posture Prediction", "Statistical Analysis", "Anthropometry"],
+      "tools": ["IPS IMMA", "Python", "RMSE Analysis", "MATLAB"],
+      "domains": ["Automotive", "Occupant Packaging", "Digital Human Modelling"],
       "evidence": {
         "paperLabel": "Paper E",
         "publicationTitle": "Improving Occupant Packaging Posture Prediction Through Integration of Simulation and Real Data",
@@ -532,32 +551,33 @@
     {
       "id": "paper-f-reaching-motion-prediction",
       "slug": "reaching-motion-prediction-optimization-vs-heuristic",
-      "title": "Compared Optimization and Heuristic Models for 3D Reaching Motion",
-      "tagline": "Evaluated which motion prediction approach works better for path, velocity, and arm configuration in seated reaching tasks.",
+      "title": "New Motion Model Cuts Velocity Prediction Error by 11x",
+      "tagline": "Built a new heuristic prediction method for 3D reaching motions that outperforms the optimization-based standard by 11x on velocity accuracy.",
+      "accentColor": "#ff4040",
       "category": "human-motion-prediction",
       "projectType": "experimental-study",
       "status": "completed",
       "featured": true,
       "yearStart": 2024,
       "yearEnd": 2025,
-      "summary": "Compared an optimization-based method with a new heuristic pipeline for predicting upper-extremity reaching motions in 3D space.",
-      "challenge": "Human motion prediction methods tend to trade off precision, behavioural realism, and variability, making it difficult to choose the right method for simulation applications.",
-      "solution": "Benchmarked an optimization-based method against a heuristic method combining steering dynamics, adaptive velocity modelling, and FABRIK inverse kinematics.",
+      "summary": "Developed and validated a new heuristic prediction method (Steering-FABRIK Method) for upper-extremity reaching motions in 3D space, and introduced a dual-metric evaluation framework combining RMSE and Dynamic Time Warping.",
+      "challenge": "DHM tools predict how drivers reach for in-vehicle controls, but existing optimization-based methods require complete task specification upfront, are computationally expensive, and produce average trajectories that do not capture real human variability. There was also no established evaluation framework that treated path accuracy, velocity accuracy, and joint angle accuracy as separate performance dimensions.",
+      "solution": "The Steering-FABRIK Method (SFM) combining a 3D steering dynamics model, adaptive velocity modelling, and FABRIK inverse kinematics, evaluated with a novel dual-metric RMSE plus DTW framework.",
       "whatIDid": [
-        "Developed and tested the heuristic Steering-FABRIK Method (SFM)",
-        "Compared SFM with an optimization-based method (OPM)",
-        "Evaluated path, velocity, and arm joint configuration separately",
-        "Used RMSE and DTW to assess both error magnitude and motion-shape similarity",
-        "Analysed how well each model captured inter-subject variability"
+        "Developed the Steering-FABRIK Method (SFM): combined a 3D steering dynamics model, adaptive velocity model, and FABRIK inverse kinematics into a single prediction pipeline",
+        "Captured and analyzed 120 real reaching motion sequences (10 participants, 4 reaching tasks, 3 trials each) using an 8-camera optical motion capture system",
+        "Compared SFM head-to-head against the optimization-based method (OPM) using a dual-metric evaluation framework combining RMSE and Dynamic Time Warping (DTW)"
       ],
       "impact": [
-        "Showed that SFM performed better for path prediction and velocity shape",
-        "Showed that OPM performed better for arm joint configuration accuracy",
-        "Made the trade-off between prediction precision and behavioural diversity more explicit for future DHM applications"
+        "SFM reduced peak velocity prediction error from 31.6 cm/s (OPM) to 2.8 cm/s, an 11-fold improvement in velocity accuracy",
+        "SFM outperformed on path accuracy for 3 of 4 tasks (Task 1 path RMSE: 23.4 cm vs 31.3 cm for OPM)",
+        "OPM outperformed on joint angle accuracy (10.8 degrees vs 12.8 degrees RMSE), establishing a clear use-case split between the two methods",
+        "DTW analysis revealed systematic model behaviours that RMSE missed entirely, establishing a better evaluation practice"
       ],
-      "skills": ["Motion prediction", "Inverse kinematics", "Behavioral modelling", "Time-series analysis", "Validation"],
-      "tools": ["MATLAB", "FABRIK", "DTW", "RMSE analysis", "Motion capture data"],
-      "domains": ["Human motion prediction", "Ergonomics", "Simulation", "Human-computer interaction"],
+      "learning": "How you evaluate a model determines what you learn about it. RMSE alone masked critical differences that DTW revealed. Better always has to be answered relative to a specific purpose.",
+      "skills": ["Motion Prediction", "Inverse Kinematics", "Behavioural Modelling", "Time-series Analysis", "Validation"],
+      "tools": ["MATLAB", "FABRIK", "DTW", "RMSE Analysis", "Motion Capture"],
+      "domains": ["Human Motion Prediction", "Human Factors", "Simulation", "Human-Computer Interaction"],
       "evidence": {
         "paperLabel": "Paper F",
         "publicationTitle": "Predicting Human Upper Extremity Reaching Motions: Comparison of Optimization-based Method and Heuristic Method",
@@ -571,67 +591,70 @@
     {
       "id": "motion-capture-system-validation",
       "slug": "motion-capture-system-and-experimental-validation",
-      "title": "Built Motion Capture-Based Validation Workflows",
-      "tagline": "Used optical motion capture and structured task design to generate ground-truth data for validating posture and motion models.",
+      "title": "Ground-Truth Validation from 199 Drivers and Motion Capture",
+      "tagline": "High-quality experimental datasets from real vehicles and optical motion capture, used to test simulation tools against actual human behaviour.",
+      "accentColor": "#00bcd4",
       "category": "motion-capture",
       "projectType": "experimental-infrastructure",
       "status": "completed",
       "featured": true,
       "yearStart": 2024,
       "yearEnd": 2025,
-      "summary": "Hands-on experimental work around motion capture and measured human movement, used to evaluate prediction methods rather than relying only on simulation outputs.",
-      "challenge": "Simulation methods are only useful if they can be checked against real human behaviour with enough precision and repeatability.",
-      "solution": "Used motion capture and structured data collection protocols to create validation datasets for both seated posture and upper-extremity reaching tasks.",
+      "summary": "Experimental infrastructure work: designing and executing two validation studies that generated ground-truth data for benchmarking posture and motion prediction models against real human behaviour.",
+      "challenge": "Simulation methods for human posture and motion prediction are only credible if tested against real measured behaviour. Most DHM research shortcuts this step or validates against small or low-quality datasets, which understates how poorly current tools perform and where they fail.",
+      "solution": "Designed and executed two rigorous validation studies providing the ground-truth datasets for Papers D and F.",
       "whatIDid": [
-        "Worked with recorded driving posture data from real users in two vehicle models",
-        "Used motion capture data from seated reaching tasks as validation ground truth",
-        "Applied quantitative metrics such as RMSE, DTW, correlation, and Bland-Altman analysis to compare prediction outputs to measured behaviour"
+        "Designed experimental protocols for two validation studies: in-vehicle driving posture with 199 real Volvo drivers across two vehicle types, and upper-extremity reaching with 10 participants using an 8-camera optical motion capture system",
+        "Applied RMSE, DTW, Pearson correlation, and Bland-Altman analysis to compare simulation outputs against measured ground truth",
+        "Standardized data processing pipelines to ensure reproducibility across studies and research institutions"
       ],
       "impact": [
-        "Strengthened the credibility of the prediction and simulation work",
-        "Created a bridge between virtual ergonomics and measured human behaviour",
-        "Enabled more rigorous comparison of competing modelling approaches"
+        "Generated the ground-truth datasets enabling rigorous head-to-head comparison of competing prediction models in Papers D and F",
+        "First application of Bland-Altman analysis to DHM posture prediction, revealing systematic biases hidden by standard RMSE metrics",
+        "Datasets remain available for future model development and benchmarking without additional participant recruitment"
       ],
-      "skills": ["Motion capture", "Experimental design", "Validation", "Data analysis", "Human movement analysis"],
-      "tools": ["Optical motion capture", "Infrared camera system", "Reflective markers", "RMSE", "DTW", "Bland-Altman"],
-      "domains": ["Human movement", "Ergonomics", "Validation", "Digital human modelling"],
+      "learning": "Good validation data is a multiplier. The same experimental dataset powered multiple independent research questions and will continue to be useful long after the original study is complete.",
+      "skills": ["Motion Capture", "Experimental Design", "Validation", "Data Analysis", "Human Movement Analysis"],
+      "tools": ["Optical Motion Capture", "Xsens", "MOVE4D", "RMSE", "DTW", "Bland-Altman"],
+      "domains": ["Human Movement", "Human Factors", "Validation", "Digital Human Modelling"],
       "evidence": {
         "relatedTo": ["Paper D", "Paper F"],
-        "notes": "Based on the thesis methodology and datasets used to validate seated posture and reaching-motion prediction methods."
+        "notes": "Experimental datasets used to validate seated posture and reaching-motion prediction methods in Papers D and F."
       },
       "sortOrder": 7
     },
     {
       "id": "sweex-ab",
       "slug": "sweex-ab-exoskeleton-startup",
-      "title": "Co-Founded Swe-Ex AB",
-      "tagline": "Turned user needs into exoskeleton prototypes through hands-on product development and iteration.",
+      "title": "Co-Founded a Wearable Tech Startup from Concept to Prototype",
+      "tagline": "Two years building exoskeleton prototypes for assembly-line workers at Science Park Skövde, from user needs to investor pitch.",
+      "accentColor": "#bf616a",
       "category": "startup",
       "projectType": "startup-venture",
       "status": "completed",
       "featured": true,
       "yearStart": 2019,
       "yearEnd": 2021,
-      "summary": "Co-founded an exoskeleton-focused startup developing wearable safety support equipment for assembly-line environments, incubated at Science Park Skövde.",
-      "challenge": "Wearable assistive products need to balance comfort, fit, usability, safety, and practical engineering constraints, especially when moving from concept to prototype.",
-      "solution": "Worked in an early-stage startup setting to define requirements, develop prototypes, and improve the concept through repeated iterations and feedback.",
+      "summary": "Co-founded Swe-Ex AB through Science Park Skövde's incubator, developing wearable safety support equipment for assembly-line workers. Led R&D, product iterations, and commercial strategy over 2 years.",
+      "challenge": "Wearable safety technology for assembly-line workers sits at the intersection of human factors, mechanical design, manufacturing constraints, and commercial viability. Early-stage hardware startups face the challenge of making progress on all four fronts simultaneously with limited resources. Without a structured process for translating user needs into testable design targets, teams burn iterations on the wrong problems.",
+      "solution": "A structured R&D process within Science Park Skövde's incubator: user needs to design targets to prototype iterations to commercial validation.",
       "whatIDid": [
-        "Co-founded the company with collaborators through Science Park Skövde incubator",
-        "Translated user needs into measurable requirements and design criteria",
-        "Drove three full prototype iterations from CAD to physical validation",
-        "Built commercial acumen through investor communications and market analysis across 10+ industries"
+        "Co-founded Swe-Ex AB through Science Park Skövde's incubator, developing exoskeleton-inspired safety support equipment for assembly-line environments",
+        "Translated user safety requirements and ergonomic constraints into measurable product targets and drove three full prototype iterations from CAD to physical validation",
+        "Conducted market analysis across 10+ industries, managed investor communications, and developed a go-to-market strategy over 2 years in the incubator"
       ],
       "impact": [
-        "Built three functional exoskeleton prototype versions",
-        "Gained direct experience in startup product development and early-stage decision-making",
-        "Strengthened the link between human factors thinking and real product iteration"
+        "Delivered three functional prototype versions with progressively refined ergonomic fit and structural performance",
+        "Built a comprehensive competitive landscape and business case informing product direction and investor conversations",
+        "Developed direct commercial experience bridging technical capability with product viability, stakeholder communication, and market positioning"
       ],
-      "skills": ["Product development", "Startup execution", "Requirements definition", "Prototyping", "Human factors"],
-      "tools": ["Prototype iteration", "User-needs translation", "Requirements framing"],
-      "domains": ["Exoskeletons", "Wearables", "Human factors", "Product development"],
+      "learning": "Building something physical with real users in a resource-constrained environment teaches prioritization that no simulation study can replicate. The incubator made the connection between technical rigour and commercial viability concrete.",
+      "skills": ["Product Development", "Startup Execution", "Requirements Definition", "Prototyping", "Human Factors"],
+      "tools": ["CAD (Autodesk Inventor, SolidWorks)", "3D Printing", "Market Analysis"],
+      "domains": ["Exoskeletons", "Wearables", "Human Factors", "Product Development"],
       "evidence": {
         "type": "professional-experience",
-        "notes": "Startup experience included here as portfolio experience rather than thesis publication."
+        "notes": "Startup experience included as a portfolio project alongside the thesis publications."
       },
       "sortOrder": 8
     }
