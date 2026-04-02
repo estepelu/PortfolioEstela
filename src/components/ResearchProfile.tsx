@@ -115,7 +115,7 @@ export default function ResearchProfile() {
           <motion.div
             key={card.label}
             variants={itemVariants}
-            whileHover={{ scale: 1.04, y: -2 }}
+            whileHover={{ scale: 1.07, y: -8, boxShadow: '0 20px 50px rgba(0,0,0,0.13)' }}
             className="glass-card p-6 rounded-3xl relative overflow-hidden"
           >
             <div
@@ -125,9 +125,45 @@ export default function ResearchProfile() {
             <card.icon className="w-5 h-5 mb-3" style={{ color: card.color }} />
             <div className="text-3xl font-display font-bold text-nord-0 mb-1">{card.value}</div>
             <div className="text-xs font-bold text-nord-0 mb-0.5">{card.label}</div>
-            <div className="text-[10px] text-nord-4">{card.sub}</div>
+            <div className="text-[10px] text-nord-3">{card.sub}</div>
           </motion.div>
         ))}
+      </motion.div>
+
+      {/* Research Interests */}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: 'spring', stiffness: 260, damping: 28, delay: 0.1 }}
+        className="mb-10"
+      >
+        <h2 className="text-xl font-display font-bold text-nord-0 mb-5 flex items-center gap-2">
+          <BookOpen className="w-5 h-5" style={{ color: '#ff00d8' }} /> Research Interests
+        </h2>
+        <div className="flex flex-wrap gap-3">
+          {[
+            { label: 'Predictive Modelling', color: '#ff00d8' },
+            { label: 'Simulation Validation', color: '#ff00d8' },
+            { label: 'Digital Human Modelling', color: '#ff7f00' },
+            { label: 'Human Motion Analysis', color: '#ff7f00' },
+            { label: 'Multi-objective Optimisation', color: '#0080ff' },
+            { label: 'Posture Prediction', color: '#0080ff' },
+            { label: 'Motion Capture & Sensing', color: '#9b59ff' },
+            { label: 'Experimental Design', color: '#9b59ff' },
+            { label: 'Automotive Ergonomics', color: '#00c896' },
+            { label: 'Validation & Verification', color: '#00c896' },
+            { label: 'Data Pipelines', color: '#5e81ac' },
+            { label: 'DHM Tools', color: '#5e81ac' },
+          ].map(({ label, color }) => (
+            <span
+              key={label}
+              className="px-4 py-2 rounded-full text-sm font-semibold cursor-default transition-all hover:scale-105"
+              style={{ background: `${color}18`, color, border: `1px solid ${color}40` }}
+            >
+              {label}
+            </span>
+          ))}
+        </div>
       </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
@@ -140,13 +176,13 @@ export default function ResearchProfile() {
             transition={{ type: 'spring', stiffness: 260, damping: 28, delay: 0.15 }}
             className="glass-card p-6 rounded-[2rem]"
           >
-            <h3 className="text-xs font-bold text-nord-4 uppercase tracking-widest mb-5 flex items-center gap-2">
+            <h3 className="text-xs font-bold text-nord-1 uppercase tracking-widest mb-5 flex items-center gap-2">
               <TrendingUp className="w-4 h-4" style={{ color: '#ff00d8' }} /> Citation Trend
             </h3>
             <div className="h-44 w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={scholarStats.citationsPerYear} barSize={14}>
-                  <XAxis dataKey="year" tick={{ fill: '#d8dee9', fontSize: 9 }} axisLine={false} tickLine={false} />
+                  <XAxis dataKey="year" tick={{ fill: '#4c566a', fontSize: 9 }} axisLine={false} tickLine={false} />
                   <YAxis hide />
                   <Tooltip
                     cursor={{ fill: 'rgba(94,129,172,0.08)' }}
@@ -166,26 +202,6 @@ export default function ResearchProfile() {
             </div>
           </motion.div>
 
-          {/* Research interests */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ type: 'spring', stiffness: 260, damping: 28, delay: 0.25 }}
-            className="p-6 bg-nord-0 text-white rounded-[2rem] relative overflow-hidden"
-          >
-            <div className="absolute -bottom-8 -right-8 w-28 h-28 rounded-full opacity-20 blur-2xl" style={{ background: '#ff00d8' }} />
-            <div className="absolute -top-8 -left-8 w-24 h-24 rounded-full opacity-10 blur-2xl" style={{ background: '#ff7f00' }} />
-            <h4 className="text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-2 relative z-10">
-              <BookOpen className="w-4 h-4" style={{ color: '#ff7f00' }} /> Research Interests
-            </h4>
-            <div className="flex flex-wrap gap-2 relative z-10">
-              {['Predictive Modelling', 'Simulation V&V', 'Human Motion', 'Optimisation', 'Motion Capture', 'DHM Tools'].map(tag => (
-                <span key={tag} className="text-[10px] px-2 py-1 bg-white/10 rounded-md hover:bg-white/20 transition-colors cursor-default">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </motion.div>
 
           {/* Citation legend */}
           <motion.div
@@ -194,7 +210,7 @@ export default function ResearchProfile() {
             transition={{ type: 'spring', stiffness: 260, damping: 28, delay: 0.35 }}
             className="glass-card p-5 rounded-[2rem]"
           >
-            <h4 className="text-[10px] font-bold uppercase tracking-widest text-nord-4 mb-3">Citation Key</h4>
+            <h4 className="text-[10px] font-bold uppercase tracking-widest text-nord-1 mb-3">Citation Key</h4>
             <div className="space-y-2">
               {[
                 { label: `≥ ${CITATION_THRESHOLD_HIGH} citations`, color: '#ff00d8' },
@@ -214,7 +230,7 @@ export default function ResearchProfile() {
         <div className="lg:col-span-3 space-y-4">
           <div className="flex items-center justify-between mb-2">
             <h2 className="text-2xl font-display font-bold text-nord-0">Publications</h2>
-            <span className="text-sm text-nord-4 flex items-center gap-1">
+            <span className="text-sm text-nord-3 flex items-center gap-1">
               <FileText className="w-4 h-4" /> {publications.length} total
             </span>
           </div>
@@ -231,7 +247,7 @@ export default function ResearchProfile() {
                   key={pub.id || index}
                   variants={itemVariants}
                   layout
-                  whileHover={{ scale: 1.01, x: 3 }}
+                  whileHover={{ scale: 1.015, x: 6, boxShadow: '0 16px 48px rgba(0,0,0,0.10)' }}
                   transition={{ type: 'spring', stiffness: 400, damping: 32 }}
                   className="group glass-card px-6 py-5 rounded-2xl border border-transparent hover:border-white/40 transition-all relative overflow-hidden"
                 >
@@ -261,7 +277,7 @@ export default function ResearchProfile() {
                         <Users className="w-3.5 h-3.5 shrink-0 mt-0.5" />
                         <span className="leading-snug">{pub.authors}</span>
                       </div>
-                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-nord-4">
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-nord-2">
                         <span className="flex items-center gap-1 italic">
                           <BookOpen className="w-3 h-3" /> {pub.publication}
                         </span>
@@ -317,7 +333,7 @@ export default function ResearchProfile() {
           )}
 
           <div className="text-center pt-4">
-            <p className="text-nord-4 text-xs italic">
+            <p className="text-nord-3 text-xs italic">
               Citation data sourced from{' '}
               <a href={scholarStats.scholarUrl} target="_blank" rel="noopener noreferrer" className="hover:text-nord-10 underline underline-offset-2">
                 Google Scholar

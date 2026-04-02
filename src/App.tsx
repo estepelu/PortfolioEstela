@@ -6,15 +6,16 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  ExternalLink, 
-  ChevronRight, 
+  ExternalLink,
+  ChevronRight,
   ChevronLeft,
-  Mail, 
-  Linkedin, 
-  FileText, 
+  Mail,
+  Linkedin,
+  FileText,
   ArrowRight,
   Search,
   X,
+  Menu,
   Briefcase,
   User,
   Info,
@@ -53,6 +54,7 @@ export default function App() {
   const [filter, setFilter] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTab, setActiveTab] = useState<'portfolio' | 'resume' | 'research' | 'quiz'>('portfolio');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const filteredProjects = portfolioData.projects.filter(project => {
     const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -65,37 +67,38 @@ export default function App() {
     <div className="min-h-screen scandi-gradient selection:bg-nord-8/30">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-xl border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <motion.div 
+        <div className="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-display font-semibold tracking-tight lowercase text-nord-0"
+            className="text-lg md:text-2xl font-display font-semibold tracking-tight lowercase text-nord-0"
           >
             {portfolioData.owner.name}
           </motion.div>
-          
-          <div className="flex items-center gap-4 md:gap-8">
+
+          {/* Desktop nav */}
+          <div className="hidden md:flex items-center gap-8">
             <div className="flex items-center gap-1 bg-nord-4/30 p-1 rounded-full">
-              <button 
+              <button
                 onClick={() => setActiveTab('portfolio')}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all lowercase ${activeTab === 'portfolio' ? 'bg-white text-nord-0 shadow-sm' : 'text-nord-3 hover:text-nord-0'}`}
               >
                 portfolio
               </button>
-              <button 
+              <button
                 onClick={() => setActiveTab('resume')}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all lowercase ${activeTab === 'resume' ? 'bg-white text-nord-0 shadow-sm' : 'text-nord-3 hover:text-nord-0'}`}
               >
                 resume
               </button>
-              <button 
+              <button
                 onClick={() => setActiveTab('research')}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all lowercase ${activeTab === 'research' ? 'bg-white text-nord-0 shadow-sm' : 'text-nord-3 hover:text-nord-0'}`}
               >
                 research profile
               </button>
             </div>
-            <div className="hidden md:flex items-center gap-4">
+            <div className="flex items-center gap-4">
               <a href={portfolioData.owner.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 text-nord-3 hover:text-nord-10 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
@@ -104,10 +107,52 @@ export default function App() {
               </a>
             </div>
           </div>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden p-2 rounded-full hover:bg-nord-4/30 transition-colors text-nord-0"
+            onClick={() => setMobileMenuOpen(v => !v)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
+
+        {/* Mobile dropdown */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 32 }}
+              className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-white/30 shadow-xl"
+            >
+              <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1">
+                {(['portfolio', 'resume', 'research'] as const).map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => { setActiveTab(tab); setMobileMenuOpen(false); }}
+                    className={`w-full text-left px-4 py-3 rounded-2xl text-sm font-semibold lowercase transition-all ${activeTab === tab ? 'bg-nord-0 text-white' : 'text-nord-3 hover:bg-nord-4/30 hover:text-nord-0'}`}
+                  >
+                    {tab === 'research' ? 'research profile' : tab}
+                  </button>
+                ))}
+                <div className="flex gap-4 px-4 pt-2 pb-1 border-t border-nord-4/30 mt-1">
+                  <a href={portfolioData.owner.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs text-nord-3 hover:text-nord-10 transition-colors">
+                    <Linkedin className="w-4 h-4" /> LinkedIn
+                  </a>
+                  <a href={`mailto:${portfolioData.owner.email}`} className="flex items-center gap-2 text-xs text-nord-3 hover:text-nord-10 transition-colors">
+                    <Mail className="w-4 h-4" /> Email
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
-      <main className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+      <main className="pt-24 md:pt-32 pb-20 px-6 max-w-7xl mx-auto">
         <AnimatePresence mode="wait">
           {activeTab === 'portfolio' && (
             <motion.div
@@ -258,8 +303,9 @@ export default function App() {
                         layout
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
+                        whileHover={{ scale: 1.03, y: -10, boxShadow: '0 32px 64px rgba(0,0,0,0.14)' }}
                         viewport={{ once: true, margin: "-50px" }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        transition={{ type: 'spring', stiffness: 360, damping: 28, delay: index * 0.05 }}
                         onClick={() => setSelectedProject(project)}
                         className={`glass-card rounded-3xl p-8 cursor-pointer flex flex-col h-full group relative overflow-hidden ${project.id === 'phd-thesis' ? 'md:col-span-2 lg:col-span-2 border-nord-10/30 bg-nord-10/5' : ''}`}
                       >
