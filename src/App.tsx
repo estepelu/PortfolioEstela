@@ -81,19 +81,19 @@ export default function App() {
             <div className="flex items-center gap-1 bg-nord-4/30 p-1 rounded-full">
               <button
                 onClick={() => setActiveTab('portfolio')}
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all lowercase ${activeTab === 'portfolio' ? 'bg-white text-nord-0 shadow-sm' : 'text-nord-3 hover:text-nord-0'}`}
+                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all lowercase ${activeTab === 'portfolio' ? 'bg-[#82241f] text-white shadow-sm' : 'text-nord-3 hover:text-[#82241f]'}`}
               >
                 portfolio
               </button>
               <button
                 onClick={() => setActiveTab('resume')}
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all lowercase ${activeTab === 'resume' ? 'bg-white text-nord-0 shadow-sm' : 'text-nord-3 hover:text-nord-0'}`}
+                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all lowercase ${activeTab === 'resume' ? 'bg-[#82241f] text-white shadow-sm' : 'text-nord-3 hover:text-[#82241f]'}`}
               >
                 resume
               </button>
               <button
                 onClick={() => setActiveTab('research')}
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all lowercase ${activeTab === 'research' ? 'bg-white text-nord-0 shadow-sm' : 'text-nord-3 hover:text-nord-0'}`}
+                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all lowercase ${activeTab === 'research' ? 'bg-[#82241f] text-white shadow-sm' : 'text-nord-3 hover:text-[#82241f]'}`}
               >
                 research profile
               </button>
@@ -133,7 +133,7 @@ export default function App() {
                   <button
                     key={tab}
                     onClick={() => { setActiveTab(tab); setMobileMenuOpen(false); }}
-                    className={`w-full text-left px-4 py-3 rounded-2xl text-sm font-semibold lowercase transition-all ${activeTab === tab ? 'bg-nord-0 text-white' : 'text-nord-3 hover:bg-nord-4/30 hover:text-nord-0'}`}
+                    className={`w-full text-left px-4 py-3 rounded-2xl text-sm font-semibold lowercase transition-all ${activeTab === tab ? 'bg-[#82241f] text-white' : 'text-nord-3 hover:bg-[#f27291]/15 hover:text-[#82241f]'}`}
                   >
                     {tab === 'research' ? 'research profile' : tab}
                   </button>
@@ -172,10 +172,10 @@ export default function App() {
                   className="max-w-4xl"
                 >
                   <h1 className="text-5xl md:text-7xl font-display font-bold text-nord-0 leading-[1.1] mb-8">
-                    Turning <span style={{ color: '#ff00d8' }}>complex systems</span> into decisions, products, and <span style={{ color: '#ff7f00' }}>customer outcomes</span>.
+                    Turning <span style={{ color: '#f27291' }}>complex systems</span> into decisions, products, and <span style={{ color: '#82241f' }}>customer outcomes</span>.
                   </h1>
                   <p className="text-xl text-nord-3 leading-relaxed mb-10 max-w-2xl">
-                    I'm {portfolioData.owner.name.split(' ')[0].toLowerCase()}, a PhD-level data scientist and systems thinker. I bridge deep technical expertise with commercial delivery — from predictive models and validation pipelines to go-to-market strategy and customer success.
+                    I'm {portfolioData.owner.name.split(' ')[0].toLowerCase()}, a PhD-level data scientist and systems thinker. I bridge deep technical expertise with commercial delivery across the full spectrum from predictive models and validation pipelines to go-to-market strategy and customer success.
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <button 
@@ -210,13 +210,13 @@ export default function App() {
                     <h2 className="text-3xl font-display font-bold text-nord-0 mb-8 lowercase">about me</h2>
                     <div className="space-y-6 text-lg text-nord-3 leading-relaxed">
                       <p>
-                        I'm a <span className="text-nord-0 font-semibold">PhD-level data scientist and systems thinker</span> with 5+ years of experience connecting technical depth with real-world impact — from predictive modelling and data pipelines to customer-facing delivery and go-to-market execution.
+                        I'm a <span className="text-nord-0 font-semibold">PhD-level data scientist and systems thinker</span> with 5+ years of experience connecting technical depth with real-world impact across the full spectrum: predictive modelling, data pipelines, customer-facing delivery, and go-to-market execution.
                       </p>
                       <p>
                         I lead cross-functional projects end-to-end: scoping the problem, building the evidence, and translating findings into decisions that stick. I've partnered with Volvo, Scania, and international research institutes, and co-founded a hardware startup where I managed everything from prototyping to investor communications.
                       </p>
                       <p>
-                        Whether the role is <span className="text-nord-0 font-semibold">technical, commercial, or at the boundary</span> — I bring the same toolkit: rigorous analysis, clear communication, and a bias for outcomes over outputs.
+                        Whether the role is <span className="text-nord-0 font-semibold">technical, commercial, or at the boundary</span> I bring the same toolkit: rigorous analysis, clear communication, and a bias for outcomes over outputs.
                       </p>
                     </div>
                     
@@ -303,7 +303,7 @@ export default function App() {
                         layout
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        whileHover={{ scale: 1.03, y: -10, boxShadow: '0 32px 64px rgba(0,0,0,0.14)' }}
+                        whileHover={{ scale: 1.04, y: -14, boxShadow: '0 40px 80px rgba(130,36,31,0.22), 0 0 0 2px rgba(242,114,145,0.4)' }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ type: 'spring', stiffness: 360, damping: 28, delay: index * 0.05 }}
                         onClick={() => setSelectedProject(project)}
@@ -384,7 +384,7 @@ export default function App() {
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10 pb-10 border-b border-nord-4/30">
                 <div>
                   <h1 className="text-4xl font-display font-bold text-nord-0 mb-2">{portfolioData.owner.name}</h1>
-                  <p className="font-medium text-lg" style={{ color: '#ff00d8' }}>{portfolioData.owner.title}</p>
+                  <p className="font-medium text-lg" style={{ color: '#f27291' }}>{portfolioData.owner.title}</p>
                 </div>
                 <div className="flex flex-col gap-2.5 text-sm text-nord-3 min-w-0">
                   <div className="flex items-center gap-2 min-w-0">
@@ -408,8 +408,8 @@ export default function App() {
 
               {/* Profile Summary */}
               {'resumeProfile' in portfolioData && (
-                <div className="mb-10 p-6 rounded-3xl relative overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(255,0,216,0.06) 0%, rgba(255,127,0,0.04) 100%)', border: '1px solid rgba(255,0,216,0.15)' }}>
-                  <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full blur-3xl opacity-20" style={{ background: '#ff00d8' }} />
+                <div className="mb-10 p-6 rounded-3xl relative overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(242,114,145,0.06) 0%, rgba(130,36,31,0.04) 100%)', border: '1px solid rgba(242,114,145,0.20)' }}>
+                  <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full blur-3xl opacity-20" style={{ background: '#f27291' }} />
                   <p className="text-nord-3 leading-relaxed text-sm relative z-10">{(portfolioData as typeof portfolioData & { resumeProfile: string }).resumeProfile}</p>
                 </div>
               )}
@@ -425,7 +425,7 @@ export default function App() {
                     <div className="space-y-12">
                       {(portfolioData as typeof portfolioData & { experience: Array<{ role: string; company: string; period: string; bullets?: string[]; description?: string }> }).experience.map((exp, i) => (
                         <div key={i} className="relative pl-8 border-l-2 border-nord-4/30">
-                          <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-2" style={{ borderColor: i === 0 ? '#ff00d8' : '#5e81ac' }} />
+                          <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-2" style={{ borderColor: i === 0 ? '#f27291' : '#5e81ac' }} />
                           <div className="mb-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                             <h3 className="text-lg font-bold text-nord-0">{exp.role}</h3>
                             <span className="text-xs font-bold px-2 py-1 rounded-md" style={{ color: '#5e81ac', background: 'rgba(94,129,172,0.1)' }}>{exp.period}</span>
@@ -434,7 +434,7 @@ export default function App() {
                           <ul className="space-y-2.5">
                             {exp.bullets.map((bullet, bi) => (
                               <li key={bi} className="flex gap-3 text-nord-3 text-sm leading-relaxed">
-                                <span className="mt-2 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: i === 0 ? '#ff00d8' : '#5e81ac' }} />
+                                <span className="mt-2 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: i === 0 ? '#f27291' : '#5e81ac' }} />
                                 {bullet}
                               </li>
                             ))}
@@ -472,8 +472,8 @@ export default function App() {
                       const skills = (portfolioData as typeof portfolioData & { skills: { core: string[]; methods: string[]; experimental: string[]; tools: string[] } }).skills;
                       const groups = [
                         { label: 'Core Stack', items: skills.core, bg: 'bg-nord-0 text-white' },
-                        { label: 'Methods', items: skills.methods, bg: 'bg-[#ff00d8]/10 text-[#c800a8]' },
-                        { label: 'Experimental', items: skills.experimental, bg: 'bg-[#ff7f00]/10 text-[#c06000]' },
+                        { label: 'Methods', items: skills.methods, bg: 'bg-[#f27291]/10 text-[#82241f]' },
+                        { label: 'Experimental', items: skills.experimental, bg: 'bg-[#82241f]/10 text-[#5c1915]' },
                         { label: 'Tools', items: skills.tools, bg: 'bg-nord-6 text-nord-3' },
                       ];
                       return (
@@ -500,7 +500,7 @@ export default function App() {
                       {(portfolioData as typeof portfolioData & { languages: Array<{ name: string; level: string }> }).languages.map(lang => (
                         <div key={lang.name} className="flex justify-between items-center text-sm">
                           <span className="text-nord-3">{lang.name}</span>
-                          <span className="font-bold text-xs px-2 py-0.5 rounded-md" style={{ color: '#ff7f00', background: 'rgba(255,127,0,0.1)' }}>{lang.level}</span>
+                          <span className="font-bold text-xs px-2 py-0.5 rounded-md" style={{ color: '#82241f', background: 'rgba(130,36,31,0.10)' }}>{lang.level}</span>
                         </div>
                       ))}
                     </div>
@@ -508,7 +508,7 @@ export default function App() {
 
                   {/* Awards */}
                   <section className="p-6 bg-nord-0 text-white rounded-3xl relative overflow-hidden">
-                    <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full blur-2xl opacity-30" style={{ background: '#ff00d8' }} />
+                    <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full blur-2xl opacity-30" style={{ background: '#f27291' }} />
                     <h2 className="text-xs uppercase tracking-widest font-bold mb-4 relative z-10">Leadership & Awards</h2>
                     <ul className="space-y-2 relative z-10">
                       {[
@@ -516,7 +516,7 @@ export default function App() {
                         'Recipient of multiple international grants and travel awards supporting research dissemination.'
                       ].map((item, i) => (
                         <li key={i} className="text-[11px] leading-relaxed text-nord-4 flex gap-2">
-                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#ff00d8' }} />
+                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#f27291' }} />
                           {item}
                         </li>
                       ))}
@@ -562,8 +562,8 @@ export default function App() {
             className="bg-nord-0 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-              <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-pop-pink rounded-full blur-[100px]" />
-              <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-pop-orange rounded-full blur-[100px]" />
+              <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full blur-[100px]" style={{ background: '#f27291' }} />
+              <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full blur-[100px]" style={{ background: '#82241f' }} />
             </div>
             
             <div className="relative z-10">
@@ -768,8 +768,8 @@ export default function App() {
                   </div>
 
                   {(selectedProject as typeof selectedProject & { learning?: string }).learning && (
-                    <div className="rounded-3xl p-8 md:p-12" style={{ background: 'linear-gradient(135deg, rgba(255,0,216,0.06) 0%, rgba(255,127,0,0.04) 100%)', border: '1px solid rgba(255,0,216,0.15)' }}>
-                      <h4 className="text-sm uppercase tracking-widest font-bold mb-4" style={{ color: '#ff00d8' }}>Key Insight</h4>
+                    <div className="rounded-3xl p-8 md:p-12" style={{ background: 'linear-gradient(135deg, rgba(242,114,145,0.06) 0%, rgba(130,36,31,0.04) 100%)', border: '1px solid rgba(242,114,145,0.20)' }}>
+                      <h4 className="text-sm uppercase tracking-widest font-bold mb-4" style={{ color: '#f27291' }}>Key Insight</h4>
                       <p className="text-nord-3 leading-relaxed italic">"{(selectedProject as typeof selectedProject & { learning?: string }).learning}"</p>
                     </div>
                   )}

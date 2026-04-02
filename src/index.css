@@ -22,11 +22,11 @@
   --color-nord-14: #a3be8c;
   --color-nord-15: #b48ead;
   
-  --color-pop-pink: #ff00d8;
-  --color-pop-orange: #ff7f00;
-  --color-pop-blue: #0080ff;
-  --color-pop-green: #00c896;
-  --color-pop-purple: #9b59ff;
+  --color-pop-pink: #f27291;
+  --color-pop-orange: #82241f;
+  --color-pop-blue: #b5decc;
+  --color-pop-green: #b5decc;
+  --color-pop-purple: #82241f;
 }
 
 @layer base {
@@ -44,5 +44,6 @@
 }
 
 .glass-card:hover {
-  @apply bg-white/60 shadow-lg border-white/40;
+  @apply bg-white/80 border-white/60;
+  box-shadow: 0 28px 60px rgba(130,36,31,0.18), 0 8px 20px rgba(0,0,0,0.07);
 }

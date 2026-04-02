@@ -304,11 +304,11 @@ export default function TravelerQuiz() {
               className="relative rounded-[2.5rem] p-10 md:p-14 text-center overflow-hidden"
               style={{ background: 'linear-gradient(135deg, #2e3440 0%, #3b4252 100%)' }}
             >
-              <div className="absolute -top-16 -left-16 w-48 h-48 rounded-full blur-3xl opacity-30" style={{ background: '#ff00d8' }} />
-              <div className="absolute -bottom-16 -right-16 w-48 h-48 rounded-full blur-3xl opacity-20" style={{ background: '#ff7f00' }} />
+              <div className="absolute -top-16 -left-16 w-48 h-48 rounded-full blur-3xl opacity-30" style={{ background: '#f27291' }} />
+              <div className="absolute -bottom-16 -right-16 w-48 h-48 rounded-full blur-3xl opacity-20" style={{ background: '#82241f' }} />
               <div className="relative z-10">
                 <div className="inline-flex p-4 rounded-full mb-6" style={{ background: 'rgba(255,0,216,0.15)' }}>
-                  <Trophy className="w-10 h-10" style={{ color: '#ff00d8' }} />
+                  <Trophy className="w-10 h-10" style={{ color: '#f27291' }} />
                 </div>
                 <motion.div
                   initial={{ scale: 0.5, opacity: 0 }}
@@ -330,7 +330,7 @@ export default function TravelerQuiz() {
                 {/* Dimension pills */}
                 <div className="flex flex-wrap justify-center gap-3">
                   {scores.map((s) => {
-                    const colors: Record<string, string> = { Traveler: '#ff00d8', Foodie: '#ff7f00', Curiosity: '#0080ff' };
+                    const colors: Record<string, string> = { Traveler: '#f27291', Foodie: '#82241f', Curiosity: '#b5decc' };
                     const c = colors[s.subject] || '#5e81ac';
                     return (
                       <div key={s.subject} className="px-5 py-2 rounded-full text-sm font-bold flex items-center gap-2" style={{ background: `${c}22`, color: c, border: `1px solid ${c}44` }}>
@@ -352,7 +352,7 @@ export default function TravelerQuiz() {
                 className="glass-card p-8 rounded-[2rem] space-y-6"
               >
                 <h3 className="text-base font-bold text-nord-0 flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5" style={{ color: '#ff00d8' }} /> Your Explorer Shape
+                  <BarChart3 className="w-5 h-5" style={{ color: '#f27291' }} /> Your Explorer Shape
                 </h3>
                 <div className="h-56 w-full">
                   <ResponsiveContainer width="100%" height="100%">
@@ -360,7 +360,7 @@ export default function TravelerQuiz() {
                       <PolarGrid stroke="#d8dee9" />
                       <PolarAngleAxis dataKey="subject" tick={{ fill: '#4c566a', fontSize: 12, fontWeight: 600 }} />
                       <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
-                      <Radar name="You" dataKey="A" stroke="#ff00d8" fill="#ff00d8" fillOpacity={0.25} strokeWidth={2} />
+                      <Radar name="You" dataKey="A" stroke="#f27291" fill="#f27291" fillOpacity={0.25} strokeWidth={2} />
                     </RadarChart>
                   </ResponsiveContainer>
                 </div>
@@ -375,7 +375,7 @@ export default function TravelerQuiz() {
                 className="glass-card p-8 rounded-[2rem] space-y-6"
               >
                 <h3 className="text-base font-bold text-nord-0 flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5" style={{ color: '#ff7f00' }} /> vs. the Crowd
+                  <BarChart3 className="w-5 h-5" style={{ color: '#82241f' }} /> vs. the Crowd
                 </h3>
                 <div className="h-56 w-full">
                   <ResponsiveContainer width="100%" height="100%">
@@ -386,7 +386,7 @@ export default function TravelerQuiz() {
                       <Tooltip contentStyle={{ borderRadius: '0.75rem', border: 'none', fontSize: '12px', boxShadow: '0 4px 24px rgba(0,0,0,0.10)' }} />
                       <Legend iconType="circle" wrapperStyle={{ fontSize: '11px' }} />
                       <Bar name="Global Avg" dataKey="average" fill="#d8dee9" radius={[4, 4, 0, 0]} />
-                      <Bar name="You" dataKey="user" fill="#ff7f00" radius={[4, 4, 0, 0]} />
+                      <Bar name="You" dataKey="user" fill="#82241f" radius={[4, 4, 0, 0]} />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
@@ -404,9 +404,9 @@ export default function TravelerQuiz() {
               <h3 className="text-base font-bold text-nord-0 mb-6">Dimension Breakdown</h3>
               <div className="space-y-6">
                 {[
-                  { label: 'Traveler', key: 'Traveler', color: '#ff00d8', icon: Map, desc: 'Geographic knowledge & landmark recognition' },
-                  { label: 'Foodie', key: 'Foodie', color: '#ff7f00', icon: Utensils, desc: 'Culinary culture & regional delicacies' },
-                  { label: 'Curiosity', key: 'Curiosity', color: '#0080ff', icon: Lightbulb, desc: 'World facts, geography & cultural trivia' },
+                  { label: 'Traveler', key: 'Traveler', color: '#f27291', icon: Map, desc: 'Geographic knowledge & landmark recognition' },
+                  { label: 'Foodie', key: 'Foodie', color: '#82241f', icon: Utensils, desc: 'Culinary culture & regional delicacies' },
+                  { label: 'Curiosity', key: 'Curiosity', color: '#b5decc', icon: Lightbulb, desc: 'World facts, geography & cultural trivia' },
                 ].map((dim) => {
                   const score = scores.find(s => s.subject === dim.label)?.A ?? 0;
                   return (

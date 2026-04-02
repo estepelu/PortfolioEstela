@@ -28,16 +28,17 @@ const CITATION_THRESHOLD_HIGH = 10;
 const CITATION_THRESHOLD_MED = 4;
 
 function getCitationColor(citations: number) {
-  if (citations >= CITATION_THRESHOLD_HIGH) return '#ff00d8';
-  if (citations >= CITATION_THRESHOLD_MED) return '#ff7f00';
+  if (citations >= CITATION_THRESHOLD_HIGH) return '#f27291';
+  if (citations >= CITATION_THRESHOLD_MED) return '#82241f';
   return '#5e81ac';
 }
 
 function getCitationBg(citations: number) {
-  if (citations >= CITATION_THRESHOLD_HIGH) return 'bg-[#ff00d8]/10 text-[#ff00d8] border-[#ff00d8]/30';
-  if (citations >= CITATION_THRESHOLD_MED) return 'bg-[#ff7f00]/10 text-[#ff7f00] border-[#ff7f00]/30';
+  if (citations >= CITATION_THRESHOLD_HIGH) return 'bg-[#f27291]/10 text-[#f27291] border-[#f27291]/30';
+  if (citations >= CITATION_THRESHOLD_MED) return 'bg-[#82241f]/10 text-[#82241f] border-[#82241f]/30';
   return 'bg-nord-10/10 text-nord-10 border-nord-10/30';
 }
+
 
 const containerVariants = {
   hidden: {},
@@ -75,10 +76,10 @@ export default function ResearchProfile() {
   const maxCitations = Math.max(...scholarStats.citationsPerYear.map(d => d.citations));
 
   const statCards = [
-    { label: 'Citations', value: scholarStats.totalCitations, sub: `${scholarStats.since2020Citations} since 2020`, icon: Quote, color: '#ff00d8' },
-    { label: 'h-index', value: scholarStats.hIndex, sub: `${scholarStats.hIndex5y} since 2020`, icon: TrendingUp, color: '#ff7f00' },
+    { label: 'Citations', value: scholarStats.totalCitations, sub: `${scholarStats.since2020Citations} since 2020`, icon: Quote, color: '#f27291' },
+    { label: 'h-index', value: scholarStats.hIndex, sub: `${scholarStats.hIndex5y} since 2020`, icon: TrendingUp, color: '#82241f' },
     { label: 'i10-index', value: scholarStats.i10Index, sub: `${scholarStats.i10Index5y} since 2020`, icon: Award, color: '#5e81ac' },
-    { label: 'Papers', value: publications.length, sub: 'peer-reviewed', icon: FileText, color: '#a3be8c' },
+    { label: 'Papers', value: publications.length, sub: 'peer-reviewed', icon: FileText, color: '#b5decc' },
   ];
 
   return (
@@ -97,7 +98,7 @@ export default function ResearchProfile() {
             href={scholarStats.scholarUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-nord-10 hover:text-[#ff00d8] transition-colors underline underline-offset-2"
+            className="text-nord-10 hover:text-[#f27291] transition-colors underline underline-offset-2"
           >
             Google Scholar
           </a>
@@ -115,7 +116,7 @@ export default function ResearchProfile() {
           <motion.div
             key={card.label}
             variants={itemVariants}
-            whileHover={{ scale: 1.07, y: -8, boxShadow: '0 20px 50px rgba(0,0,0,0.13)' }}
+            whileHover={{ scale: 1.09, y: -12, boxShadow: '0 28px 60px rgba(130,36,31,0.22), 0 0 0 2px rgba(242,114,145,0.35)' }}
             className="glass-card p-6 rounded-3xl relative overflow-hidden"
           >
             <div
@@ -138,22 +139,22 @@ export default function ResearchProfile() {
         className="mb-10"
       >
         <h2 className="text-xl font-display font-bold text-nord-0 mb-5 flex items-center gap-2">
-          <BookOpen className="w-5 h-5" style={{ color: '#ff00d8' }} /> Research Interests
+          <BookOpen className="w-5 h-5" style={{ color: '#f27291' }} /> Research Interests
         </h2>
         <div className="flex flex-wrap gap-3">
           {[
-            { label: 'Predictive Modelling', color: '#ff00d8' },
-            { label: 'Simulation Validation', color: '#ff00d8' },
-            { label: 'Digital Human Modelling', color: '#ff7f00' },
-            { label: 'Human Motion Analysis', color: '#ff7f00' },
-            { label: 'Multi-objective Optimisation', color: '#0080ff' },
-            { label: 'Posture Prediction', color: '#0080ff' },
-            { label: 'Motion Capture & Sensing', color: '#9b59ff' },
-            { label: 'Experimental Design', color: '#9b59ff' },
-            { label: 'Automotive Ergonomics', color: '#00c896' },
-            { label: 'Validation & Verification', color: '#00c896' },
-            { label: 'Data Pipelines', color: '#5e81ac' },
-            { label: 'DHM Tools', color: '#5e81ac' },
+            { label: 'Predictive Modelling', color: '#f27291' },
+            { label: 'Simulation Validation', color: '#f27291' },
+            { label: 'Digital Human Modelling', color: '#82241f' },
+            { label: 'Human Motion Analysis', color: '#82241f' },
+            { label: 'Multi-objective Optimisation', color: '#f27291' },
+            { label: 'Posture Prediction', color: '#82241f' },
+            { label: 'Motion Capture & Sensing', color: '#b5decc' },
+            { label: 'Experimental Design', color: '#b5decc' },
+            { label: 'Automotive Ergonomics', color: '#b5decc' },
+            { label: 'Validation & Verification', color: '#82241f' },
+            { label: 'Data Pipelines', color: '#f27291' },
+            { label: 'DHM Tools', color: '#b5decc' },
           ].map(({ label, color }) => (
             <span
               key={label}
@@ -177,7 +178,7 @@ export default function ResearchProfile() {
             className="glass-card p-6 rounded-[2rem]"
           >
             <h3 className="text-xs font-bold text-nord-1 uppercase tracking-widest mb-5 flex items-center gap-2">
-              <TrendingUp className="w-4 h-4" style={{ color: '#ff00d8' }} /> Citation Trend
+              <TrendingUp className="w-4 h-4" style={{ color: '#f27291' }} /> Citation Trend
             </h3>
             <div className="h-44 w-full">
               <ResponsiveContainer width="100%" height="100%">
@@ -193,7 +194,7 @@ export default function ResearchProfile() {
                     {scholarStats.citationsPerYear.map((entry, i) => (
                       <Cell
                         key={i}
-                        fill={entry.citations === maxCitations ? '#ff00d8' : entry.citations > maxCitations * 0.6 ? '#ff7f00' : '#88c0d0'}
+                        fill={entry.citations === maxCitations ? '#f27291' : entry.citations > maxCitations * 0.6 ? '#82241f' : '#b5decc'}
                       />
                     ))}
                   </Bar>
@@ -213,10 +214,11 @@ export default function ResearchProfile() {
             <h4 className="text-[10px] font-bold uppercase tracking-widest text-nord-1 mb-3">Citation Key</h4>
             <div className="space-y-2">
               {[
-                { label: `≥ ${CITATION_THRESHOLD_HIGH} citations`, color: '#ff00d8' },
-                { label: `≥ ${CITATION_THRESHOLD_MED} citations`, color: '#ff7f00' },
+                { label: `≥ ${CITATION_THRESHOLD_HIGH} citations`, color: '#f27291' },
+                { label: `≥ ${CITATION_THRESHOLD_MED} citations`, color: '#82241f' },
                 { label: '< 4 citations', color: '#5e81ac' }
               ].map(item => (
+
                 <div key={item.label} className="flex items-center gap-2 text-xs text-nord-3">
                   <span className="w-3 h-3 rounded-full shrink-0" style={{ background: item.color }} />
                   {item.label}
@@ -247,19 +249,19 @@ export default function ResearchProfile() {
                   key={pub.id || index}
                   variants={itemVariants}
                   layout
-                  whileHover={{ scale: 1.015, x: 6, boxShadow: '0 16px 48px rgba(0,0,0,0.10)' }}
+                  whileHover={{ scale: 1.02, x: 10, boxShadow: '0 20px 52px rgba(130,36,31,0.16), 0 0 0 1px rgba(242,114,145,0.25)' }}
                   transition={{ type: 'spring', stiffness: 400, damping: 32 }}
                   className="group glass-card px-6 py-5 rounded-2xl border border-transparent hover:border-white/40 transition-all relative overflow-hidden"
                 >
                   {/* Subtle glow based on citation tier */}
                   {pub.citations >= CITATION_THRESHOLD_HIGH && (
                     <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                      style={{ background: 'linear-gradient(135deg, rgba(255,0,216,0.04) 0%, transparent 60%)' }}
+                      style={{ background: 'linear-gradient(135deg, rgba(242,114,145,0.06) 0%, transparent 60%)' }}
                     />
                   )}
                   {pub.citations >= CITATION_THRESHOLD_MED && pub.citations < CITATION_THRESHOLD_HIGH && (
                     <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                      style={{ background: 'linear-gradient(135deg, rgba(255,127,0,0.04) 0%, transparent 60%)' }}
+                      style={{ background: 'linear-gradient(135deg, rgba(130,36,31,0.06) 0%, transparent 60%)' }}
                     />
                   )}
 
@@ -267,7 +269,7 @@ export default function ResearchProfile() {
                     <div className="space-y-2 flex-grow min-w-0">
                       <div className="flex items-start gap-2">
                         {pub.citations >= CITATION_THRESHOLD_HIGH && (
-                          <Star className="w-3.5 h-3.5 mt-1 shrink-0" style={{ color: '#ff00d8', fill: '#ff00d8' }} />
+                          <Star className="w-3.5 h-3.5 mt-1 shrink-0" style={{ color: '#f27291', fill: '#f27291' }} />
                         )}
                         <h3 className="text-base font-semibold text-nord-0 group-hover:text-nord-10 transition-colors leading-snug">
                           {pub.title}

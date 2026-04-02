@@ -1,20 +1,46 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Estela Pérez Luque — Portfolio
 
-# Run and deploy your AI Studio app
+Personal portfolio website for Estela Pérez Luque, PhD. Data Scientist | Technical Strategy & Customer-Driven Systems.
 
-This contains everything you need to run your app locally.
+**Live site:** https://estepelu.github.io/PortfolioEstela/
 
-View your app in AI Studio: https://ai.studio/apps/fe684749-f3f0-4428-807e-c1eca7db8104
+## Tech stack
 
-## Run Locally
+- React 19 + TypeScript
+- Vite 6
+- Tailwind CSS v4
+- Framer Motion (motion/react)
+- Recharts
+- Lucide React icons
 
-**Prerequisites:**  Node.js
+## Color palette
 
+- `#f27291` — Rose (primary accent)
+- `#82241f` — Burgundy (dark accent / hover states)
+- `#b5decc` — Mint (secondary accent)
+- Nord color system for structural text and backgrounds
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Local development
+
+```bash
+npm install
+npm run dev
+```
+
+Open http://localhost:5173
+
+## Build
+
+```bash
+npm run build
+```
+
+## Deployment
+
+Automatically deployed to GitHub Pages on every push to `main` via GitHub Actions. No manual steps required.
+
+To set up for the first time: go to **Settings → Pages → Source → GitHub Actions** in the GitHub repository.
+
+## Content
+
+All content (resume, publications, projects, Google Scholar stats) lives in `src/data.json`. Edit that file to update any text, numbers, or links.
