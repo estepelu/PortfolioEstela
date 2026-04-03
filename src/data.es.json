@@ -1,0 +1,225 @@
+{
+  "owner": { "title": "Científica de datos | Estrategia técnica y sistemas orientados al cliente" },
+  "philosophy": "Creo en la importancia de tener marcos rigurosos para evaluar sistemas y una comprensión integral para conectar los puntos. Me impulsa resolver problemas del mundo real comprendiendo las necesidades del cliente y proporcionando las mejores soluciones a través de un análisis profundo de sistemas.",
+  "resumeProfile": "Doctora en Informática con más de 5 años transformando sistemas complejos y datos en decisiones, productos y resultados para el cliente. He liderado proyectos multifuncionales en colaboraciones industriales, investigación internacional y un emprendimiento startup, abarcando desde modelado predictivo y pipelines de validación hasta comunicación con stakeholders, análisis de mercado y entrega orientada al cliente. Me desenvuelvo donde la profundidad técnica se encuentra con la realidad empresarial: ya sea definiendo una estrategia de datos, facilitando el éxito del cliente o construyendo el fundamento analítico para una estrategia de mercado.",
+  "interests": ["Sistemas autónomos", "IA centrada en el ser humano", "Analítica de producto", "Modelado de comportamiento humano", "Diseño de experiencia del cliente", "Tecnología de simulación"],
+  "experience": [
+    {
+      "role": "Ingeniera de investigación y doctoranda",
+      "company": "University of Skövde, Sweden",
+      "period": "Sep 2020 to Oct 2025",
+      "bullets": [
+        "Construí pipelines end-to-end en Python y MATLAB para validación de simulaciones y benchmarking de modelos, comparando resultados de predicción contra datos de captura de movimiento y datos de vehículos mediante RMSE, DTW y métricas de Bland-Altman para producir evidencia reproducible y trazable para decisiones de ingeniería y planificación de pruebas.",
+        "Lideré proyectos de I+D con múltiples stakeholders junto a Volvo Cars, Volvo Trucks, Scania, Texas Tech University y University of Antwerp, coordinando alcance, plazos y expectativas entre equipos técnicos y no técnicos, resultando en más de 15 publicaciones peer-reviewed y 145 citas totales.",
+        "Apliqué optimización multiobjetivo (NSGA-II) a problemas de diseño interior de vehículos, evaluando más de 1.000 configuraciones para 14 maniquíes humanos digitales y transformando la evaluación ergonómica de prueba y error manual a exploración sistemática y escalable del espacio de diseño.",
+        "Diseñé y ejecuté estudios experimentales con sistemas de captura de movimiento y escaneo corporal 4D, gestionando desarrollo de protocolos, aprobaciones éticas y pipelines de datos de principio a fin, desde el reclutamiento de participantes hasta resultados listos para publicación.",
+        "Supervisé más de 10 trabajos de fin de grado e impartí docencia a nivel de grado y máster; elegida representante estudiantil y miembro de junta directiva representando a más de 40 doctorandos en la gobernanza investigadora universitaria."
+      ]
+    },
+    {
+      "role": "Investigadora visitante",
+      "company": "University of Antwerp, Belgium",
+      "period": "Sep 2024 to Mar 2025",
+      "bullets": [
+        "Gestioné una estancia de investigación internacional de 6 meses: lideré la solicitud ética para aprobación de recopilación de datos a gran escala durante 5 años, diseñé protocolos de captura de movimiento y escaneo corporal 4D para más de 30 participantes, y construí pipelines de datos reproducibles para validación consistente entre instituciones."
+      ]
+    },
+    {
+      "role": "Cofundadora y responsable de I+D",
+      "company": "Swe-Ex AB (Startup) at Science Park Skövde, Sweden",
+      "period": "Sep 2021 to Mar 2023",
+      "bullets": [
+        "Cofundé una startup de tecnología wearable que desarrollaba equipamiento de soporte de seguridad inspirado en exoesqueletos para entornos de montaje, incubada en Science Park Skövde durante 2 años.",
+        "Traduje necesidades de usuario y requisitos de seguridad en objetivos de producto medibles y dirigí tres iteraciones completas de prototipo desde CAD hasta validación física con componentes impresos en 3D, textiles y de acero.",
+        "Desarrollé perspicacia comercial mediante comunicación con inversores, análisis de mercado en más de 10 industrias y planificación empresarial estructurada, conectando capacidad técnica con viabilidad de producto y estrategia de mercado."
+      ]
+    },
+    {
+      "role": "Asistente de investigación",
+      "company": "University of Skövde, Sweden",
+      "period": "Jun 2019 to Sep 2020",
+      "bullets": [
+        "Contribuí a proyectos aplicados con más de 6 socios industriales: realicé evaluaciones ergonómicas (RULA, REBA), produje informes analíticos orientados a la toma de decisiones y contenido educativo, y presenté hallazgos a equipos multifuncionales para apoyar decisiones de desarrollo de producto."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Doctorado en Informática",
+      "school": "University of Skövde, Sweden",
+      "period": "Sep 2020 to Oct 2025",
+      "details": "Tesis: Human Posture and Motion Prediction for Automotive Ergonomics Design. Modelado predictivo, validación de simulaciones y benchmarking contra datasets reales."
+    },
+    {
+      "degree": "Máster en Automatización Inteligente",
+      "school": "University of Skövde, Sweden",
+      "period": "Aug 2018 to Jun 2019",
+      "details": "Tesis: Evaluación experimental de tres exoesqueletos de tren superior con captura de movimiento Xsens."
+    },
+    {
+      "degree": "Grado en Ingeniería Mecánica (ERASMUS+)",
+      "school": "University of Skövde, Sweden",
+      "period": "Aug 2017 to Jun 2018"
+    },
+    {
+      "degree": "Grado en Ingeniería Mecánica",
+      "school": "University of Málaga, Spain",
+      "period": "Aug 2012 to Jun 2018"
+    }
+  ],
+  "projects": [
+    {
+      "id": "phd-thesis",
+      "tagline": "Seis artículos. Una pregunta: ¿pueden las herramientas de simulación predecir cómo se mueven las personas reales en vehículos reales? Esto es lo que encontré.",
+      "challenge": "Las herramientas DHM son estándar en la ingeniería automotriz, pero los profesionales perdían tiempo en correcciones manuales, predicciones posturales inexactas y flujos de trabajo que no conectaban la simulación digital con el comportamiento humano real. Nadie había realizado un estudio sistemático y basado en evidencia de dónde exactamente fallaban las herramientas ni qué se necesitaba para solucionarlo.",
+      "whatIDid": [
+        "Comencé entrevistando a 10 diseñadores expertos en ergonomía de 7 empresas automotrices suecas para mapear dónde fallaban las herramientas existentes antes de construir nada",
+        "Desarrollé el procedimiento Body Shape Alignment que estandarizó cómo se colocan los maniquíes digitales en modelos de vehículos, utilizado posteriormente en 3 estudios subsiguientes",
+        "Construí un marco de optimización multiobjetivo automatizado que ejecutó más de 1 millón de configuraciones de simulación para identificar diseños interiores que funcionan para todos los tipos corporales",
+        "Comparé métodos de predicción postural en competencia contra datos reales de 199 conductores de Volvo en dos tipos de vehículos, proporcionando a los profesionales una regla de decisión clara",
+        "Creé estrategias posturales basadas en estatura que mejoraron la precisión de predicción para conductores bajos en un 37 % utilizando datos de pruebas OEM existentes",
+        "Desarrollé y validé un nuevo método heurístico de predicción de movimiento (SFM) con un error de velocidad 11 veces menor que el estándar existente"
+      ],
+      "impact": [
+        "6 publicaciones peer-reviewed, 145 citas totales, h-index 8",
+        "Los profesionales ahora cuentan con orientación basada en evidencia: qué método postural para qué tipo de vehículo, y cómo retroalimentar datos existentes a las herramientas de simulación",
+        "El procedimiento de alineación del Paper B se convirtió en el fundamento estandarizado para 3 estudios subsiguientes",
+        "La precisión de predicción postural para conductores bajos mejoró de 36,4 mm a 22,9 mm RMSE (reducción del 37 %)"
+      ],
+      "learning": "La investigación que comienza escuchando a los profesionales antes de construir cualquier cosa resuelve problemas que realmente importan. Cada contribución técnica de esta tesis se rastreó directamente hasta una brecha confirmada por personas que realizan el trabajo en la industria."
+    },
+    {
+      "id": "paper-a-ergonomics-workflows",
+      "tagline": "Antes de construir mejores herramientas, entrevisté a quienes las usan. Todos los expertos confirmaron los mismos cuatro problemas.",
+      "challenge": "Los OEM automotrices suecos estaban invirtiendo en herramientas DHM pero carecían de una imagen basada en evidencia de cómo los diseñadores de ergonomía realmente las usaban, dónde fallaban y qué se necesitaba realmente. Las mejoras de herramientas se impulsaban por suposiciones en lugar de la realidad de los profesionales.",
+      "whatIDid": [
+        "Diseñé y realicé 10 entrevistas semiestructuradas con expertos (60 a 75 minutos cada una) con diseñadores de ergonomía de 7 OEM y proveedores",
+        "Construí un marco de codificación cualitativa estructurado para categorizar hallazgos en etapas de flujo de trabajo, uso de herramientas, puntos de dolor y necesidades futuras",
+        "Mapeé el flujo de trabajo ergonómico completo desde la definición de requisitos hasta la validación, identificando dónde se utilizaba cada tipo de herramienta y dónde fallaba"
+      ],
+      "impact": [
+        "Los 10 participantes confirmaron independientemente: las herramientas DHM eran lentas, difíciles de usar y producían predicciones posturales inexactas que requerían corrección manual",
+        "Identifiqué 4 brechas concretas de investigación confirmadas por cada experto: predicción del comportamiento humano, usabilidad de herramientas, métodos de evaluación ergonómica e integración de sistemas",
+        "Estos hallazgos dieron forma directamente a la agenda de investigación técnica para los artículos B a F",
+        "Publicado en DESIGN 2022, una de las principales conferencias internacionales de investigación en diseño"
+      ],
+      "learning": "Los profesionales de la industria son la mejor brújula de investigación. Cuando los 10 expertos nombran independientemente los mismos 4 problemas, esos son los 4 problemas que vale la pena resolver."
+    },
+    {
+      "id": "paper-b-hip-joint-location",
+      "tagline": "Los maniquíes digitales flotaban en el espacio porque el punto de referencia del vehículo no coincide con la articulación de cadera humana. Construí el procedimiento para solucionarlo.",
+      "challenge": "Antes de que cualquier simulación de postura de conducción pueda comenzar, el maniquí digital debe colocarse correctamente en el vehículo. El punto de referencia estándar del vehículo (el punto H) no corresponde a la articulación anatómica de la cadera humana, y no existía un método estandarizado para cerrar la brecha. Los ingenieros ajustaban manualmente, produciendo resultados que dependían de quién ejecutaba la simulación. La discrepancia era mayor para tipos corporales con alto IMC.",
+      "whatIDid": [
+        "Desarrollé el procedimiento Body Shape Alignment (BSA) utilizando una plantilla virtual de máquina de punto H para anclar el posicionamiento del maniquí a la geometría del asiento del vehículo",
+        "Probé BSA con 14 maniquíes digitales que cubrían todo el rango de IMC de la base de datos antropométrica CAESAR, incluyendo cuerpos masculinos y femeninos",
+        "Comparé BSA directamente contra el Statistical Prediction Method (SPM) existente en un modelo CAD de Volkswagen Beetle usando mallas corporales 3D"
+      ],
+      "impact": [
+        "SPM produjo posiciones flotantes físicamente irreales para maniquíes con alto IMC (despegándose hacia adelante de la superficie del asiento), requiriendo corrección manual cada vez",
+        "BSA mantuvo un contacto con el asiento consistente y realista en los 14 maniquíes independientemente del tipo corporal",
+        "BSA se convirtió en el paso de alineación estandarizado para los artículos C, D y E, proporcionando un fundamento reproducible para todo el programa de investigación"
+      ],
+      "learning": "Las correcciones de infraestructura poco atractivas son a menudo las contribuciones técnicas de mayor apalancamiento. Si las condiciones iniciales de una simulación son incorrectas y no reproducibles, ninguna cantidad de modelado sofisticado posterior lo corregirá."
+    },
+    {
+      "id": "paper-c-sbmoo-occupant-packaging",
+      "tagline": "La ergonomía del interior del vehículo es un problema de optimización. Construí el marco que lo trata como tal.",
+      "challenge": "Diseñar un interior de vehículo que funcione ergonómicamente para conductores de todos los tamaños corporales implica equilibrar 5 variables de diseño contra 4 restricciones geométricas para 14 perfiles antropométricos simultáneamente. Los ingenieros resolvían esto mediante prueba y error manual, una configuración a la vez. Demasiado lento para explorar el espacio de diseño real y demasiado subjetivo para producir resultados trazables.",
+      "whatIDid": [
+        "Construí un pipeline de optimización automatizado que acopla el algoritmo genético NSGA-II con el software DHM IPS IMMA",
+        "Definí 5 variables de diseño (posiciones de asiento y volante), 4 restricciones geométricas duras (holguras de cabeza, rodilla, muslo y ángulo de visión) y un objetivo ergonómico basado en ángulos articulares para 14 maniquíes humanos digitales",
+        "Ejecuté 1.000 iteraciones de optimización, evaluando 75 configuraciones posturales por iteración para 14 maniquíes, un total de más de 1 millón de ejecuciones de simulación individuales"
+      ],
+      "impact": [
+        "El algoritmo convergió aproximadamente a las 550 iteraciones, identificando un diseño Pareto-óptimo con solo 38 ángulos articulares inaceptables en toda la población de 14 maniquíes",
+        "Las 4 restricciones geométricas duras fueron satisfechas por la solución seleccionada",
+        "Demostró que la exploración sistemática automatizada identifica soluciones que la iteración manual nunca alcanzaría en un plazo de proyecto práctico",
+        "Publicado en International Journal of Industrial Ergonomics (2025)"
+      ],
+      "learning": "Una vez que un problema de diseño puede expresarse como objetivos y restricciones, la automatización casi siempre supera la prueba y error humano tanto en velocidad como en calidad de solución. El apalancamiento está en la formulación, no en ejecutar el algoritmo."
+    },
+    {
+      "id": "paper-d-driving-posture-comparison",
+      "tagline": "¿Qué método de predicción postural DHM es realmente más preciso? La respuesta depende del vehículo que estés diseñando.",
+      "challenge": "Los ingenieros automotrices usan herramientas DHM diariamente para predecir dónde posicionarán los conductores sus asientos, volantes y altura de ojos durante el diseño del vehículo. Existen dos enfoques principales de predicción, pero nadie los había probado directamente entre sí contra un gran dataset real en múltiples tipos de vehículos. Los ingenieros elegían métodos por costumbre, no por evidencia.",
+      "whatIDid": [
+        "Analicé datos reales de posición preferida de 199 conductores en dos vehículos Volvo con diferentes configuraciones de altura de asiento (SUV con asiento bajo y modelo con asiento alto)",
+        "Comparé el Statistical Prediction Method (basado en regresión) contra el Optimization Prediction Method (maximización de confort) para posiciones de punto H, punto ocular y volante",
+        "Apliqué RMSE, MAE, correlación de Pearson y análisis de Bland-Altman, introduciendo gráficos de Bland-Altman en este dominio de investigación por primera vez"
+      ],
+      "impact": [
+        "OPM superó en punto H anteroposterior en ambos vehículos (47,2 mm vs 48,8 mm RMSE en Vehículo A; 48,5 mm vs 59,9 mm en Vehículo B)",
+        "SPM superó en punto H vertical en ambos vehículos (23,4 mm vs OPM 26,0 mm en Vehículo A)",
+        "Ambos métodos tuvieron bajo rendimiento para conductores bajos y altos, apuntando directamente a la siguiente pregunta de investigación abordada en Paper E",
+        "El análisis de Bland-Altman reveló sesgos de predicción sistemáticos invisibles solo para métricas RMSE"
+      ],
+      "learning": "En la mayoría de problemas de predicción reales, ningún modelo individual gana en todas partes. El resultado más útil suele ser una regla de decisión clara: usa este método para este contexto, usa aquel para el otro."
+    },
+    {
+      "id": "paper-e-simulation-real-data-integration",
+      "tagline": "Los datos de clínicas posturales de OEM suelen quedar sin usar. Construí el pipeline que los retroalimenta a las herramientas DHM y mejoré la predicción para tamaños corporales extremos hasta un 37 %.",
+      "challenge": "Las herramientas DHM aplican una única estrategia postural genérica para todos los conductores independientemente del tamaño corporal. Los conductores bajos y altos obtienen consistentemente las peores predicciones. Mientras tanto, la mayoría de los OEM automotrices recopilan rutinariamente datos de postura de conductores en clínicas de prueba que quedan sin usar y desconectados de sus modelos de simulación.",
+      "whatIDid": [
+        "Construí un pipeline de 3 pasos para retroalimentar datos reales de conductores a la predicción DHM: medí posiciones preferidas de 49 conductores de Volvo Cars, generé maniquíes individualizados en IPS IMMA, simulé cada maniquí en su posición medida para extraer ángulos articulares representativos",
+        "Derivé 3 estrategias posturales basadas en estatura (baja, media, alta) a partir de los datos extraídos",
+        "Comparé estrategias basadas en estatura contra la estrategia genérica predeterminada Seated Car usando RMSE para posiciones de punto H y punto ocular"
+      ],
+      "impact": [
+        "El RMSE vertical del punto H mejoró de 36,4 mm a 22,9 mm para conductores bajos (reducción del 37 %)",
+        "El RMSE vertical del punto ocular mejoró de 32,3 mm a 22,8 mm para conductores bajos y de 27,1 mm a 22,9 mm para conductores altos",
+        "Demostró que los datos existentes de clínicas OEM con 49 participantes son suficientes para mejorar la precisión de simulación sin un nuevo estudio dedicado",
+        "Presentado en el 22.º IEA World Congress (2024)"
+      ],
+      "learning": "Muchas organizaciones tienen datos que podrían mejorar sus modelos. Conectar activos de datos existentes con las herramientas que los necesitan suele tener mayor valor que recopilar datos nuevos desde cero."
+    },
+    {
+      "id": "paper-f-reaching-motion-prediction",
+      "tagline": "Construí un nuevo método heurístico de predicción para movimientos de alcance 3D que supera al estándar basado en optimización con una precisión de velocidad 11 veces mayor.",
+      "challenge": "Las herramientas DHM predicen cómo los conductores alcanzan los controles del vehículo, pero los métodos existentes basados en optimización requieren especificación completa de la tarea por adelantado, son computacionalmente costosos y producen trayectorias promedio que no capturan la variabilidad humana real. Tampoco existía un marco de evaluación establecido que tratara la precisión de trayectoria, la precisión de velocidad y la precisión de ángulos articulares como dimensiones de rendimiento separadas.",
+      "whatIDid": [
+        "Desarrollé el Steering-FABRIK Method (SFM): combiné un modelo de dinámica de dirección 3D, modelo de velocidad adaptativo y cinemática inversa FABRIK en un único pipeline de predicción",
+        "Capturé y analicé 120 secuencias reales de movimiento de alcance (10 participantes, 4 tareas de alcance, 3 intentos cada una) usando un sistema de captura de movimiento óptico de 8 cámaras",
+        "Comparé SFM directamente contra el método basado en optimización (OPM) usando un marco de evaluación de doble métrica que combina RMSE y Dynamic Time Warping (DTW)"
+      ],
+      "impact": [
+        "SFM redujo el error de velocidad pico de 31,6 cm/s (OPM) a 2,8 cm/s, una mejora de 11 veces en precisión de velocidad",
+        "SFM superó en precisión de trayectoria en 3 de 4 tareas (Tarea 1 RMSE de trayectoria: 23,4 cm vs 31,3 cm para OPM)",
+        "OPM superó en precisión de ángulos articulares (10,8 grados vs 12,8 grados RMSE), estableciendo una clara división de casos de uso entre los dos métodos",
+        "El análisis DTW reveló comportamientos sistemáticos del modelo que RMSE perdió por completo, estableciendo mejores prácticas de evaluación"
+      ],
+      "learning": "Cómo evalúas un modelo determina lo que aprendes de él. El RMSE por sí solo enmascaró diferencias críticas que DTW reveló. Mejor siempre debe responderse en relación con un propósito específico."
+    },
+    {
+      "id": "motion-capture-system-validation",
+      "tagline": "Datasets experimentales de alta calidad de vehículos reales y captura óptica de movimiento, utilizados para probar herramientas de simulación contra el comportamiento humano real.",
+      "challenge": "Los métodos de simulación para predicción de postura y movimiento humano solo son creíbles si se prueban contra comportamiento real medido. La mayoría de la investigación en DHM toma atajos en este paso o valida contra datasets pequeños o de baja calidad, lo que subestima cuán mal funcionan las herramientas actuales y dónde fallan.",
+      "whatIDid": [
+        "Diseñé protocolos experimentales para dos estudios de validación: postura de conducción en vehículo con 199 conductores reales de Volvo en dos tipos de vehículos, y alcance de extremidades superiores con 10 participantes usando un sistema de captura de movimiento óptico de 8 cámaras",
+        "Apliqué RMSE, DTW, correlación de Pearson y análisis de Bland-Altman para comparar resultados de simulación contra la verdad fundamental medida",
+        "Estandaricé pipelines de procesamiento de datos para garantizar reproducibilidad entre estudios e instituciones de investigación"
+      ],
+      "impact": [
+        "Generé los datasets de verdad fundamental que permitieron una comparación directa rigurosa de modelos de predicción en competencia en los artículos D y F",
+        "Primera aplicación del análisis de Bland-Altman a la predicción postural DHM, revelando sesgos sistemáticos ocultos por métricas estándar de RMSE",
+        "Los datasets permanecen disponibles para desarrollo futuro de modelos y benchmarking sin reclutamiento adicional de participantes"
+      ],
+      "learning": "Buenos datos de validación son un multiplicador. El mismo dataset experimental impulsó múltiples preguntas de investigación independientes y seguirá siendo útil mucho después de que el estudio original esté completo."
+    },
+    {
+      "id": "sweex-ab",
+      "tagline": "Dos años construyendo prototipos de exoesqueletos para trabajadores de montaje en Science Park Skövde, desde necesidades del usuario hasta pitch para inversores.",
+      "challenge": "La tecnología de seguridad wearable para trabajadores de montaje se sitúa en la intersección de factores humanos, diseño mecánico, restricciones de fabricación y viabilidad comercial. Las startups de hardware en etapa temprana enfrentan el desafío de avanzar en los cuatro frentes simultáneamente con recursos limitados. Sin un proceso estructurado para traducir necesidades del usuario en objetivos de diseño comprobables, los equipos gastan iteraciones en los problemas equivocados.",
+      "whatIDid": [
+        "Cofundé Swe-Ex AB a través de la incubadora de Science Park Skövde, desarrollando equipamiento de soporte de seguridad inspirado en exoesqueletos para entornos de montaje",
+        "Traduje requisitos de seguridad del usuario y restricciones ergonómicas en objetivos de producto medibles y dirigí tres iteraciones completas de prototipo desde CAD hasta validación física",
+        "Realicé análisis de mercado en más de 10 industrias, gestioné comunicación con inversores y desarrollé estrategia de mercado durante 2 años en la incubadora"
+      ],
+      "impact": [
+        "Entregué tres versiones funcionales de prototipo con ajuste ergonómico y rendimiento estructural progresivamente refinados",
+        "Construí un panorama competitivo integral y caso de negocio que informó la dirección del producto y conversaciones con inversores",
+        "Desarrollé experiencia comercial directa conectando capacidad técnica con viabilidad de producto, comunicación con stakeholders y posicionamiento de mercado"
+      ],
+      "learning": "Construir algo físico con usuarios reales en un entorno con recursos limitados enseña priorización que ningún estudio de simulación puede replicar. La incubadora hizo concreta la conexión entre rigor técnico y viabilidad comercial."
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "owner": { "title": "Datavetare | Teknisk strategi & kunddrivna system" },
+  "philosophy": "Jag tror på vikten av rigorösa ramverk för att utvärdera system och en helhetsförståelse för att koppla samman delarna. Jag drivs av att lösa verkliga problem genom att förstå kundbehov och leverera de bästa lösningarna genom djup systemanalys.",
+  "resumeProfile": "Doktor i informatik med 5+ års erfarenhet av att omvandla komplexa system och data till beslut, produkter och kundresultat. Jag har lett tvärfunktionella projekt inom industrisamarbeten, internationell forskning och ett startupföretag – från prediktiv modellering och valideringspipelines till stakeholderkommunikation, marknadsanalys och kundorienterad leverans. Jag trivs där tekniskt djup möter affärsverklighet: oavsett om det handlar om att definiera en datastrategi, möjliggöra kundframgång eller bygga det analytiska fundamentet för en marknadsstrategi.",
+  "interests": ["Autonoma system", "Människocentrerad AI", "Produktanalys", "Modellering av mänskligt beteende", "Kundupplevelsedesign", "Simuleringsteknik"],
+  "experience": [
+    {
+      "role": "Forskningsingenjör och doktorand",
+      "company": "University of Skövde, Sweden",
+      "period": "Sep 2020 to Oct 2025",
+      "bullets": [
+        "Byggde end-to-end-pipelines i Python och MATLAB för simuleringsvalidering och modellbenchmarking, jämförde prediktionsresultat mot rörelsefångst- och fordonsdata med RMSE, DTW och Bland-Altman-metodik för att producera reproducerbar och spårbar evidens för ingenjörsbeslut och testplanering.",
+        "Ledde FoU-projekt med flera intressenter tillsammans med Volvo Cars, Volvo Trucks, Scania, Texas Tech University och University of Antwerp, koordinerade omfattning, tidsplaner och förväntningar mellan tekniska och icke-tekniska team, vilket resulterade i 15+ peer-reviewed-publikationer och 145 totala citeringar.",
+        "Tillämpade flerålsoptimering (NSGA-II) på fordonsinredningsproblem, utvärderade 1 000+ konfigurationer för 14 digitala människomodeller och förflyttade ergonomibedömning från manuell trial-and-error till systematisk, skalbar designutforskning.",
+        "Designade och genomförde experimentella studier med rörelsefångst- och 4D-kroppsskanningssystem, ansvarade för protokollutveckling, etikgodkännanden och datapipelines från rekrytering av deltagare till publikationsklara resultat.",
+        "Handledde 10+ kandidatarbeten och undervisade på kandidat- och masternivå; vald studentrepresentant och styrelseledamot som representerade 40+ doktorander i universitetets forskningsstyrning."
+      ]
+    },
+    {
+      "role": "Gästforskare",
+      "company": "University of Antwerp, Belgium",
+      "period": "Sep 2024 to Mar 2025",
+      "bullets": [
+        "Genomförde en 6 månaders internationell forskningsvistelse: ledde etikansökan för 5 års storskalig datainsamling, designade protokoll för rörelsefångst och 4D-kroppsskanning för 30+ deltagare, och byggde reproducerbara datapipelines för konsekvent validering mellan institutioner."
+      ]
+    },
+    {
+      "role": "Medgrundare och FoU-ansvarig",
+      "company": "Swe-Ex AB (Startup) at Science Park Skövde, Sweden",
+      "period": "Sep 2021 to Mar 2023",
+      "bullets": [
+        "Medgrundade en startup inom bärbar teknik som utvecklade exoskelettinspirerad säkerhetsutrustning för monteringsmiljöer, inkuberad vid Science Park Skövde under 2 år.",
+        "Översatte användarbehov och säkerhetskrav till mätbara produktmål och drev tre fullständiga prototypiterationer från CAD till fysisk validering med 3D-utskrivna, textil- och stålkomponenter.",
+        "Byggde kommersiell förståelse genom investerarkommunikation, marknadsanalys över 10+ branscher och strukturerad affärsplanering – kopplade teknisk kapacitet till produktlivskraft och marknadsstrategi."
+      ]
+    },
+    {
+      "role": "Forskningsassistent",
+      "company": "University of Skövde, Sweden",
+      "period": "Jun 2019 to Sep 2020",
+      "bullets": [
+        "Bidrog till tillämpade projekt med 6+ industripartners: genomförde ergonomiska bedömningar (RULA, REBA), producerade beslutsklara analytiska rapporter och utbildningsmaterial, och presenterade resultat för tvärfunktionella team för att stödja produktutvecklingsbeslut."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Doktor i informatik",
+      "school": "University of Skövde, Sweden",
+      "period": "Sep 2020 to Oct 2025",
+      "details": "Avhandling: Human Posture and Motion Prediction for Automotive Ergonomics Design. Prediktiv modellering, simuleringsvalidering och benchmarking mot verkliga dataset."
+    },
+    {
+      "degree": "Master i intelligent automation",
+      "school": "University of Skövde, Sweden",
+      "period": "Aug 2018 to Jun 2019",
+      "details": "Uppsats: Experimentell utvärdering av tre överkroppsexoskelett med Xsens-rörelsefångst."
+    },
+    {
+      "degree": "Kandidatexamen i maskinteknik (ERASMUS+)",
+      "school": "University of Skövde, Sweden",
+      "period": "Aug 2017 to Jun 2018"
+    },
+    {
+      "degree": "Civilingenjörsexamen i maskinteknik",
+      "school": "University of Málaga, Spain",
+      "period": "Aug 2012 to Jun 2018"
+    }
+  ],
+  "projects": [
+    {
+      "id": "phd-thesis",
+      "tagline": "Sex artiklar. En fråga: kan simuleringsverktyg förutsäga hur riktiga människor rör sig i riktiga fordon? Här är vad jag fann.",
+      "challenge": "DHM-verktyg är standard inom fordonsindustrin, men yrkesverksamma förlorade tid på manuella korrigeringar, felaktiga hållningsprediktioner och arbetsflöden som inte kopplade digital simulering till verkligt mänskligt beteende. Ingen hade gjort en systematisk, evidensbaserad studie av exakt var verktygen brast eller vad som krävdes för att åtgärda det.",
+      "whatIDid": [
+        "Började med att intervjua 10 expertergonomidesigners från 7 svenska fordonsföretag för att kartlägga var befintliga verktyg brast innan något byggdes",
+        "Utvecklade Body Shape Alignment-proceduren som standardiserade hur digitala manikins placeras i fordonsmodeller, vilket sedan användes i 3 efterföljande studier",
+        "Byggde ett automatiserat flerålsoptimeringsramverk som körde över 1 miljon simuleringskonfigurationer för att identifiera inredningslösningar som fungerar för alla kroppstyper",
+        "Jämförde konkurrerande hållningsprediktionsmetoder mot verkliga data från 199 Volvo-förare i två fordonstyper, vilket gav yrkesverksamma en tydlig beslutsregel",
+        "Skapade kroppslängdsbaserade hållningsstrategier som förbättrade prediktionsnoggrannheten för korta förare med 37 % med befintliga OEM-testdata",
+        "Utvecklade och validerade en ny heuristisk rörelseprediktionsmetod (SFM) med 11 gånger lägre hastighetsfel än den befintliga standarden"
+      ],
+      "impact": [
+        "6 peer-reviewed-publikationer, 145 totala citeringar, h-index 8",
+        "Yrkesverksamma har nu evidensbaserad vägledning: vilken hållningsmetod för vilken fordonstyp, och hur befintliga data kan återkopplas till simuleringsverktyg",
+        "Justeringsproceduren från Paper B blev det standardiserade fundamentet för 3 efterföljande studier",
+        "Hållningsprediktionens noggrannhet för korta förare förbättrades från 36,4 mm till 22,9 mm RMSE (37 % minskning)"
+      ],
+      "learning": "Forskning som börjar med att lyssna på yrkesverksamma innan man bygger något löser problem som verkligen spelar roll. Varje tekniskt bidrag i denna avhandling spårades direkt tillbaka till en bekräftad lucka av personer som utför arbetet i industrin."
+    },
+    {
+      "id": "paper-a-ergonomics-workflows",
+      "tagline": "Innan jag byggde bättre verktyg intervjuade jag dem som använder dem. Samtliga experter bekräftade samma fyra problem.",
+      "challenge": "Svenska fordons-OEM:er investerade i DHM-verktyg men saknade en evidensbaserad bild av hur ergonomidesigners faktiskt använde dem, var verktygen brast och vad som verkligen behövdes. Verktygsförbättringar drevs av antaganden snarare än verkligheten hos yrkesverksamma.",
+      "whatIDid": [
+        "Designade och genomförde 10 semistrukturerade expertintervjuer (60–75 minuter vardera) med ergonomidesigners från 7 OEM:er och leverantörer",
+        "Byggde ett strukturerat kvalitativt kodningsramverk för att kategorisera resultat över arbetsflödessteg, verktygsanvändning, smärtpunkter och framtida behov",
+        "Kartlade hela ergonomiarbetsflödet från kravdefinition till validering, identifierade var varje typ av verktyg användes och var det fallerade"
+      ],
+      "impact": [
+        "Alla 10 deltagare bekräftade oberoende: DHM-verktyg var långsamma, svåra att använda och producerade felaktiga hållningsprediktioner som krävde manuell korrigering",
+        "Identifierade 4 konkreta forskningsluckor bekräftade av varje expert: prediktion av mänskligt beteende, verktygsanvändbarhet, ergonomibedömningsmetoder och systemintegration",
+        "Dessa resultat formade direkt den tekniska forskningsagendan för artiklarna B till F",
+        "Publicerad vid DESIGN 2022, en av de ledande internationella designforskningskonferenserna"
+      ],
+      "learning": "Yrkesverksamma inom industrin är den bästa forskningskompassen. När alla 10 experter oberoende nämner samma 4 problem är det de 4 problemen som är värda att lösa."
+    },
+    {
+      "id": "paper-b-hip-joint-location",
+      "tagline": "Digitala manikins svävade i luften eftersom fordonsreferenspunkten inte matchar den mänskliga höftleden. Jag byggde proceduren för att lösa det.",
+      "challenge": "Innan en simulering av körställning kan påbörjas måste den digitala manikinen placeras korrekt i fordonet. Standardreferenspunkten (H-punkten) motsvarar inte den mänskliga anatomiska höftleden, och ingen standardiserad metod fanns för att överbrygga gapet. Ingenjörer justerade manuellt, vilket gav resultat beroende på vem som körde simuleringen. Avvikelsen var störst för kroppstyper med högt BMI.",
+      "whatIDid": [
+        "Utvecklade Body Shape Alignment (BSA)-proceduren med en virtuell H-punktsmaskinmall för att förankra manikinpositionering mot fordonssätets geometri",
+        "Testade BSA för 14 digitala manikins som täckte hela BMI-spannet från CAESAR-antropometridatabasen, inklusive både manliga och kvinnliga kroppar",
+        "Jämförde BSA direkt mot den befintliga Statistical Prediction Method (SPM) i en Volkswagen Beetle CAD-modell med 3D-kroppsmesh"
+      ],
+      "impact": [
+        "SPM producerade fysikaliskt orealistiska svävande positioner för manikins med högt BMI (lossnade framåt från sätesytan), vilket krävde manuell korrigering varje gång",
+        "BSA bibehöll konsekvent, realistisk säteskontakt för alla 14 manikins oavsett kroppstyp",
+        "BSA blev det standardiserade justeringssteget för artiklarna C, D och E, vilket gav en reproducerbar grund för hela forskningsprogrammet"
+      ],
+      "learning": "Oattraktiva infrastrukturförbättringar är ofta de tekniska bidragen med störst hävstång. Om startvillkoren för en simulering är felaktiga och ej reproducerbara kan ingen mängd sofistikerad modellering nedströms rätta till det."
+    },
+    {
+      "id": "paper-c-sbmoo-occupant-packaging",
+      "tagline": "Fordonsinredningsergonomi är ett optimeringsproblem. Jag byggde ramverket som behandlar det som ett sådant.",
+      "challenge": "Att designa en fordonsinredning som fungerar ergonomiskt för förare av alla kroppsstorlekar innebär att balansera 5 designvariabler mot 4 geometriska begränsningar för 14 antropometriska profiler samtidigt. Ingenjörer löste detta genom manuell trial-and-error, en konfiguration i taget – för långsamt för att utforska det verkliga designutrymmet och för subjektivt för att ge spårbara resultat.",
+      "whatIDid": [
+        "Byggde en automatiserad optimeringspipeline som kopplade den genetiska algoritmen NSGA-II med DHM-programvaran IPS IMMA",
+        "Definierade 5 designvariabler (sätes- och rattpositioner), 4 geometriska hårda begränsningar (huvud-, knä-, lårfrigång och synvinkel) och ett ledvinkelbaserat ergonomimål för 14 digitala människomodeller",
+        "Körde 1 000 optimeringsiterationer med 75 hållningskonfigurationer för varje iteration över 14 manikins, totalt över 1 miljon individuella simuleringskörningar"
+      ],
+      "impact": [
+        "Algoritmen konvergerade vid cirka 550 iterationer och identifierade en Pareto-optimal design med endast 38 oacceptabla ledvinklar för hela populationen av 14 manikins",
+        "Alla 4 geometriska hårda begränsningar uppfylldes av den valda lösningen",
+        "Visade att automatiserad systematisk utforskning identifierar lösningar som manuell iteration aldrig skulle nå inom en praktisk projekttidsram",
+        "Publicerad i International Journal of Industrial Ergonomics (2025)"
+      ],
+      "learning": "När ett designproblem kan uttryckas som mål och begränsningar överträffar automation nästan alltid mänsklig trial-and-error i både hastighet och lösningskvalitet. Hävstången ligger i formuleringen, inte i att köra algoritmen."
+    },
+    {
+      "id": "paper-d-driving-posture-comparison",
+      "tagline": "Vilken DHM-hållningsprediktionsmetod är egentligen mer exakt? Svaret beror på vilket fordon du designar.",
+      "challenge": "Fordonsingenjörer använder dagligen DHM-verktyg för att förutsäga var förare positionerar säten, ratt och ögonhöjd under fordonsdesign. Två huvudsakliga prediktionsmetoder finns, men ingen hade testat dem direkt mot varandra med ett stort verkligt dataset över flera fordonstyper. Ingenjörer valde metod baserat på vana, inte evidens.",
+      "whatIDid": [
+        "Analyserade verkliga preferenspositionsdata från 199 förare i två Volvo-fordon med olika säteshöjdskonfigurationer (SUV med lågt säte och modell med högt säte)",
+        "Jämförde Statistical Prediction Method (regressionsbaserad) mot Optimization Prediction Method (komfortmaximering) för H-punkt, ögonpunkt och rattpositioner",
+        "Tillämpade RMSE, MAE, Pearson-korrelation och Bland-Altman-analys, och introducerade Bland-Altman-diagram i detta forskningsområde för första gången"
+      ],
+      "impact": [
+        "OPM presterade bättre för H-punktens längdriktning i båda fordonen (47,2 mm mot 48,8 mm RMSE i Fordon A; 48,5 mm mot 59,9 mm i Fordon B)",
+        "SPM presterade bättre för H-punktens höjdriktning i båda fordonen (23,4 mm mot OPM 26,0 mm i Fordon A)",
+        "Båda metoderna underpresterade för korta och långa förare, vilket direkt pekade på nästa forskningsfråga som behandlades i Paper E",
+        "Bland-Altman-analys avslöjade systematiska prediktionsbias som var osynliga för enbart RMSE-mått"
+      ],
+      "learning": "I de flesta verkliga prediktionsproblem vinner ingen enskild modell överallt. Det mest användbara resultatet är ofta en tydlig beslutsregel: använd denna metod i detta sammanhang, använd den andra i det andra."
+    },
+    {
+      "id": "paper-e-simulation-real-data-integration",
+      "tagline": "OEM-data från hållningsklinikerligger vanligtvis oanvänd. Jag byggde pipelinen som matar tillbaka den i DHM-verktygen och förbättrade prediktionen för extrema kroppsstorlekar med upp till 37 %.",
+      "challenge": "DHM-verktyg tillämpar en enda generisk hållningsstrategi för alla förare oavsett kroppsstorlek. Korta och långa förare får konsekvent de sämsta prediktionerna. Samtidigt samlar de flesta fordons-OEM:er rutinmässigt in förardata i testkliniker som sedan ligger oanvänd och frånkopplad från deras simuleringsmodeller.",
+      "whatIDid": [
+        "Byggde en 3-stegspipeline för att återkoppla verkliga förardata till DHM-prediktion: mätte preferenspositioner från 49 Volvo Cars-förare, genererade individualiserade manikins i IPS IMMA, simulerade varje manikin vid den uppmätta positionen för att extrahera representativa ledvinklar",
+        "Härledde 3 kroppslängdsbaserade hållningsstrategier (kort, medel, lång) från de extraherade data",
+        "Jämförde kroppslängdsbaserade strategier mot standardstrategin Seated Car med RMSE för H-punkt och ögonpunktspositioner"
+      ],
+      "impact": [
+        "H-punktens vertikala RMSE förbättrades från 36,4 mm till 22,9 mm för korta förare (37 % minskning)",
+        "Ögonpunktens vertikala RMSE förbättrades från 32,3 mm till 22,8 mm för korta förare och från 27,1 mm till 22,9 mm för långa förare",
+        "Visade att befintliga OEM-klinikdata med 49 deltagare räcker för att förbättra simuleringsnoggrannheten utan en ny dedikerad studie",
+        "Presenterad vid 22:a IEA World Congress (2024)"
+      ],
+      "learning": "Många organisationer sitter på data som skulle kunna förbättra deras modeller. Att koppla befintliga datatillgångar till verktygen som behöver dem ger ofta högre värde än att samla in ny data från grunden."
+    },
+    {
+      "id": "paper-f-reaching-motion-prediction",
+      "tagline": "Byggde en ny heuristisk prediktionsmetod för 3D-räckningsrörelser som överträffar den optimeringsbaserade standarden med 11 gånger bättre hastighetsnoggrannhet.",
+      "challenge": "DHM-verktyg förutsäger hur förare räcker mot reglage i fordon, men befintliga optimeringsbaserade metoder kräver fullständig uppgiftsspecifikation i förväg, är beräkningsmässigt dyra och producerar genomsnittliga banor som inte fångar verklig mänsklig variation. Det fanns heller inget etablerat utvärderingsramverk som behandlade bannoggrannhet, hastighetsnoggrannhet och ledvinkelnoggrannhet som separata prestationsdimensioner.",
+      "whatIDid": [
+        "Utvecklade Steering-FABRIK-metoden (SFM): kombinerade en 3D-styrningsdynamikmodell, adaptiv hastighetsmodell och FABRIK invers kinematik i en samlad prediktionspipeline",
+        "Fångade och analyserade 120 verkliga räckningsrörelser (10 deltagare, 4 räckningsuppgifter, 3 försök vardera) med ett optiskt rörelsefångstsystem med 8 kameror",
+        "Jämförde SFM direkt mot den optimeringsbaserade metoden (OPM) med ett dubbelmetriskt utvärderingsramverk som kombinerade RMSE och Dynamic Time Warping (DTW)"
+      ],
+      "impact": [
+        "SFM minskade topphastighetsfel från 31,6 cm/s (OPM) till 2,8 cm/s – en 11-faldig förbättring av hastighetsnoggrannheten",
+        "SFM presterade bättre på bannoggrannhet för 3 av 4 uppgifter (Uppgift 1 ban-RMSE: 23,4 cm mot 31,3 cm för OPM)",
+        "OPM presterade bättre på ledvinkelnoggrannhet (10,8 grader mot 12,8 grader RMSE), vilket etablerade en tydlig användningsfallsuppdelning mellan de två metoderna",
+        "DTW-analys avslöjade systematiska modellbeteenden som RMSE helt missade, vilket etablerade bättre utvärderingspraxis"
+      ],
+      "learning": "Hur man utvärderar en modell bestämmer vad man lär sig om den. Enbart RMSE maskerade kritiska skillnader som DTW avslöjade. Bättre måste alltid besvaras i förhållande till ett specifikt syfte."
+    },
+    {
+      "id": "motion-capture-system-validation",
+      "tagline": "Högkvalitativa experimentella dataset från verkliga fordon och optisk rörelsefångst, använda för att testa simuleringsverktyg mot faktiskt mänskligt beteende.",
+      "challenge": "Simuleringsmetoder för prediktion av mänsklig hållning och rörelse är bara trovärdiga om de testas mot verkligt uppmätt beteende. Mest DHM-forskning tar genvägar i detta steg eller validerar mot små eller lågkvalitativa dataset, vilket underskattar hur dåligt befintliga verktyg presterar och var de brister.",
+      "whatIDid": [
+        "Designade experimentella protokoll för två valideringsstudier: körställning i fordon med 199 verkliga Volvo-förare i två fordonstyper, och överkroppsräckning med 10 deltagare med ett optiskt rörelsefångstsystem med 8 kameror",
+        "Tillämpade RMSE, DTW, Pearson-korrelation och Bland-Altman-analys för att jämföra simuleringsresultat mot uppmätt grundsanning",
+        "Standardiserade databearbetningspipelines för att säkerställa reproducerbarhet mellan studier och forskningsinstitutioner"
+      ],
+      "impact": [
+        "Genererade grundsanningsdataset som möjliggjorde rigorös direkt jämförelse av konkurrerande prediktionsmodeller i artiklarna D och F",
+        "Första tillämpningen av Bland-Altman-analys på DHM-hållningsprediktion, avslöjade systematiska bias dolda av standard-RMSE-mått",
+        "Dataset finns tillgängliga för framtida modellutveckling och benchmarking utan ytterligare deltagarrekrytering"
+      ],
+      "learning": "Bra valideringsdata är en multiplikator. Samma experimentella dataset drev flera oberoende forskningsfrågor och kommer att fortsätta vara användbart långt efter att den ursprungliga studien är avslutad."
+    },
+    {
+      "id": "sweex-ab",
+      "tagline": "Två år av att bygga exoskelettprototyper för monteringsarbetare vid Science Park Skövde – från användarbehov till investerarpitch.",
+      "challenge": "Bärbar säkerhetsteknik för monteringsarbetare befinner sig i skärningspunkten mellan human factors, mekanisk design, tillverkningsbegränsningar och kommersiell livskraft. Hårdvarustartups i tidig fas står inför utmaningen att göra framsteg på alla fyra fronter samtidigt med begränsade resurser. Utan en strukturerad process för att översätta användarbehov till testbara designmål lägger team iterationer på fel problem.",
+      "whatIDid": [
+        "Medgrundade Swe-Ex AB genom Science Park Skövdes inkubator, utvecklade exoskelettinspirerad säkerhetsutrustning för monteringsmiljöer",
+        "Översatte användarsäkerhetskrav och ergonomiska begränsningar till mätbara produktmål och drev tre fullständiga prototypiterationer från CAD till fysisk validering",
+        "Genomförde marknadsanalys över 10+ branscher, hanterade investerarkommunikation och utvecklade en marknadsstrategi under 2 år i inkubatorn"
+      ],
+      "impact": [
+        "Levererade tre funktionella prototypversioner med successivt förbättrad ergonomisk passform och strukturell prestanda",
+        "Byggde ett omfattande konkurrenslandskap och affärsfall som informerade produktriktning och investerarsamtal",
+        "Utvecklade direkt kommersiell erfarenhet som kopplade teknisk kapacitet till produktlivskraft, intressentkommunikation och marknadspositionering"
+      ],
+      "learning": "Att bygga något fysiskt med riktiga användare i en resursbegränsad miljö lär ut prioritering som ingen simuleringsstudie kan replikera. Inkubatorn gjorde kopplingen mellan teknisk rigor och kommersiell livskraft konkret."
+    }
+  ]
+}

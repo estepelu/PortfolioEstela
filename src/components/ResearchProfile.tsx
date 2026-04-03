@@ -22,6 +22,7 @@ import {
   ResponsiveContainer,
   Cell
 } from 'recharts';
+import { translations, type Lang } from '../translations';
 import portfolioData from '../data.json';
 
 const CITATION_THRESHOLD_HIGH = 10;
@@ -56,7 +57,8 @@ const itemVariants = {
   }
 };
 
-export default function ResearchProfile() {
+export default function ResearchProfile({ lang }: { lang: Lang }) {
+  const t = translations[lang];
   const { publications, scholarStats } = portfolioData as typeof portfolioData & {
     scholarStats: {
       totalCitations: number;
@@ -76,10 +78,10 @@ export default function ResearchProfile() {
   const maxCitations = Math.max(...scholarStats.citationsPerYear.map(d => d.citations));
 
   const statCards = [
-    { label: 'Citations', value: scholarStats.totalCitations, sub: `${scholarStats.since2020Citations} since 2020`, icon: Quote, color: '#f27291' },
-    { label: 'h-index', value: scholarStats.hIndex, sub: `${scholarStats.hIndex5y} since 2020`, icon: TrendingUp, color: '#82241f' },
-    { label: 'i10-index', value: scholarStats.i10Index, sub: `${scholarStats.i10Index5y} since 2020`, icon: Award, color: '#5e81ac' },
-    { label: 'Papers', value: publications.length, sub: 'peer-reviewed', icon: FileText, color: '#b5decc' },
+    { label: t.research.citations, value: scholarStats.totalCitations, sub: `${scholarStats.since2020Citations} ${t.research.citationsSince}`, icon: Quote, color: '#f27291' },
+    { label: t.research.hIndex, value: scholarStats.hIndex, sub: `${scholarStats.hIndex5y} ${t.research.hIndexSince}`, icon: TrendingUp, color: '#82241f' },
+    { label: t.research.i10, value: scholarStats.i10Index, sub: `${scholarStats.i10Index5y} ${t.research.i10Since}`, icon: Award, color: '#5e81ac' },
+    { label: t.research.papers, value: publications.length, sub: t.research.peerReviewed, icon: FileText, color: '#b5decc' },
   ];
 
   return (
@@ -91,9 +93,9 @@ export default function ResearchProfile() {
         transition={{ type: 'spring', stiffness: 280, damping: 26 }}
         className="mb-12"
       >
-        <h1 className="text-4xl font-display font-bold text-nord-0 mb-2">Research Profile</h1>
+        <h1 className="text-4xl font-display font-bold text-nord-0 mb-2">{t.research.heading}</h1>
         <p className="text-nord-3">
-          Data pulled from{' '}
+          {t.research.source}{' '}
           <a
             href={scholarStats.scholarUrl}
             target="_blank"
@@ -139,23 +141,14 @@ export default function ResearchProfile() {
         className="mb-10"
       >
         <h2 className="text-xl font-display font-bold text-nord-0 mb-5 flex items-center gap-2">
-          <BookOpen className="w-5 h-5" style={{ color: '#f27291' }} /> Research Interests
+          <BookOpen className="w-5 h-5" style={{ color: '#f27291' }} /> {t.research.interests}
         </h2>
         <div className="flex flex-wrap gap-3">
-          {[
-            { label: 'Predictive Modelling', color: '#f27291' },
-            { label: 'Simulation Validation', color: '#f27291' },
-            { label: 'Digital Human Modelling', color: '#82241f' },
-            { label: 'Human Motion Analysis', color: '#82241f' },
-            { label: 'Multi-objective Optimisation', color: '#f27291' },
-            { label: 'Posture Prediction', color: '#82241f' },
-            { label: 'Motion Capture & Sensing', color: '#b5decc' },
-            { label: 'Experimental Design', color: '#b5decc' },
-            { label: 'Automotive Ergonomics', color: '#b5decc' },
-            { label: 'Validation & Verification', color: '#82241f' },
-            { label: 'Data Pipelines', color: '#f27291' },
-            { label: 'DHM Tools', color: '#b5decc' },
-          ].map(({ label, color }) => (
+          {t.research.keywords.map((label, idx) => {
+            const colors = ['#f27291', '#f27291', '#82241f', '#82241f', '#f27291', '#82241f', '#b5decc', '#b5decc', '#b5decc', '#82241f', '#f27291', '#b5decc'];
+            const color = colors[idx] || '#82241f';
+            return { label, color };
+          }).map(({ label, color }) => (
             <span
               key={label}
               className="px-4 py-2 rounded-full text-sm font-semibold cursor-default transition-all hover:scale-105"
@@ -178,7 +171,7 @@ export default function ResearchProfile() {
             className="glass-card p-6 rounded-[2rem]"
           >
             <h3 className="text-xs font-bold text-nord-1 uppercase tracking-widest mb-5 flex items-center gap-2">
-              <TrendingUp className="w-4 h-4" style={{ color: '#f27291' }} /> Citation Trend
+              <TrendingUp className="w-4 h-4" style={{ color: '#f27291' }} /> {t.research.citationTrend}
             </h3>
             <div className="h-44 w-full">
               <ResponsiveContainer width="100%" height="100%">
@@ -211,12 +204,12 @@ export default function ResearchProfile() {
             transition={{ type: 'spring', stiffness: 260, damping: 28, delay: 0.35 }}
             className="glass-card p-5 rounded-[2rem]"
           >
-            <h4 className="text-[10px] font-bold uppercase tracking-widest text-nord-1 mb-3">Citation Key</h4>
+            <h4 className="text-[10px] font-bold uppercase tracking-widest text-nord-1 mb-3">{t.research.citationKey}</h4>
             <div className="space-y-2">
               {[
-                { label: `≥ ${CITATION_THRESHOLD_HIGH} citations`, color: '#f27291' },
-                { label: `≥ ${CITATION_THRESHOLD_MED} citations`, color: '#82241f' },
-                { label: '< 4 citations', color: '#5e81ac' }
+                { label: t.research.high, color: '#f27291' },
+                { label: t.research.medium, color: '#82241f' },
+                { label: t.research.low, color: '#5e81ac' }
               ].map(item => (
 
                 <div key={item.label} className="flex items-center gap-2 text-xs text-nord-3">
@@ -231,9 +224,9 @@ export default function ResearchProfile() {
         {/* Publications list */}
         <div className="lg:col-span-3 space-y-4">
           <div className="flex items-center justify-between mb-2">
-            <h2 className="text-2xl font-display font-bold text-nord-0">Publications</h2>
+            <h2 className="text-2xl font-display font-bold text-nord-0">{t.research.publications}</h2>
             <span className="text-sm text-nord-3 flex items-center gap-1">
-              <FileText className="w-4 h-4" /> {publications.length} total
+              <FileText className="w-4 h-4" /> {publications.length} {t.research.total}
             </span>
           </div>
 
@@ -327,20 +320,20 @@ export default function ResearchProfile() {
               className="w-full py-4 mt-2 flex items-center justify-center gap-2 text-sm font-semibold text-nord-3 hover:text-nord-0 border border-nord-4/30 rounded-2xl hover:border-nord-10/50 hover:bg-white/40 transition-all group"
             >
               {showAll ? (
-                <><ChevronUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" /> Show fewer</>
+                <><ChevronUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" /> {t.research.showFewer}</>
               ) : (
-                <><ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" /> Show all {publications.length} papers</>
+                <><ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" /> {t.research.showAll.replace('{n}', String(publications.length))}</>
               )}
             </motion.button>
           )}
 
           <div className="text-center pt-4">
             <p className="text-nord-3 text-xs italic">
-              Citation data sourced from{' '}
+              {t.research.source}{' '}
               <a href={scholarStats.scholarUrl} target="_blank" rel="noopener noreferrer" className="hover:text-nord-10 underline underline-offset-2">
                 Google Scholar
               </a>
-              . Updated April 2026.
+              . {t.research.updatedNote}
             </p>
           </div>
         </div>

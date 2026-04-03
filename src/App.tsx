@@ -43,11 +43,14 @@ import {
   Radar,
   Legend
 } from 'recharts';
-import portfolioData from './data.json';
+import { translations, type Lang } from './translations';
+import dataEn from './data.json';
+import dataSv from './data.sv.json';
+import dataEs from './data.es.json';
 import TravelerQuiz from './components/TravelerQuiz';
 import ResearchProfile from './components/ResearchProfile';
 
-type Project = typeof portfolioData.projects[0];
+type Project = typeof dataEn.projects[0];
 
 const PARTNER_LOGOS = [
   { name: 'University of Antwerp', file: 'Antwerp.jpg' },
@@ -67,6 +70,28 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTab, setActiveTab] = useState<'portfolio' | 'resume' | 'research' | 'quiz'>('portfolio');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [lang, setLang] = useState<Lang>(() => (localStorage.getItem('lang') as Lang) || 'en');
+  const t = translations[lang];
+
+  function mergeData(ov: { owner?: object; projects?: { id: string; [k: string]: unknown }[]; experience?: object[]; education?: object[]; [k: string]: unknown }): typeof dataEn {
+    return {
+      ...dataEn,
+      ...ov,
+      owner: { ...dataEn.owner, ...(ov.owner ?? {}) },
+      projects: dataEn.projects.map(base => {
+        const proj = ov.projects?.find(p => p.id === base.id);
+        return proj ? { ...base, ...proj } : base;
+      }),
+      experience: dataEn.experience.map((base, i) => ({ ...base, ...(ov.experience?.[i] ?? {}) })),
+      education: dataEn.education.map((base, i) => ({ ...base, ...(ov.education?.[i] ?? {}) })),
+    } as typeof dataEn;
+  }
+
+  const portfolioData = lang === 'sv' ? mergeData(dataSv)
+                      : lang === 'es' ? mergeData(dataEs)
+                      : dataEn;
+
+  useEffect(() => { localStorage.setItem('lang', lang) }, [lang]);
 
   const filteredProjects = portfolioData.projects.filter(project => {
     const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -95,19 +120,19 @@ export default function App() {
                 onClick={() => setActiveTab('portfolio')}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all lowercase ${activeTab === 'portfolio' ? 'bg-[#82241f] text-white shadow-sm' : 'text-nord-3 hover:text-[#82241f]'}`}
               >
-                portfolio
+                {t.nav.portfolio}
               </button>
               <button
                 onClick={() => setActiveTab('resume')}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all lowercase ${activeTab === 'resume' ? 'bg-[#82241f] text-white shadow-sm' : 'text-nord-3 hover:text-[#82241f]'}`}
               >
-                resume
+                {t.nav.resume}
               </button>
               <button
                 onClick={() => setActiveTab('research')}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all lowercase ${activeTab === 'research' ? 'bg-[#82241f] text-white shadow-sm' : 'text-nord-3 hover:text-[#82241f]'}`}
               >
-                research profile
+                {t.nav.research}
               </button>
             </div>
             <div className="flex items-center gap-4">
@@ -117,6 +142,17 @@ export default function App() {
               <a href={`mailto:${portfolioData.owner.email}`} className="p-2 text-nord-3 hover:text-nord-10 transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
+            </div>
+            <div className="flex items-center gap-1 bg-white/30 p-1 rounded-full ml-2">
+              {(['en', 'sv', 'es'] as Lang[]).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={`px-3 py-1 rounded-full text-xs font-bold uppercase transition-all ${lang === l ? 'bg-[#82241f] text-white shadow-sm' : 'text-nord-3 hover:text-[#82241f]'}`}
+                >
+                  {l}
+                </button>
+              ))}
             </div>
           </div>
 
@@ -147,7 +183,7 @@ export default function App() {
                     onClick={() => { setActiveTab(tab); setMobileMenuOpen(false); }}
                     className={`w-full text-left px-4 py-3 rounded-2xl text-sm font-semibold lowercase transition-all ${activeTab === tab ? 'bg-[#82241f] text-white' : 'text-nord-3 hover:bg-[#f27291]/15 hover:text-[#82241f]'}`}
                   >
-                    {tab === 'research' ? 'research profile' : tab}
+                    {tab === 'research' ? t.nav.research : tab === 'resume' ? t.nav.resume : t.nav.portfolio}
                   </button>
                 ))}
                 <div className="flex gap-4 px-4 pt-2 pb-1 border-t border-nord-4/30 mt-1">
@@ -157,6 +193,17 @@ export default function App() {
                   <a href={`mailto:${portfolioData.owner.email}`} className="flex items-center gap-2 text-xs text-nord-3 hover:text-nord-10 transition-colors">
                     <Mail className="w-4 h-4" /> Email
                   </a>
+                </div>
+                <div className="flex gap-1 px-4 pt-2 pb-1 mt-1">
+                  {(['en', 'sv', 'es'] as Lang[]).map((l) => (
+                    <button
+                      key={l}
+                      onClick={() => { setLang(l); setMobileMenuOpen(false); }}
+                      className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase transition-all ${lang === l ? 'bg-[#82241f] text-white' : 'text-nord-3 hover:text-[#82241f]'}`}
+                    >
+                      {l}
+                    </button>
+                  ))}
                 </div>
               </div>
             </motion.div>
@@ -184,10 +231,10 @@ export default function App() {
                   className="max-w-4xl"
                 >
                   <h1 className="text-5xl md:text-7xl font-display font-bold text-nord-0 leading-[1.1] mb-8">
-                    Turning <span style={{ color: '#f27291' }}>complex systems</span> into decisions, products, and <span style={{ color: '#82241f' }}>customer outcomes</span>.
+                    {t.hero.line1} <span style={{ color: '#f27291' }}>{t.hero.accent1}</span> {t.hero.line2} <span style={{ color: '#82241f' }}>{t.hero.accent2}</span>.
                   </h1>
                   <p className="text-xl text-nord-3 leading-relaxed mb-10 max-w-2xl">
-                    I'm {portfolioData.owner.name.split(' ')[0].toLowerCase()}, a PhD-level data scientist and systems thinker. I bridge deep technical expertise with commercial delivery across the full spectrum from predictive models and validation pipelines to go-to-market strategy and customer success.
+                    {t.hero.subtitle}
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <button 
@@ -197,14 +244,14 @@ export default function App() {
                       }}
                       className="px-8 py-4 bg-nord-0 text-white rounded-full font-medium hover:bg-nord-1 transition-all flex items-center gap-2 group"
                     >
-                      Learn More
+                      {t.hero.cta1}
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </button>
-                    <a 
+                    <a
                       href={`mailto:${portfolioData.owner.email}`}
                       className="px-8 py-4 bg-white border border-nord-4 text-nord-0 rounded-full font-medium hover:border-nord-10 transition-all"
                     >
-                      Get in touch
+                      {t.hero.cta2}
                     </a>
                   </div>
                 </motion.div>
@@ -219,17 +266,11 @@ export default function App() {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                   >
-                    <h2 className="text-3xl font-display font-bold text-nord-0 mb-8 lowercase">about me</h2>
+                    <h2 className="text-3xl font-display font-bold text-nord-0 mb-8 lowercase">{t.about.heading}</h2>
                     <div className="space-y-6 text-lg text-nord-3 leading-relaxed">
-                      <p>
-                        I'm a <span className="text-nord-0 font-semibold">PhD-level data scientist and systems thinker</span> with 5+ years of experience connecting technical depth with real-world impact across the full spectrum: predictive modelling, data pipelines, customer-facing delivery, and go-to-market execution.
-                      </p>
-                      <p>
-                        I lead cross-functional projects end-to-end: scoping the problem, building the evidence, and translating findings into decisions that stick. I've partnered with Volvo, Scania, and international research institutes, and co-founded a hardware startup where I managed everything from prototyping to investor communications.
-                      </p>
-                      <p>
-                        Whether the role is <span className="text-nord-0 font-semibold">technical, commercial, or at the boundary</span> I bring the same toolkit: rigorous analysis, clear communication, and a bias for outcomes over outputs.
-                      </p>
+                      <p>{t.about.p1}</p>
+                      <p>{t.about.p2}</p>
+                      <p>{t.about.p3}</p>
                     </div>
                     
                     <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -241,8 +282,8 @@ export default function App() {
                         className="p-6 bg-white/40 rounded-3xl border border-white/20"
                       >
                         <Target className="w-6 h-6 text-nord-10 mb-4" />
-                        <h4 className="text-nord-0 font-bold mb-2">My Mission</h4>
-                        <p className="text-sm text-nord-3">To contribute to real-world problems by connecting the dots between complex systems and human needs.</p>
+                        <h4 className="text-nord-0 font-bold mb-2">{t.about.missionTitle}</h4>
+                        <p className="text-sm text-nord-3">{t.about.missionText}</p>
                       </motion.div>
                       <motion.div 
                         initial={{ opacity: 0, y: 20 }}
@@ -252,7 +293,7 @@ export default function App() {
                         className="p-6 bg-white/40 rounded-3xl border border-white/20"
                       >
                         <Sparkles className="w-6 h-6 text-nord-14 mb-4" />
-                        <h4 className="text-nord-0 font-bold mb-2">Interests</h4>
+                        <h4 className="text-nord-0 font-bold mb-2">{t.about.interestsTitle}</h4>
                         <div className="flex flex-wrap gap-2">
                           {portfolioData.interests.map(interest => (
                             <span key={interest} className="text-[10px] px-2 py-1 bg-nord-4/30 text-nord-3 rounded-md uppercase tracking-wider font-bold">
@@ -289,8 +330,8 @@ export default function App() {
               <section id="projects" className="mb-32 scroll-mt-32">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
                   <div>
-                    <h2 className="text-3xl font-display font-bold text-nord-0 mb-4 lowercase">strategic projects</h2>
-                    <p className="text-nord-3">High-impact initiatives driving system optimization and user-centric design.</p>
+                    <h2 className="text-3xl font-display font-bold text-nord-0 mb-4 lowercase">{t.projects.heading}</h2>
+                    <p className="text-nord-3">{t.projects.subtitle}</p>
                   </div>
                   
                   <div className="flex flex-wrap items-center gap-4">
@@ -298,7 +339,7 @@ export default function App() {
                       <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-nord-4 group-focus-within:text-nord-10 transition-colors" />
                       <input 
                         type="text"
-                        placeholder="search projects..."
+                        placeholder={t.projects.searchPlaceholder}
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         className="pl-10 pr-4 py-2 bg-white/50 border border-nord-4 rounded-full text-sm focus:outline-none focus:border-nord-10 focus:ring-1 focus:ring-nord-10 transition-all w-full md:w-64"
@@ -373,7 +414,7 @@ export default function App() {
                         </div>
                         
                         <div className="flex items-center text-nord-0 text-sm font-semibold group-hover:gap-2 transition-all">
-                          Read Case Study <ChevronRight className="w-4 h-4" />
+                          {t.projects.readCase} <ChevronRight className="w-4 h-4" />
                         </div>
                       </motion.div>
                     ))}
@@ -390,8 +431,8 @@ export default function App() {
                   transition={{ type: 'spring', stiffness: 260, damping: 28 }}
                   className="mb-10"
                 >
-                  <h2 className="text-3xl font-display font-bold text-nord-0 mb-3 lowercase">collaborators & partners</h2>
-                  <p className="text-nord-1">Institutions and organisations I have worked with across research, industry, and ventures.</p>
+                  <h2 className="text-3xl font-display font-bold text-nord-0 mb-3 lowercase">{t.partners.heading}</h2>
+                  <p className="text-nord-1">{t.partners.subtitle}</p>
                 </motion.div>
 
                 <motion.div
@@ -488,7 +529,7 @@ export default function App() {
                   {/* Experience */}
                   <section>
                     <h2 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-8 flex items-center gap-3">
-                      <Briefcase className="w-5 h-5" /> Professional Experience
+                      <Briefcase className="w-5 h-5" /> {t.resume.experience}
                     </h2>
                     <div className="space-y-12">
                       {(portfolioData as typeof portfolioData & { experience: Array<{ role: string; company: string; period: string; bullets?: string[]; description?: string }> }).experience.map((exp, i) => (
@@ -515,7 +556,7 @@ export default function App() {
                   {/* Education */}
                   <section>
                     <h2 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-8 flex items-center gap-3">
-                      <GraduationCap className="w-5 h-5" /> Education
+                      <GraduationCap className="w-5 h-5" /> {t.resume.education}
                     </h2>
                     <div className="space-y-8">
                       {portfolioData.education.map((edu, i) => (
@@ -535,14 +576,14 @@ export default function App() {
                 <div className="space-y-12">
                   {/* Skills Grid */}
                   <section>
-                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-6">Technical Expertise</h2>
+                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-6">{t.resume.expertise}</h2>
                     {(() => {
                       const skills = (portfolioData as typeof portfolioData & { skills: { core: string[]; methods: string[]; experimental: string[]; tools: string[] } }).skills;
                       const groups = [
-                        { label: 'Core Stack', items: skills.core, bg: 'bg-nord-0 text-white' },
-                        { label: 'Methods', items: skills.methods, bg: 'bg-[#f27291]/10 text-[#82241f]' },
-                        { label: 'Experimental', items: skills.experimental, bg: 'bg-[#82241f]/10 text-[#5c1915]' },
-                        { label: 'Tools', items: skills.tools, bg: 'bg-nord-6 text-nord-3' },
+                        { label: t.resume.coreStack, items: skills.core, bg: 'bg-nord-0 text-white' },
+                        { label: t.resume.methods, items: skills.methods, bg: 'bg-[#f27291]/10 text-[#82241f]' },
+                        { label: t.resume.experimental, items: skills.experimental, bg: 'bg-[#82241f]/10 text-[#5c1915]' },
+                        { label: t.resume.tools, items: skills.tools, bg: 'bg-nord-6 text-nord-3' },
                       ];
                       return (
                         <div className="space-y-5">
@@ -563,12 +604,12 @@ export default function App() {
 
                   {/* Languages */}
                   <section>
-                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-6">Languages</h2>
+                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-6">{t.resume.languages}</h2>
                     <div className="space-y-3">
-                      {(portfolioData as typeof portfolioData & { languages: Array<{ name: string; level: string }> }).languages.map(lang => (
-                        <div key={lang.name} className="flex justify-between items-center text-sm">
-                          <span className="text-nord-3">{lang.name}</span>
-                          <span className="font-bold text-xs px-2 py-0.5 rounded-md" style={{ color: '#82241f', background: 'rgba(130,36,31,0.10)' }}>{lang.level}</span>
+                      {(portfolioData as typeof portfolioData & { languages: Array<{ name: string; level: string }> }).languages.map(lng => (
+                        <div key={lng.name} className="flex justify-between items-center text-sm">
+                          <span className="text-nord-3">{lng.name}</span>
+                          <span className="font-bold text-xs px-2 py-0.5 rounded-md" style={{ color: '#82241f', background: 'rgba(130,36,31,0.10)' }}>{lng.level}</span>
                         </div>
                       ))}
                     </div>
@@ -577,12 +618,9 @@ export default function App() {
                   {/* Awards */}
                   <section className="p-6 bg-nord-0 text-white rounded-3xl relative overflow-hidden">
                     <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full blur-2xl opacity-30" style={{ background: '#f27291' }} />
-                    <h2 className="text-xs uppercase tracking-widest font-bold mb-4 relative z-10">Leadership & Awards</h2>
+                    <h2 className="text-xs uppercase tracking-widest font-bold mb-4 relative z-10">{t.resume.leadership}</h2>
                     <ul className="space-y-2 relative z-10">
-                      {[
-                        'Elected Student Representative & Board Member, representing 40+ PhD students in university governance.',
-                        'Recipient of multiple international grants and travel awards supporting research dissemination.'
-                      ].map((item, i) => (
+                      {t.resume.leadershipItems.map((item, i) => (
                         <li key={i} className="text-[11px] leading-relaxed text-nord-4 flex gap-2">
                           <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#f27291' }} />
                           {item}
@@ -603,7 +641,7 @@ export default function App() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <ResearchProfile />
+              <ResearchProfile lang={lang} />
             </motion.div>
           )}
 
@@ -635,9 +673,9 @@ export default function App() {
             </div>
             
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 lowercase">let's collaborate</h2>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 lowercase">{t.contact.heading}</h2>
               <p className="text-nord-4 text-lg mb-12 max-w-xl mx-auto">
-                Interested in data science, autonomous systems, or human factors research? I'd love to hear from you.
+                {t.contact.subtitle}
               </p>
               
               <div className="flex flex-wrap justify-center gap-6">
@@ -646,16 +684,16 @@ export default function App() {
                   className="flex items-center gap-3 px-8 py-4 bg-white text-nord-0 rounded-full font-bold hover:bg-nord-6 transition-all"
                 >
                   <Mail className="w-5 h-5" />
-                  Email Me
+                  {t.contact.email}
                 </a>
-                <a 
+                <a
                   href={portfolioData.owner.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 px-8 py-4 bg-white/10 text-white border border-white/20 rounded-full font-bold hover:bg-white/20 transition-all"
                 >
                   <Linkedin className="w-5 h-5" />
-                  LinkedIn
+                  {t.contact.linkedin}
                 </a>
               </div>
             </div>
@@ -666,7 +704,7 @@ export default function App() {
       {/* Footer */}
       <footer className="py-12 border-t border-nord-4/30 text-center">
         <p className="text-sm text-nord-4">
-          &copy; {new Date().getFullYear()} {portfolioData.owner.name.toLowerCase()}. built with scandinavian care.
+          &copy; {new Date().getFullYear()} {portfolioData.owner.name.toLowerCase()}. {t.footer}
         </p>
       </footer>
 
@@ -751,14 +789,14 @@ export default function App() {
                     <div className="md:col-span-2 space-y-10">
                       <div>
                         <h4 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-4 flex items-center gap-2">
-                          <Info className="w-4 h-4" /> Context & Challenge
+                          <Info className="w-4 h-4" /> {t.modal.context}
                         </h4>
                         <p className="text-nord-3 leading-relaxed">{selectedProject.challenge}</p>
                       </div>
 
                       <div>
                         <h4 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-4 flex items-center gap-2">
-                          <Briefcase className="w-4 h-4" /> Action
+                          <Briefcase className="w-4 h-4" /> {t.modal.action}
                         </h4>
                         <ul className="space-y-3">
                           {selectedProject.whatIDid.map((item, i) => (
@@ -773,7 +811,7 @@ export default function App() {
                     
                     <div className="space-y-10">
                       <div>
-                        <h4 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-4">Skills</h4>
+                        <h4 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-4">{t.modal.skills}</h4>
                         <div className="flex flex-wrap gap-2">
                           {selectedProject.skills.map(skill => (
                             <span key={skill} className="text-xs px-3 py-1 bg-nord-6 text-nord-3 rounded-full">
@@ -784,7 +822,7 @@ export default function App() {
                       </div>
                       
                       <div>
-                        <h4 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-4">Tools</h4>
+                        <h4 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-4">{t.modal.tools}</h4>
                         <div className="flex flex-wrap gap-2">
                           {selectedProject.tools.map(tool => (
                             <span key={tool} className="text-xs px-3 py-1 bg-nord-6 text-nord-3 rounded-full">
@@ -796,7 +834,7 @@ export default function App() {
 
                       {selectedProject.evidence && (
                         <div>
-                          <h4 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-4">Evidence</h4>
+                          <h4 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-4">{t.modal.evidence}</h4>
                           <div className="p-4 bg-nord-6 rounded-2xl">
                             <div className="flex items-center gap-2 text-nord-10 font-bold text-xs mb-2">
                               <FileText className="w-3 h-3" />
@@ -822,7 +860,7 @@ export default function App() {
                   </div>
                   
                   <div className="bg-nord-14/10 rounded-3xl p-8 md:p-12 mb-6">
-                    <h4 className="text-sm uppercase tracking-widest font-bold text-nord-14 mb-6">Results</h4>
+                    <h4 className="text-sm uppercase tracking-widest font-bold text-nord-14 mb-6">{t.modal.results}</h4>
                     <ul className="space-y-4">
                       {selectedProject.impact.map((item, i) => (
                         <li key={i} className="flex gap-4 text-nord-0 font-medium leading-relaxed">
@@ -837,7 +875,7 @@ export default function App() {
 
                   {(selectedProject as typeof selectedProject & { learning?: string }).learning && (
                     <div className="rounded-3xl p-8 md:p-12" style={{ background: 'linear-gradient(135deg, rgba(242,114,145,0.06) 0%, rgba(130,36,31,0.04) 100%)', border: '1px solid rgba(242,114,145,0.20)' }}>
-                      <h4 className="text-sm uppercase tracking-widest font-bold mb-4" style={{ color: '#f27291' }}>Key Insight</h4>
+                      <h4 className="text-sm uppercase tracking-widest font-bold mb-4" style={{ color: '#f27291' }}>{t.modal.insight}</h4>
                       <p className="text-nord-3 leading-relaxed italic">"{(selectedProject as typeof selectedProject & { learning?: string }).learning}"</p>
                     </div>
                   )}
