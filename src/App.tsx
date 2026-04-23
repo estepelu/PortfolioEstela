@@ -50,15 +50,17 @@ import ResearchProfile from './components/ResearchProfile';
 type Project = typeof portfolioData.projects[0];
 
 const PARTNER_LOGOS = [
-  { name: 'University of Antwerp', file: 'Antwerp.jpg' },
-  { name: 'Ericsson', file: 'Ericsson.png' },
-  { name: 'Safer', file: 'Safer.jpeg' },
-  { name: 'Scania', file: 'Scania.png' },
-  { name: 'Texas Tech University', file: 'Texas tech.jpg' },
-  { name: 'Volvo Cars', file: 'Volvo Cars.jpeg' },
-  { name: 'Volvo Group', file: 'Volvo Group.png' },
-  { name: 'Zeekr', file: 'Zeekr.jpg' },
-  { name: 'Feelgood', file: 'feelgood.png' },
+  { name: 'University of Antwerp', file: 'Antwerp.jpg', h: 140 },
+  { name: 'Safer', file: 'Safer.jpeg', h: 44 },
+  { name: 'Ericsson', file: 'Ericsson.png', h: 140 },
+  { name: 'Scania', file: 'Scania.png', h: 44 },
+  { name: 'Texas Tech University', file: 'Texas tech.jpg', h: 140 },
+  { name: 'Zeekr', file: 'Zeekr.jpg', h: 44 },
+  { name: 'Volvo Cars', file: 'Volvo Cars.jpeg', h: 140 },
+  { name: 'University of Skövde', file: 'uniskovde.png', h: 80 },
+  { name: 'Volvo Group', file: 'Volvo Group.jpeg', h: 140 },
+  { name: 'Feelgood', file: 'feelgood.png', h: 44 },
+  { name: 'Science Park Skövde', file: 'sciencepark.png', h: 80 },
 ];
 
 export default function App() {
@@ -67,6 +69,7 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTab, setActiveTab] = useState<'portfolio' | 'resume' | 'research' | 'quiz'>('portfolio');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [contactPopover, setContactPopover] = useState<'nav-email' | 'nav-phone' | 'bottom-email' | null>(null);
 
   const filteredProjects = portfolioData.projects.filter(project => {
     const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -77,9 +80,15 @@ export default function App() {
 
   return (
     <div className="min-h-screen scandi-gradient selection:bg-nord-8/30">
+      {/* Transparent overlay to close any open popover */}
+      {contactPopover && (
+        <div className="fixed inset-0 z-40" onClick={() => setContactPopover(null)} />
+      )}
+
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-xl border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 h-16 md:h-20 grid grid-cols-3 items-center">
+          {/* Left: Name */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -88,41 +97,101 @@ export default function App() {
             {portfolioData.owner.name}
           </motion.div>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Center: Tabs */}
+          <div className="hidden md:flex justify-center">
             <div className="flex items-center gap-1 bg-nord-4/30 p-1 rounded-full">
               <button
-                onClick={() => setActiveTab('portfolio')}
+                onClick={() => { setActiveTab('portfolio'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all lowercase ${activeTab === 'portfolio' ? 'bg-[#82241f] text-white shadow-sm' : 'text-nord-3 hover:text-[#82241f]'}`}
               >
                 portfolio
               </button>
               <button
-                onClick={() => setActiveTab('resume')}
+                onClick={() => { setActiveTab('resume'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all lowercase ${activeTab === 'resume' ? 'bg-[#82241f] text-white shadow-sm' : 'text-nord-3 hover:text-[#82241f]'}`}
               >
-                resume
+                cv
               </button>
               <button
-                onClick={() => setActiveTab('research')}
+                onClick={() => { setActiveTab('research'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all lowercase ${activeTab === 'research' ? 'bg-[#82241f] text-white shadow-sm' : 'text-nord-3 hover:text-[#82241f]'}`}
               >
                 research profile
               </button>
             </div>
-            <div className="flex items-center gap-4">
-              <a href={portfolioData.owner.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 text-nord-3 hover:text-nord-10 transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href={`mailto:${portfolioData.owner.email}`} className="p-2 text-nord-3 hover:text-nord-10 transition-colors">
-                <Mail className="w-5 h-5" />
-              </a>
+          </div>
+
+          {/* Right: Contact icon buttons */}
+          <div className="hidden md:flex justify-end items-center gap-1">
+            {/* Email */}
+            <div className="relative">
+              <button
+                onClick={() => setContactPopover(contactPopover === 'nav-email' ? null : 'nav-email')}
+                className="p-2 text-nord-3 hover:text-[#82241f] hover:bg-[#f27291]/10 rounded-full transition-all"
+                aria-label="Email"
+              >
+                <Mail className="w-4.5 h-4.5" style={{ width: '1.125rem', height: '1.125rem' }} />
+              </button>
+              {contactPopover === 'nav-email' && (
+                <motion.div
+                  initial={{ opacity: 0, y: -4, scale: 0.96 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  className="absolute top-full right-0 mt-2 bg-white rounded-2xl shadow-xl border border-nord-4/20 p-4 w-72 z-50"
+                >
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-nord-4 mb-1">Email</p>
+                  <p className="text-sm font-medium text-nord-0 mb-3 break-all">{portfolioData.owner.email}</p>
+                  <a
+                    href={`mailto:${portfolioData.owner.email}`}
+                    className="flex items-center justify-center gap-2 text-xs font-bold text-white bg-[#82241f] px-4 py-2 rounded-full hover:bg-[#5c1915] transition-colors w-full"
+                  >
+                    <Mail className="w-3 h-3" /> Send Email
+                  </a>
+                </motion.div>
+              )}
             </div>
+
+            {/* Phone */}
+            <div className="relative">
+              <button
+                onClick={() => setContactPopover(contactPopover === 'nav-phone' ? null : 'nav-phone')}
+                className="p-2 text-nord-3 hover:text-[#82241f] hover:bg-[#f27291]/10 rounded-full transition-all"
+                aria-label="Phone"
+              >
+                <Phone className="w-4.5 h-4.5" style={{ width: '1.125rem', height: '1.125rem' }} />
+              </button>
+              {contactPopover === 'nav-phone' && (
+                <motion.div
+                  initial={{ opacity: 0, y: -4, scale: 0.96 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  className="absolute top-full right-0 mt-2 bg-white rounded-2xl shadow-xl border border-nord-4/20 p-4 w-56 z-50"
+                >
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-nord-4 mb-1">Phone</p>
+                  <p className="text-sm font-medium text-nord-0 mb-3">{portfolioData.owner.phone}</p>
+                  <a
+                    href={`tel:${portfolioData.owner.phone}`}
+                    className="flex items-center justify-center gap-2 text-xs font-bold text-white bg-[#82241f] px-4 py-2 rounded-full hover:bg-[#5c1915] transition-colors w-full"
+                  >
+                    <Phone className="w-3 h-3" /> Call
+                  </a>
+                </motion.div>
+              )}
+            </div>
+
+            {/* LinkedIn */}
+            <a
+              href={portfolioData.owner.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-nord-3 hover:text-[#82241f] hover:bg-[#f27291]/10 rounded-full transition-all"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-4.5 h-4.5" style={{ width: '1.125rem', height: '1.125rem' }} />
+            </a>
           </div>
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 rounded-full hover:bg-nord-4/30 transition-colors text-nord-0"
+            className="md:hidden col-start-3 justify-self-end p-2 rounded-full hover:bg-nord-4/30 transition-colors text-nord-0"
             onClick={() => setMobileMenuOpen(v => !v)}
             aria-label="Toggle menu"
           >
@@ -144,18 +213,21 @@ export default function App() {
                 {(['portfolio', 'resume', 'research'] as const).map((tab) => (
                   <button
                     key={tab}
-                    onClick={() => { setActiveTab(tab); setMobileMenuOpen(false); }}
+                    onClick={() => { setActiveTab(tab); setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                     className={`w-full text-left px-4 py-3 rounded-2xl text-sm font-semibold lowercase transition-all ${activeTab === tab ? 'bg-[#82241f] text-white' : 'text-nord-3 hover:bg-[#f27291]/15 hover:text-[#82241f]'}`}
                   >
-                    {tab === 'research' ? 'research profile' : tab}
+                    {tab === 'research' ? 'research profile' : tab === 'resume' ? 'cv' : tab}
                   </button>
                 ))}
-                <div className="flex gap-4 px-4 pt-2 pb-1 border-t border-nord-4/30 mt-1">
-                  <a href={portfolioData.owner.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs text-nord-3 hover:text-nord-10 transition-colors">
-                    <Linkedin className="w-4 h-4" /> LinkedIn
+                <div className="flex flex-col gap-2 px-4 pt-3 pb-1 border-t border-nord-4/30 mt-1">
+                  <a href={`mailto:${portfolioData.owner.email}`} className="flex items-center gap-2 text-xs text-nord-3 hover:text-[#82241f] transition-colors">
+                    <Mail className="w-4 h-4" /> {portfolioData.owner.email}
                   </a>
-                  <a href={`mailto:${portfolioData.owner.email}`} className="flex items-center gap-2 text-xs text-nord-3 hover:text-nord-10 transition-colors">
-                    <Mail className="w-4 h-4" /> Email
+                  <a href={`tel:${portfolioData.owner.phone}`} className="flex items-center gap-2 text-xs text-nord-3 hover:text-[#82241f] transition-colors">
+                    <Phone className="w-4 h-4" /> {portfolioData.owner.phone}
+                  </a>
+                  <a href={portfolioData.owner.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs text-nord-3 hover:text-[#82241f] transition-colors">
+                    <Linkedin className="w-4 h-4" /> LinkedIn
                   </a>
                 </div>
               </div>
@@ -174,6 +246,32 @@ export default function App() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
             >
+              {/* Cover / Presentation Section */}
+              <section className="min-h-[65vh] flex flex-col justify-center items-center text-center mb-16">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.9, ease: "easeOut" }}
+                >
+                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold text-nord-0 leading-tight mb-8 tracking-tight">
+                    {portfolioData.owner.name}
+                  </h1>
+                  <motion.div
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.6 }}
+                    className="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 text-sm md:text-base text-nord-3"
+                  >
+                    {['Rigorous Researcher', 'Technologist', 'Creative Problem Solver', 'Human-Centered Engineer'].map((d, i, arr) => (
+                      <span key={d} className="flex items-center gap-3">
+                        <span className="font-medium tracking-wide">{d}</span>
+                        {i < arr.length - 1 && <span className="text-nord-10 font-light">·</span>}
+                      </span>
+                    ))}
+                  </motion.div>
+                </motion.div>
+              </section>
+
               {/* Hero Section */}
               <section className="mb-24">
                 <motion.div
@@ -289,8 +387,7 @@ export default function App() {
               <section id="projects" className="mb-32 scroll-mt-32">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
                   <div>
-                    <h2 className="text-3xl font-display font-bold text-nord-0 mb-4 lowercase">strategic projects</h2>
-                    <p className="text-nord-3">High-impact initiatives driving system optimization and user-centric design.</p>
+                    <h2 className="text-3xl font-display font-bold text-nord-0 mb-4 lowercase">selected work</h2>
                   </div>
                   
                   <div className="flex flex-wrap items-center gap-4">
@@ -394,13 +491,9 @@ export default function App() {
                   <p className="text-nord-1">Institutions and organisations I have worked with across research, industry, and ventures.</p>
                 </motion.div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-60px' }}
-                  transition={{ type: 'spring', stiffness: 240, damping: 28, delay: 0.1 }}
-                  className="overflow-hidden rounded-3xl py-6"
-                  style={{ background: '#ffffff', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)', maskImage: 'linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)' }}
+                <div
+                  className="overflow-hidden rounded-3xl"
+                  style={{ background: '#ffffff' }}
                 >
                   <div className="marquee-inner">
                     {[...PARTNER_LOGOS, ...PARTNER_LOGOS].map((logo, i) => (
@@ -408,13 +501,8 @@ export default function App() {
                         key={i}
                         style={{
                           flexShrink: 0,
-                          margin: '0 28px',
-                          width: '200px',
-                          height: '110px',
-                          backgroundColor: '#ffffff',
-                          borderRadius: '12px',
-                          padding: '14px',
-                          overflow: 'hidden',
+                          margin: '0 24px',
+                          height: '160px',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
@@ -424,17 +512,15 @@ export default function App() {
                           src={`${import.meta.env.BASE_URL}logos/${encodeURIComponent(logo.file)}`}
                           alt={logo.name}
                           style={{
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'contain',
+                            height: `${logo.h}px`,
+                            width: 'auto',
                             display: 'block',
-                            backgroundColor: '#ffffff',
                           }}
                         />
                       </div>
                     ))}
                   </div>
-                </motion.div>
+                </div>
               </section>
             </motion.div>
           )}
@@ -448,57 +534,28 @@ export default function App() {
               transition={{ duration: 0.3 }}
               className="max-w-4xl mx-auto"
             >
-              {/* Resume Header */}
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10 pb-10 border-b border-nord-4/30">
-                <div>
-                  <h1 className="text-4xl font-display font-bold text-nord-0 mb-2">{portfolioData.owner.name}</h1>
-                  <p className="font-medium text-lg" style={{ color: '#f27291' }}>{portfolioData.owner.title}</p>
-                </div>
-                <div className="flex flex-col gap-2.5 text-sm text-nord-3 min-w-0">
-                  <div className="flex items-center gap-2 min-w-0">
-                    <Mail className="w-4 h-4 text-nord-10 shrink-0" />
-                    <a href={`mailto:${portfolioData.owner.email}`} className="hover:text-nord-10 break-all">{portfolioData.owner.email}</a>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-4 h-4 text-nord-10 shrink-0" />
-                    <span>{portfolioData.owner.phone}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-nord-10 shrink-0" />
-                    <span>{portfolioData.owner.location}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Linkedin className="w-4 h-4 text-nord-10 shrink-0" />
-                    <a href={portfolioData.owner.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-nord-10">LinkedIn Profile</a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Profile Summary */}
-              {'resumeProfile' in portfolioData && (
-                <div className="mb-10 p-6 rounded-3xl relative overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(242,114,145,0.06) 0%, rgba(130,36,31,0.04) 100%)', border: '1px solid rgba(242,114,145,0.20)' }}>
-                  <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full blur-3xl opacity-20" style={{ background: '#f27291' }} />
-                  <p className="text-nord-3 leading-relaxed text-sm relative z-10">{(portfolioData as typeof portfolioData & { resumeProfile: string }).resumeProfile}</p>
-                </div>
-              )}
-
               {/* Resume Content */}
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
                 <div className="lg:col-span-2 space-y-16">
                   {/* Experience */}
                   <section>
-                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-8 flex items-center gap-3">
-                      <Briefcase className="w-5 h-5" /> Professional Experience
+                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-0 mb-8 pb-2 border-b-2 border-nord-0/20">
+                      Professional Experience
                     </h2>
                     <div className="space-y-12">
-                      {(portfolioData as typeof portfolioData & { experience: Array<{ role: string; company: string; period: string; bullets?: string[]; description?: string }> }).experience.map((exp, i) => (
+                      {(portfolioData as typeof portfolioData & { experience: Array<{ role: string; company: string; location?: string; period: string; bullets?: string[] }> }).experience.map((exp, i) => (
                         <div key={i} className="relative pl-8 border-l-2 border-nord-4/30">
                           <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-2" style={{ borderColor: i === 0 ? '#f27291' : '#5e81ac' }} />
-                          <div className="mb-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                            <h3 className="text-lg font-bold text-nord-0">{exp.role}</h3>
-                            <span className="text-xs font-bold px-2 py-1 rounded-md" style={{ color: '#5e81ac', background: 'rgba(94,129,172,0.1)' }}>{exp.period}</span>
+                          <div className="flex justify-between gap-4 mb-3">
+                            <div>
+                              <h3 className="text-lg font-bold text-nord-0">{exp.role}</h3>
+                              <p className="text-nord-1 font-semibold text-sm mt-0.5">{exp.company}</p>
+                            </div>
+                            <div className="shrink-0 flex flex-col items-end gap-1">
+                              <span className="text-xs font-bold px-2 py-1 rounded-md whitespace-nowrap" style={{ color: '#5e81ac', background: 'rgba(94,129,172,0.1)' }}>{exp.period}</span>
+                              {exp.location && <span className="text-[11px] text-nord-3">{exp.location}</span>}
+                            </div>
                           </div>
-                          <p className="text-nord-3 font-medium mb-4">{exp.company}</p>
                           <ul className="space-y-2.5">
                             {exp.bullets.map((bullet, bi) => (
                               <li key={bi} className="flex gap-3 text-nord-3 text-sm leading-relaxed">
@@ -514,15 +571,15 @@ export default function App() {
 
                   {/* Education */}
                   <section>
-                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-8 flex items-center gap-3">
-                      <GraduationCap className="w-5 h-5" /> Education
+                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-0 mb-8 pb-2 border-b-2 border-nord-0/20">
+                      Education
                     </h2>
                     <div className="space-y-8">
                       {portfolioData.education.map((edu, i) => (
                         <div key={i} className="flex justify-between gap-4">
                           <div>
                             <h3 className="font-bold text-nord-0">{edu.degree}</h3>
-                            <p className="text-sm text-nord-3">{edu.school}</p>
+                            <p className="text-sm text-nord-2 font-medium">{edu.school}</p>
                             {edu.details && <p className="text-xs text-nord-10 mt-1 italic">{edu.details}</p>}
                           </div>
                           <span className="text-xs font-medium text-nord-3 shrink-0">{edu.period}</span>
@@ -532,10 +589,10 @@ export default function App() {
                   </section>
                 </div>
 
-                <div className="space-y-12">
+                <div className="space-y-12 lg:sticky lg:top-28 lg:self-start">
                   {/* Skills Grid */}
                   <section>
-                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-6">Technical Expertise</h2>
+                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-0 mb-6">Technical Expertise</h2>
                     {(() => {
                       const skills = (portfolioData as typeof portfolioData & { skills: { core: string[]; methods: string[]; experimental: string[]; tools: string[] } }).skills;
                       const groups = [
@@ -563,7 +620,7 @@ export default function App() {
 
                   {/* Languages */}
                   <section>
-                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-1 mb-6">Languages</h2>
+                    <h2 className="text-sm uppercase tracking-widest font-bold text-nord-0 mb-6">Languages</h2>
                     <div className="space-y-3">
                       {(portfolioData as typeof portfolioData & { languages: Array<{ name: string; level: string }> }).languages.map(lang => (
                         <div key={lang.name} className="flex justify-between items-center text-sm">
@@ -641,14 +698,32 @@ export default function App() {
               </p>
               
               <div className="flex flex-wrap justify-center gap-6">
-                <a 
-                  href={`mailto:${portfolioData.owner.email}`}
-                  className="flex items-center gap-3 px-8 py-4 bg-white text-nord-0 rounded-full font-bold hover:bg-nord-6 transition-all"
-                >
-                  <Mail className="w-5 h-5" />
-                  Email Me
-                </a>
-                <a 
+                <div className="relative">
+                  <button
+                    onClick={() => setContactPopover(contactPopover === 'bottom-email' ? null : 'bottom-email')}
+                    className="flex items-center gap-3 px-8 py-4 bg-white text-nord-0 rounded-full font-bold hover:bg-nord-6 transition-all"
+                  >
+                    <Mail className="w-5 h-5" />
+                    Email Me
+                  </button>
+                  {contactPopover === 'bottom-email' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 bg-white rounded-2xl shadow-xl border border-nord-4/20 p-4 w-72 z-50"
+                    >
+                      <p className="text-[10px] uppercase tracking-widest font-bold text-nord-4 mb-1">Email</p>
+                      <p className="text-sm font-medium text-nord-0 mb-3 break-all">{portfolioData.owner.email}</p>
+                      <a
+                        href={`mailto:${portfolioData.owner.email}`}
+                        className="flex items-center justify-center gap-2 text-xs font-bold text-white bg-[#82241f] px-4 py-2 rounded-full hover:bg-[#5c1915] transition-colors w-full"
+                      >
+                        <Mail className="w-3 h-3" /> Send Email
+                      </a>
+                    </motion.div>
+                  )}
+                </div>
+                <a
                   href={portfolioData.owner.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -666,7 +741,7 @@ export default function App() {
       {/* Footer */}
       <footer className="py-12 border-t border-nord-4/30 text-center">
         <p className="text-sm text-nord-4">
-          &copy; {new Date().getFullYear()} {portfolioData.owner.name.toLowerCase()}. built with scandinavian care.
+          &copy; {new Date().getFullYear()} Estela Pérez Luque. Built with Andalusian soul and Scandinavian care.
         </p>
       </footer>
 

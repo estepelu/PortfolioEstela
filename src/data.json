@@ -10,44 +10,55 @@
   "lastUpdated": "2026-04-02",
   "philosophy": "I believe in the importance of having rigorous frameworks to evaluate systems and a comprehensive understanding to connect the dots. I am driven to solve real-world problems by understanding customer needs and providing the best solutions through deep system analysis.",
   "interests": ["Autonomous Systems", "Human-Centred AI", "Product Analytics", "Human Behaviour Modelling", "Customer Experience Design", "Simulation Technology"],
-  "resumeProfile": "PhD in Informatics with 5+ years turning complex systems and data into decisions, products, and customer outcomes. I have led cross-functional projects across industry partnerships, international research, and a startup venture, spanning predictive modelling and validation pipelines through stakeholder communication, market analysis, and customer-facing delivery. I thrive where technical depth meets business reality: whether scoping a data strategy, enabling customer success, or building the analytical foundation for a go-to-market motion.",
+  "resumeProfile": "PhD in Informatics with 6+ years of experience in data science, human factors research, and research engineering across automotive and industrial environments. I build analytical pipelines, design and run validation studies, develop predictive models, and translate findings into decisions that engineering teams can act on. I have partnered with Volvo Cars, Volvo Trucks, Scania, and SAFER on real product challenges, co-founded and led R&D for a hardware startup through a 2-year incubator, and published 20+ peer-reviewed papers (145 citations, h-index 8). I work equally well deep in a dataset and in front of stakeholders who need clear, actionable answers.",
   "experience": [
     {
       "role": "Research Engineer and PhD Researcher",
       "company": "University of Skövde, Sweden",
+      "location": "Skövde, Sweden",
       "period": "Sep 2020 to Oct 2025",
       "bullets": [
-        "Built end-to-end Python and MATLAB pipelines for simulation validation and model benchmarking, comparing prediction outputs against motion capture and in-vehicle datasets using RMSE, DTW, and Bland-Altman metrics to produce reproducible, traceable evidence for engineering decisions and test planning.",
-        "Led multi-stakeholder R&D projects with Volvo Cars, Volvo Trucks, Scania, Texas Tech University, and University of Antwerp, aligning scope, timelines, and expectations across technical and non-technical teams, resulting in 15+ peer-reviewed publications and 145 total citations.",
-        "Applied multi-objective optimization (NSGA-II) to vehicle interior design problems, evaluating 1,000+ configurations across 14 digital human manikins and shifting ergonomics assessment from manual trial-and-error to systematic, scalable design-space exploration.",
-        "Designed and executed experimental studies with motion capture and 4D body-scanning systems, managing protocol development, ethics approvals, and data pipelines end-to-end from participant recruitment to publication-ready outputs.",
-        "Supervised 10+ BSc theses and delivered teaching at BSc and MSc level; elected Student Representative and Board Member representing 40+ PhD students in university-level research governance."
+        "Built end-to-end Python and MATLAB pipelines to ingest, clean, and benchmark predictive models against motion capture and in-vehicle datasets spanning up to 199 participants, generating reproducible, traceable evidence that replaced ad hoc manual analysis across engineering and design decisions.",
+        "Applied multi-objective optimization (NSGA-II) to systematically evaluate 1,000+ vehicle interior configurations across 14 digital human models, turning a manual, time-consuming ergonomics process into an automated workflow that consistently identified solutions beyond the reach of human trial-and-error.",
+        "Developed a novel 3D reaching-motion prediction pipeline combining steering dynamics, adaptive velocity modelling, and FABRIK inverse kinematics, reducing peak velocity prediction error 11-fold over the existing optimization-based standard, published in the International Journal of Human-Computer Interaction (2026).",
+        "Designed a multi-metric evaluation framework using RMSE, DTW, and Bland-Altman analysis across posture and motion prediction studies, revealing up to 15-20% variation in model performance depending on evaluation approach and showing that how a model is measured directly shapes the engineering decisions made from it.",
+        "Led Human Factors studies end to end across multiple industry partnerships: scoped evaluation criteria, built representative anthropometric user populations, ran motion capture experiments with up to 199 real drivers, and delivered structured posture, visibility, and reachability recommendations to Volvo Cars, Volvo Trucks, and Scania.",
+        "Partnered with Volvo Cars, Volvo Trucks, Scania, and the SAFER vehicle safety ecosystem to scope validation studies, align evaluation criteria with real engineering constraints, and deliver findings that fed directly into vehicle design and ergonomics processes, resulting in 20+ peer-reviewed publications (145 total citations, h-index 8) and 15+ conference and industry presentations.",
+        "Taught CAD and digital human modelling at BSc and MSc levels, supervised 10+ final-year student projects, and served as elected Student Representative in doctoral committees, representing 40+ PhD researchers in university governance and programme decisions."
       ]
     },
     {
       "role": "Visiting Researcher",
       "company": "University of Antwerp, Belgium",
+      "location": "Antwerp, Belgium",
+
       "period": "Sep 2024 to Mar 2025",
       "bullets": [
-        "Managed a 6-month international research stay end-to-end: led ethics application for 5-year large-scale data collection approval, designed motion capture and 4D body-scanning protocols for 30+ participants, and built reproducible multi-site data pipelines enabling consistent validation across institutions."
+        "Secured ethics approval for a 5-year large-scale data collection programme, designed motion capture and 4D body scanning protocols for 30+ participants, and managed experimental logistics across institutions, delivering a rigorous, well-governed study campaign from scratch in six months.",
+        "Built reproducible multi-site data pipelines standardizing collection, processing, and documentation across research teams, improving data consistency and cross-study comparability to support long-term model validation."
       ]
     },
     {
       "role": "Co-founder and R&D Lead",
       "company": "Swe-Ex AB (Startup) at Science Park Skövde, Sweden",
+      "location": "Skövde, Sweden",
+
       "period": "Sep 2021 to Mar 2023",
       "bullets": [
-        "Co-founded an early-stage wearable technology startup developing exoskeleton-inspired safety support equipment for assembly-line environments, incubated at Science Park Skövde over 2 years.",
-        "Translated user needs and safety requirements into measurable product targets and drove three full prototype iterations from CAD to physical validation using 3D-printed, textile, and steel components.",
-        "Built commercial acumen through investor communications, market analysis across 10+ industries, and structured business planning, bridging technical capability with product viability and go-to-market strategy."
+        "Co-founded a wearable safety technology startup at Science Park Skövde, developing exoskeleton-inspired support equipment for assembly-line environments targeting ergonomic risk reduction and worker injury prevention.",
+        "Drove three full product prototype iterations from CAD concept to physical validation using 3D-printed, textile, and steel components, translating user safety requirements and ergonomic constraints into measurable design targets at each stage.",
+        "Researched 10+ target markets, developed a full business and pricing strategy, and pitched to investors through a 2-year structured incubator programme, building direct experience connecting technical R&D with commercial viability and go-to-market planning."
       ]
     },
     {
       "role": "Research Assistant",
       "company": "University of Skövde, Sweden",
+      "location": "Skövde, Sweden",
+
       "period": "Jun 2019 to Sep 2020",
       "bullets": [
-        "Contributed to applied projects with 6+ industry partners: conducted ergonomic assessments (RULA, REBA), produced decision-ready analytical reports and educational content, and presented findings to cross-functional teams to support product development decisions."
+        "Conducted ergonomic assessments (RULA, REBA) and simulation studies for 6+ industry partners, producing structured decision-ready reports and live demonstrations that supported ergonomics and usability decisions during early product development.",
+        "Created training materials and video tutorials on digital human modelling tools for industrial partners and students, improving simulation tool adoption and reducing onboarding time across academic and applied engineering settings."
       ]
     }
   ],
@@ -55,31 +66,35 @@
     {
       "degree": "PhD in Informatics",
       "school": "University of Skövde, Sweden",
+
       "period": "Sep 2020 to Oct 2025",
       "details": "Thesis: Human Posture and Motion Prediction for Automotive Ergonomics Design. Predictive modelling, simulation validation, and benchmarking against real-world datasets."
     },
     {
       "degree": "Master of Science in Intelligent Automation",
       "school": "University of Skövde, Sweden",
+
       "period": "Aug 2018 to Jun 2019",
       "details": "Thesis: Experimental evaluation of three upper-body exoskeletons using Xsens motion capture."
     },
     {
       "degree": "Bachelor of Science in Mechanical Engineering (ERASMUS+)",
       "school": "University of Skövde, Sweden",
+
       "period": "Aug 2017 to Jun 2018"
     },
     {
       "degree": "Degree in Mechanical Engineering",
       "school": "University of Málaga, Spain",
+
       "period": "Aug 2012 to Jun 2018"
     }
   ],
   "skills": {
     "core": ["Python", "MATLAB", "Time-series Analysis", "Predictive Modelling", "Simulation Validation", "Data Pipelines"],
-    "methods": ["Model Benchmarking", "Experimental Design", "Multi-objective Optimisation", "Statistical Analysis", "Inverse Kinematics"],
-    "experimental": ["Motion Capture (Xsens, MOVE4D, optical)", "4D Body Scanning", "Protocol Development", "Ethics Governance"],
-    "tools": ["IPS IMMA", "Siemens Jack", "AnyBody", "SolidWorks", "Autodesk Inventor"]
+    "methods": ["Model Benchmarking", "Experimental Design", "Multi-objective Optimisation", "Statistical Analysis", "Human Factors and Ergonomics", "Inverse Kinematics"],
+    "experimental": ["Motion Capture (Xsens, MOVE4D, optical)", "4D Body Scanning", "Ergonomic Assessment (RULA, REBA)", "Protocol Development"],
+    "tools": ["IPS IMMA", "Siemens Jack", "AnyBody", "Autodesk Inventor", "SolidWorks", "Git"]
   },
   "languages": [
     { "name": "English", "level": "C1" },
